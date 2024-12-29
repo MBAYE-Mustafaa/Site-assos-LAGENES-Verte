@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jeu éducatif sur le recyclage - LAGENES Verte">
+    <meta name="keywords" content="jeu, recyclage, environnement, éducation">
+    <title>Jeu éducatif | LAGENES Verte</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/aev.png" />
+    <style>
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .memory-card {
+            width: 100%;
+            height: 150px;
+            border-radius: 5px;
+            background: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .memory-card.flipped {
+            background: #22aa22;
+            color: white;
+        }
+
+        .educational-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        #timer {
+            font-size: 18px;
+            color: #e53935;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container text-center">
+                <a href="index.html" class="navbar-brand ml-auto" style="color: rgb(22, 170, 22)">LAGENES Verte</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav m-auto mt-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link custom-pl-3" style="color: whitesmoke">Accueil</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="evenements.html" class="nav-link custom-pl-3 dropdown-toggle" style="color: whitesmoke" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Projets
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="school.html">Projet Clean'School</a>
+                                <a class="dropdown-item" href="avenir.html"> <i>En construction</i></a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link custom-pl-3custom-pl-3" style="color: whitesmoke">À propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link custom-pl-3" style="color: whitesmoke">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social-icons">
+                    <a href="contact.html" class="social-icon"><i class="fas fa-user"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Jeu de mémoire éducatif sur le recyclage</h1>
+            <p class="text-center">Associez les matériaux pour apprendre à les recycler !</p>
+
+            <div class="text-center mt-3">
+                <p id="timer">Temps restant : 60s</p>
+            </div>
+
+            <div class="memory-game" id="memory-game">
+                <!-- Les cartes seront générées dynamiquement -->
+            </div>
+
+            <div class="educational-message text-center" id="educational-message"></div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-section text-center">
+                        <img src="images/aev.png" alt="Logo de l'Association pour l'Environnement Vert" class="footer-logo">
+                        <div class="footer-text">
+                            <p class="footer-heading">À propos de nous</p>
+                            <p>L'Association LAGENES Verte s'engage à la préservation de l'environnement et à la sensibilisation à l'écologie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <div class="footer-text">
+                            <p class="footer-heading">Contactez-nous</p>
+                            <p>Adresse : Méckhé, Sénégal</p>
+                            <p>Email : lagenescleanschool@gmail.com</p>
+                            <p>Téléphone : +221 76 214 70 78</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <div class="footer-text text-center">
+                            <p class="footer-heading">Suivez-nous</p>
+                            <div class="social-links">
+                                <a class="social-link" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="social-link" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="social-link" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Faire un don</a>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <p class="copyright">&copy;2024 LAGENES Verte. Tous droits réservés.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      
+    const cards = [
+        { text: 'Plastique', message: 'Le plastique est recyclable, mais pensez à le nettoyer avant de le jeter.' },
+        { text: 'Verre', message: 'Le verre est recyclable à l’infini, sans perte de qualité.' },
+        { text: 'Papier', message: 'Recyclez le papier propre et sec dans les bacs appropriés.' },
+        { text: 'Canette', message: 'Les canettes en aluminium sont 100 % recyclables.' },
+        { text: 'Pile', message: 'Les piles ne doivent pas être jetées dans les bacs classiques. Apportez-les aux points de collecte.' },
+        { text: 'Déchet organique', message: 'Les déchets organiques peuvent être compostés pour enrichir les sols.' }
+    ];
+
+    const gameContainer = document.getElementById('memory-game');
+    const messageContainer = document.getElementById('educational-message');
+    let firstCard = null;
+    let secondCard = null;
+    let lockBoard = false;
+    let gameTime = 60;
+    let timerInterval;
+
+    function shuffle(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    function createCard(text) {
+        const card = document.createElement('div');
+        card.classList.add('memory-card');
+        card.dataset.text = text;
+        card.innerText = 'Cacher';
+
+        card.addEventListener('click', () => {
+            if (lockBoard || card === firstCard) return;
+
+            card.classList.add('flipped');
+            card.innerText = text;
+
+            if (!firstCard) {
+                firstCard = card;
+                return;
+            }
+
+            secondCard = card;
+            checkForMatch();
+        });
+
+        return card;
+    }
+
+    function checkForMatch() {
+        const isMatch = firstCard.dataset.text === secondCard.dataset.text;
+
+        if (isMatch) {
+            const message = cards.find(c => c.text === firstCard.dataset.text).message;
+            messageContainer.innerText = message;
+
+            firstCard = null;
+            secondCard = null;
+
+            checkWinCondition(); // Vérifie si le joueur a gagné
+        } else {
+            lockBoard = true;
+            setTimeout(() => {
+                firstCard.classList.remove('flipped');
+                firstCard.innerText = 'Cacher';
+                secondCard.classList.remove('flipped');
+                secondCard.innerText = 'Cacher';
+
+                firstCard = null;
+                secondCard = null;
+                lockBoard = false;
+            }, 1000);
+        }
+    }
+
+    function startTimer() {
+        const timerDisplay = document.getElementById('timer');
+        timerDisplay.innerText = `Temps restant : ${gameTime}s`;
+
+        timerInterval = setInterval(() => {
+            gameTime -= 1;
+            timerDisplay.innerText = `Temps restant : ${gameTime}s`;
+
+            if (gameTime <= 0) {
+                clearInterval(timerInterval);
+                alert('Temps écoulé ! Recommencez le jeu.');
+                resetGame();
+            }
+        }, 1000);
+    }
+
+    function checkWinCondition() {
+        const allCards = Array.from(document.querySelectorAll('.memory-card'));
+        const allFlipped = allCards.every(card => card.classList.contains('flipped'));
+
+        if (allFlipped) {
+            clearInterval(timerInterval); // Arrête le minuteur
+            alert('Félicitations, vous avez gagné !');
+            resetGame();
+        }
+    }
+
+    function resetGame() {
+        gameContainer.innerHTML = '';
+        messageContainer.innerText = '';
+        firstCard = null;
+        secondCard = null;
+        lockBoard = false;
+        gameTime = 60;
+        clearInterval(timerInterval);
+        initGame();
+    }
+
+    function revealCardsBriefly() {
+        const allCards = Array.from(gameContainer.children);
+        allCards.forEach(card => {
+            card.classList.add('flipped');
+            card.innerText = card.dataset.text;
+        });
+
+        setTimeout(() => {
+            allCards.forEach(card => {
+                card.classList.remove('flipped');
+                card.innerText = 'Cacher';
+            });
+            startTimer();
+        }, 3000);
+    }
+
+    function initGame() {
+        const shuffledCards = shuffle([...cards, ...cards]);
+        shuffledCards.forEach(card => {
+            const cardElement = createCard(card.text);
+            gameContainer.appendChild(cardElement);
+        });
+
+        revealCardsBriefly();
+    }
+
+    initGame();
+</script>
+
+</body>
+
+</html>
