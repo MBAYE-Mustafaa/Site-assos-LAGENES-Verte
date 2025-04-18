@@ -63,7 +63,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav m-auto mt-auto">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link custom-pl-3" style="color: whitesmoke">Accueil</a>
+                            <a href="index.html" class="nav-link" style="color: whitesmoke">Accueil</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a href="evenements.html" class="nav-link custom-pl-3 dropdown-toggle" style="color: whitesmoke" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -71,14 +71,15 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="school.html">Projet Clean'School</a>
-                                <a class="dropdown-item" href="avenir.html"> <i>En construction</i></a>
+                                <a class="dropdown-item" href="Jeu de mémoire.html"> <i>Memo-Recyclage</i></a>
+                                <a class="dropdown-item" href="SuiteProject.html"> <i>En construction</i></a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link custom-pl-3custom-pl-3" style="color: whitesmoke">À propos</a>
+                            <a href="about.html" class="nav-link" style="color: whitesmoke">À propos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="contact.html" class="nav-link custom-pl-3" style="color: whitesmoke">Contact</a>
+                            <a href="Boutique.html" class="nav-link" style="color: whitesmoke">Boutique</a>
                         </li>
                     </ul>
                 </div>
@@ -95,10 +96,10 @@
     <section class="py-5">
         <div class="container">
             <h1 class="text-center mb-5">Jeu de mémoire éducatif sur le recyclage</h1>
-            <p class="text-center">Associez les matériaux pour apprendre à les recycler !</p>
+            <p class="text-center">Associez les matériaux pour vous acculturer sur le recyclage !</p>
 
             <div class="text-center mt-3">
-                <p id="timer">Temps restant : 60s</p>
+                <p id="timer">Temps restant : 120s</p>
             </div>
 
             <div class="memory-game" id="memory-game">
@@ -174,7 +175,7 @@
     let firstCard = null;
     let secondCard = null;
     let lockBoard = false;
-    let gameTime = 60;
+    let gameTime = 120;
     let timerInterval;
 
     function shuffle(array) {
@@ -282,7 +283,7 @@
                 card.innerText = 'Cacher';
             });
             startTimer();
-        }, 3000);
+        }, 6000);
     }
 
     function initGame() {
