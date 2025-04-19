@@ -11,6 +11,127 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/aev.png" />
+    <style>
+        body {
+            background-color: #98D7C2; /* Couleur vert menthe */
+            color: #222;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .clean-section {
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background-color: #ffffff;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-title {
+            font-weight: bold;
+        }
+
+        .btn-outline-danger {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #333;
+            margin-top: 0;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: white;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #98D7C2;
+            text-decoration: none;
+        }
+
+        .header {
+            background: linear-gradient(to right, #0f9d58, #00c853);
+            color: white;
+        }
+
+        .whatsapp-btn-container {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1000;
+        }
+
+
+        .alert-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 15px solid #0f9d58;
+            color: #333;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 8px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #98D7C2;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+        }
+    </style>
 </head>
 
 <body>

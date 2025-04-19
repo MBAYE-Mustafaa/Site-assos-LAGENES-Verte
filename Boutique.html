@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Événements à venir et passés de l'Association pour l'Environnement Vert">
     <meta name="keywords" content="événements, environnement, écologie">
-    <title>Accueil | LAGENES Verte</title>
+    <title>Boutique | LAGENES Verte</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/aev.png" />
     <style>
         body {
-            background-color: #f5fdf6;
+            background-color: #98D7C2; /* Couleur vert menthe */
             color: #222;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
         }
 
         .clean-section {
-            background-color: #f5fdf6;
-            color: #222;
             padding: 2rem 1rem;
         }
 
@@ -27,7 +34,14 @@
             background-color: #ffffff;
             color: #333;
             border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
         .card-title {
@@ -44,17 +58,78 @@
             color: white;
         }
 
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
         footer {
             background-color: #333;
+            margin-top: 0;
+            padding: 2rem 0;
         }
 
         footer a {
             color: white;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #98D7C2;
+            text-decoration: none;
         }
 
         .header {
             background: linear-gradient(to right, #0f9d58, #00c853);
             color: white;
+        }
+
+        .whatsapp-btn-container {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1000;
+        }
+
+
+        .alert-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 15px solid #0f9d58;
+            color: #333;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 8px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #98D7C2;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
         }
     </style>
 </head>
@@ -103,6 +178,9 @@
             <a class="whatsapp-btn" href="https://wa.me/33605536426"><i class="fab fa-whatsapp"></i></a>
             <span><i>Contact us</i></span>
         </div>
+    </header>
+
+    <div class="content">
         <section class="container my-5">
             <div class="text-center mb-5">
                 <h2 class="mb-3">🌱 Soutenez notre cause avec style !</h2>
@@ -110,42 +188,42 @@
             </div>
         
             <div class="row text-center">
-                  <!-- Carte de soutien -->
-                  <div class="col-md-4 mb-4">
+                <!-- Carte de soutien -->
+                <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" target="_blank">
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20carte%20de%20soutien" target="_blank">
                             <img src="images/soutien.jpg" class="card-img-top" alt="Carte de soutien">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">Carte de soutien</h5>
                             <p class="card-text">💸 <strong>Prix :</strong> 2 500 FCFA</p>
-                            <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" class="btn btn-success" target="_blank">Commander sur WhatsApp</a>
+                            <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20carte%20de%20soutien" class="btn btn-success" target="_blank">Commander sur WhatsApp</a>
                         </div>
                     </div>
                 </div>
-                  <!-- Carte de membre -->
-                  <div class="col-md-4 mb-4">
+                <!-- Carte de membre -->
+                <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" target="_blank">
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20carte%20de%20membre" target="_blank">
                             <img src="images/membre.jpg" class="card-img-top" alt="Carte de membre">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">Carte de membre</h5>
                             <p class="card-text">💸 <strong>Prix :</strong> 1 000 FCFA</p>
-                            <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" class="btn btn-success" target="_blank">Commander sur WhatsApp</a>
+                            <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20carte%20de%20membre" class="btn btn-success" target="_blank">Commander sur WhatsApp</a>
                         </div>
                     </div>
                 </div>
-                  <!-- Carte de membre -->
-                  <div class="col-md-4 mb-4">
+                <!-- Carte de membre (duplicata - corrigé) -->
+                <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" target="_blank">
-                            <img src="images/membre.jpg" class="card-img-top" alt="Carte de membre">
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20badge" target="_blank">
+                            <img src="images/badge.jpg" class="card-img-top" alt="Badge LAGENES">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Carte de membre</h5>
+                            <h5 class="card-title">Badge LAGENES</h5>
                             <p class="card-text">💸 <strong>Prix :</strong> 1 000 FCFA</p>
-                            <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" class="btn btn-success" target="_blank">Commander sur WhatsApp</a>
+                            <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20badge" class="btn btn-success" target="_blank">Commander sur WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -201,36 +279,44 @@
                 <p class="mt-3">Chaque don ou achat est un pas de plus vers un Sénégal plus propre et une jeunesse plus engagée. 🌍</p>
             </div>
         </section>
-    </header>
+    </div>
 
-   <!-- Footer -->
-   <footer class="text-white py-4">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="images/aev.png" alt="Logo de l'association" class="img-fluid">
-                <p>L'association s'engage à la préservation de l'environnement et à la sensibilisation à l'écologie.</p>
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/aev.png" alt="Logo association" class="img-fluid" style="max-width: 150px;">
+                    <p class="mt-3">L'association s'engage à la préservation de l'environnement et à la sensibilisation à l'écologie.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Contactez-nous</h5>
+                    <p><i class="fas fa-map-marker-alt mr-2"></i>Méckhé, Sénégal</p>
+                    <p><i class="fas fa-envelope mr-2"></i><a href="mailto:lagenescleanschool@gmail.com">lagenescleanschool@gmail.com</a></p>
+                    <p><i class="fas fa-phone mr-2"></i>+221 76 214 70 78</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Suivez-nous</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h5>Contactez-nous</h5>
-                <p>Adresse: Méckhé, Sénégal</p>
-                <p>Email: <a href="mailto:lagenescleanschool@gmail.com">lagenescleanschool@gmail.com</a></p>
-                <p>Téléphone: +221 76 214 70 78</p>
-            </div>
-            <div class="col-md-4">
-                <h5>Suivez-nous</h5>
-                <a href="#" class="mr-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="mr-3"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="mr-3"><i class="fab fa-instagram"></i></a>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p class="mb-0">&copy; 2025 LAGENES Verte - Tous droits réservés</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
