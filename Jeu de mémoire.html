@@ -23,17 +23,25 @@
             background-color: #f5f5f5;
         }
         
+       
         .header {
-            background: linear-gradient(to right, var(--senegal-green), #00a651);
+            background: linear-gradient(135deg, var(--senegal-green), #006b32);
             color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--senegal-yellow);
         }
         
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
+            display: flex;
+            align-items: center;
         }
         
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
         .senegal-flag {
             color: var(--senegal-yellow);
             font-weight: bold;
@@ -320,26 +328,8 @@
             font-size: 1.2rem;
         }
 
-        
-        .header {
-            background: linear-gradient(135deg, var(--senegal-green), #006b32);
-            color: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            border-bottom: 3px solid var(--senegal-yellow);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
+      
+      
         .nav-link {
             position: relative;
             padding: 8px 15px;
@@ -429,9 +419,6 @@
         }
         
         
-        
-     
-        
         footer {
             background: linear-gradient(135deg, #222, #444);
             margin-top: 0;
@@ -493,47 +480,69 @@
                 height: 30px;
             }
             
-          
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
         }
+        .dropdown-item :active {
+    color: #06bb15;
+ }
     </style>
 </head>
 
 <body>
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container text-center">
+            <div class="container">
                 <a href="index.html" class="navbar-brand">
                     <img src="images/aev.png" alt="Logo LAGENES Verte">
                     LAGENES <span style="color: var(--senegal-yellow)">Verte</span>
                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav m-auto mt-auto">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link" style="color: whitesmoke">Accueil</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link">Accueil</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="evenements.html" class="nav-link custom-pl-3 dropdown-toggle" style="color: whitesmoke" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:whitesmoke">
                                 Projets
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="school.html">Projet Clean'School</a>
-                                <a class="dropdown-item active" href="Jeu de mémoire.html"> <i>Memo-Recyclage</i></a>
-                                <a class="dropdown-item" href="SuiteProject.html"> <i>Projets Futurs</i></a>
+                                <a class="dropdown-item" href="Jeu de mémoire.html">Memo-Recyclage</a>
+                                <a class="dropdown-item" href="SuiteProject.html">Projets Futurs</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link" style="color: whitesmoke">À propos</a>
+                            <a href="about.html" class="nav-link" style="color:whitesmoke">À propos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Boutique.html" class="nav-link" style="color: whitesmoke">Boutique</a>
+                            <a href="Boutique.html" class="nav-link" style="color:whitesmoke">Boutique</a>
                         </li>
                     </ul>
-                </div>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <div class="social-icons d-none d-lg-flex ml-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -545,7 +554,7 @@
 
     <main class="container py-5">
         <div class="memory-game-container">
-            <h1 class="text-center mb-4">Memo-Propreté Sénégal</h1>
+            <h1 class="text-center mb-4">Memo-Sénégal PROPRE</h1>
             <p class="text-center lead">Jeu éducatif pour un Sénégal plus propre</p>
 
             <div class="alert alert-info text-center">

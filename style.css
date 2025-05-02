@@ -150,7 +150,10 @@
 .dropdown-item:hover {
    background-color: #06bb15;
 }
-
+.dropdown-item :active {
+    background-color: #06bb15;
+ }
+ 
 /* Media Query pour les écrans de taille supérieure (par exemple, ordinateurs de bureau) */
 @media (min-width: 1200px) {
     .btn {
@@ -282,7 +285,6 @@
 }
 
 
-/* Styles pour le hamburger à gauche sur les petits écrans (mobiles) */
 @media (max-width: 767px) {
     .navbar-toggler {
         order: -1;
@@ -293,7 +295,6 @@
     }
 }
 
-/* Styles pour le hamburger à gauche sur les petits écrans (mode paysage) */
 @media (min-width: 768px) and (max-width: 991px) {
     .navbar-toggler {
         order: -1;
@@ -430,7 +431,7 @@
    left: -10px;
    right: -10px;
    height: 10px;
-   background: linear-gradient(to top, rgba(56, 231, 217, 0.336), transparent);
+   background: linear-gradient(to top, rgba(17, 194, 11, 0.336), transparent);
    border-radius: 0 0 20px 20px;
 }
 
