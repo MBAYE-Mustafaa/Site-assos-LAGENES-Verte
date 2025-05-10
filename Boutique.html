@@ -779,6 +779,99 @@
                 height: 200px;
             }
         }
+    
+        /* Styles boutique*/
+        .product-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: white;
+            margin-bottom: 30px;
+            position: relative;
+            border: 2px solid transparent;
+        }
+        
+        .magic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-color: #25D366;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.5s ease;
+        }
+        
+        .img-hover-zoom {
+            overflow: hidden;
+            display: block;
+        }
+        
+        .img-hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+        
+        .product-body {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #f9f9f9, white);
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .product-title:hover {
+            color: #25D366;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #e44d26;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            position: relative;
+        }
+        
+        .flash-sale {
+            animation: priceFlash 3s infinite;
+        }
+        
+        .btn-buy {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .super-pulse:hover {
+            animation: superPulse 0.5s infinite alternate;
+            transform: scale(1.05);
+        }
+        
+        /* Animations clés */
+        @keyframes priceFlash {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); color: #ff6b81; }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes superPulse {
+            from { box-shadow: 0 0 10px rgba(37, 211, 102, 0.6); }
+            to { box-shadow: 0 0 30px rgba(37, 211, 102, 0.9); }
+        }
     </style>
 </head>
 
@@ -847,99 +940,133 @@
         <div class="row">
             <!-- Carte de soutien -->
             <div class="col-md-4">
-                <div class="product-card">
-                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20carte%20de%20soutien" target="_blank">
-                        <img src="images/soutien.jpg" class="product-img" alt="Carte de soutien">
+                <div class="product-card magic-card">
+                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                       target="_blank" 
+                       class="img-hover-zoom">
+                        <img src="images/soutien.png" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">Carte de soutien</h3>
-                        <div class="product-price">2 500 FCFA</div>
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20carte%20de%20soutien" class="btn btn-buy" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Commander
+                        <div class="product-price flash-sale">1 500 FCFA</div>
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                           class="btn btn-buy super-pulse" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
                 </div>
             </div>
+            
+            
 
             <!-- Carte de membre -->
             <div class="col-md-4">
-                <div class="product-card">
-                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20carte%20de%20membre" target="_blank">
-                        <img src="images/membre.jpg" class="product-img" alt="Carte de membre">
+                <div class="product-card magic-card">
+                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                       target="_blank" 
+                       class="img-hover-zoom">
+                        <img src="images/membre.png" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">Carte de membre</h3>
-                        <div class="product-price">1 000 FCFA</div>
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20carte%20de%20membre" class="btn btn-buy" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Commander
+                        <div class="product-price flash-sale">3 000 FCFA</div>
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                           class="btn btn-buy super-pulse" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
                 </div>
             </div>
+            
 
-            <!-- Badge -->
+    
+            <!--Polo-->
             <div class="col-md-4">
-                <div class="product-card">
-                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20badge" target="_blank">
-                        <img src="images/badge.jpg" class="product-img" alt="Badge LAGENES">
+                <div class="product-card magic-card">
+                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                       target="_blank" 
+                       class="img-hover-zoom">
+                        <img src="images/A1.png" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
-                        <h3 class="product-title">Badge LAGENES</h3>
-                        <div class="product-price">1 000 FCFA</div>
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20badge" class="btn btn-buy" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Commander
+                        <h3 class="product-title">Polo</h3>
+                        <div class="product-price flash-sale">6 500 FCFA</div>
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                           class="btn btn-buy super-pulse" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
                 </div>
             </div>
-
+            
+          
             <!-- T-shirt -->
             <div class="col-md-4">
-                <div class="product-card">
-                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" target="_blank">
-                        <img src="images/A2.png" class="product-img" alt="T-shirt Clean'School">
+                <div class="product-card magic-card">
+                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                       target="_blank" 
+                       class="img-hover-zoom">
+                        <img src="images/A2.png" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
-                        <h3 class="product-title">T-shirt Clean'School</h3>
-                        <div class="product-price">5 000 FCFA</div>
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" class="btn btn-buy" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Commander
+                        <h3 class="product-title">T-shirt</h3>
+                        <div class="product-price flash-sale">5 000 FCFA</div>
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                           class="btn btn-buy super-pulse" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
                 </div>
             </div>
+          
+            <!--Casquette Logo Assos-->
 
-            <!-- Polo -->
             <div class="col-md-4">
-                <div class="product-card">
-                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20polo%20Clean'School" target="_blank">
-                        <img src="images/A1.png" class="product-img" alt="Polo Clean'School">
+                <div class="product-card magic-card">
+                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                       target="_blank" 
+                       class="img-hover-zoom">
+                        <img src="images/CASQUET.png" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
-                        <h3 class="product-title">Polo Clean'School</h3>
-                        <div class="product-price">8 000 FCFA</div>
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20polo%20Clean'School" class="btn btn-buy" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Commander
+                        <h3 class="product-title">Casquette LAGENES Verte</h3>
+                        <div class="product-price flash-sale">3 000 FCFA</div>
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                           class="btn btn-buy super-pulse" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
                 </div>
             </div>
+            
+           
 
-            <!-- Casquette -->
+            <!-- Casquette Clean'School -->
             <div class="col-md-4">
-                <div class="product-card">
-                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20casquette%20Clean'School" target="_blank">
-                        <img src="images/CASQUET.png" class="product-img" alt="Casquette Clean'School">
+                <div class="product-card magic-card">
+                    <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                       target="_blank" 
+                       class="img-hover-zoom">
+                        <img src="images/CASQUET 2.png" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">Casquette Clean'School</h3>
-                        <div class="product-price">3 000 FCFA</div>
-                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20une%20casquette%20Clean'School" class="btn btn-buy" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Commander
+                        <div class="product-price flash-sale">3 000 FCFA</div>
+                        <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
+                           class="btn btn-buy super-pulse" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
                 </div>
             </div>
+            
+          
         </div>
 
         <div class="emoji-divider">✨ 🌿 ✨</div>
