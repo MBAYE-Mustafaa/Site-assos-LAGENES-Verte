@@ -23,7 +23,6 @@
             background-color: #f5f5f5;
         }
         
-       
         .header {
             background: linear-gradient(135deg, var(--senegal-green), #006b32);
             color: white;
@@ -328,8 +327,6 @@
             font-size: 1.2rem;
         }
 
-      
-      
         .nav-link {
             position: relative;
             padding: 8px 15px;
@@ -418,7 +415,6 @@
             align-items: center;
         }
         
-        
         footer {
             background: linear-gradient(135deg, #222, #444);
             margin-top: 0;
@@ -448,6 +444,7 @@
             text-align: center;
         }
         
+        
         .social-icons a {
             color: white;
             font-size: 1.2rem;
@@ -475,6 +472,27 @@
             font-size: 0.9rem;
         }
         
+        .game-instructions {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--senegal-green);
+        }
+        
+        .game-instructions h4 {
+            color: var(--senegal-green);
+            margin-bottom: 15px;
+        }
+        
+        .game-instructions ol {
+            padding-left: 20px;
+        }
+        
+        .game-instructions li {
+            margin-bottom: 8px;
+        }
+        
         @media (max-width: 768px) {
             .navbar-brand img {
                 height: 30px;
@@ -499,8 +517,8 @@
             }
         }
         .dropdown-item :active {
-    color: #06bb15;
- }
+            color: #06bb15;
+        }
     </style>
 </head>
 
@@ -561,8 +579,26 @@
                 <strong>Saviez-vous ?</strong> Chaque Sénégalais produit environ 0.5 kg de déchets par jour. En les jetant correctement, nous pouvons préserver notre beau pays.
             </div>
 
+            <div class="game-instructions">
+                <h4><i class="fas fa-info-circle"></i> Comment jouer ?</h4>
+                <ol>
+                    <li>Cliquez sur "Commencer le jeu" pour démarrer</li>
+                    <li>Mémorisez les paires de cartes qui s'affichent pendant 15 secondes</li>
+                    <li>Retournez les cartes deux par deux pour trouver les paires correspondantes</li>
+                    <li>Chaque paire trouvée vous apprendra un geste pour un Sénégal plus propre</li>
+                    <li>Vous avez 2 minutes pour trouver toutes les paires</li>
+                </ol>
+                <p class="mt-3"><strong>Objectif :</strong> Apprendre les bons gestes écologiques tout en s'amusant !</p>
+            </div>
+
             <div class="text-center">
-                <p id="timer">Préparez-vous à mémoriser...</p>
+                <p id="timer">Prêt à jouer ? Cliquez sur le bouton ci-dessous</p>
+                <button id="startGameBtn" class="btn btn-senegal btn-lg mb-4">
+                    <i class="fas fa-play mr-2"></i>Commencer le jeu
+                </button>
+                <div id="gameStats" class="d-none">
+                    <p>Paires trouvées : <span id="pairsFound">0</span>/<span id="totalPairs">0</span></p>
+                </div>
             </div>
 
             <div class="memory-game" id="memory-game">
@@ -699,7 +735,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Projet Clean'School</h5>
                                 <p class="card-text">Programme d'éducation à la propreté et à l'environnement dans les écoles de Méckhé et ses environs.</p>
-                                <a href="school.html" class="btn btn-senegal">En savoir plus</a>
+                                
+                                <a href="school.html#poubelles" class="btn btn-senegal">Voir le projet</a>
                                 <a href="https://goo.gl/maps/..." class="btn btn-outline-success ml-2" target="_blank">
                                     <i class="fas fa-map-marker-alt"></i> Localiser
                                 </a>
@@ -712,8 +749,8 @@
                             <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Poubelles école">
                             <div class="card-body">
                                 <h5 class="card-title">Déploiement de poubelles</h5>
-                                <p class="card-text">Installation de poubelles de tri dans les écoles partenaires à Méckhé pour une meilleure gestion des déchets.</p>
-                                <a href="school.html#poubelles" class="btn btn-senegal">Voir le projet</a>
+                                <p class="card-text">Installation de poubelles dans les écoles partenaires à Méckhé pour une meilleure gestion des déchets.</p>
+                                <a href="school.html" class="btn btn-senegal">En savoir plus</a>
                                 <a href="https://goo.gl/maps/..." class="btn btn-outline-success ml-2" target="_blank">
                                     <i class="fas fa-map-marker-alt"></i> Écoles équipées
                                 </a>
@@ -724,7 +761,7 @@
                 
                 <div class="text-center mt-4">
                     <div class="alert alert-success">
-                        <h4 class="alert-heading">Le saviez-vous ?</h4>
+                        <h4 class="alert-heading"> <strong>AGIR, c'est le moment !</strong></h4>
                         <p>Un Sénégal propre commence par chacun de nous. En jetant vos déchets correctement, vous inspirez les autres à faire de même.</p>
                         <hr>
                         <p class="mb-0">"SET" (propreté en wolof) est une valeur traditionnelle sénégalaise. Retrouvons cet esprit !</p>
@@ -744,9 +781,9 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <h5 class="mb-3">Contactez-nous</h5>
-                    <p><i class="fas fa-map-marker-alt mr-2"></i>Méckhé, Sénégal</p>
-                    <p><i class="fas fa-envelope mr-2"></i><a href="mailto:lagenescleanschool@gmail.com">lagenescleanschool@gmail.com</a></p>
-                    <p><i class="fas fa-phone mr-2"></i>+221 76 214 70 78</p>
+                    <p class="footer-contact"><i class="fas fa-map-marker-alt mr-2"></i>Méckhé, Sénégal</p>
+                    <p class="footer-contact"><i class="fas fa-envelope mr-2"></i><a href="mailto:lagenescleanschool@gmail.com">lagenescleanschool@gmail.com</a></p>
+                    <p class="footer-contact"><i class="fas fa-phone mr-2"></i>+221 76 214 70 78</p>
                 </div>
                 <div class="col-md-4 mb-4">
                     <h5 class="mb-3">Suivez-nous</h5>
@@ -760,7 +797,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="Boutique.html" class="btn btn-primary btn-lg">Soutenir nos actions</a>
+                    <a href="Paiement.html" class="btn btn-primary btn-lg">Soutenir nos actions</a>
                 </div>
             </div>
             <div class="row mt-3">
@@ -786,251 +823,277 @@
     </div>
 
     <script>
-    const cards = [
-        { 
-            text: 'Poubelle', 
-            message: 'Au Sénégal, seulement 30% des déchets sont collectés. En utilisant systématiquement les poubelles, même quand elles sont rares, nous pouvons améliorer ce chiffre. Gardez vos déchets avec vous jusqu\'à trouver une poubelle si nécessaire.',
-            icon: 'fas fa-trash-alt'
-        },
-        { 
-            text: 'Plastique', 
-            message: 'Les sacs plastiques sont un véritable fléau au Sénégal. Ils bouchent les caniveaux, causant des inondations pendant l\'hivernage. Préférez les paniers traditionnels ou sacs en tissu réutilisables. Un sac plastique met 400 ans à se décomposer!',
-            icon: 'fas fa-shopping-bag'
-        },
-        { 
-            text: 'Mégot', 
-            message: 'Un seul mégot peut polluer 500 litres d\'eau! Malheureusement, beaucoup de Sénégalais les jettent encore par terre. Utilisez un cendrier de poche ou éteignez-les dans une boîte métallique avant de les jeter à la poubelle. Les filtres contiennent des produits toxiques qui polluent nos sols.',
-            icon: 'fas fa-smoking'
-        },
-        { 
-            text: 'Canette', 
-            message: 'Les canettes en métal mettent entre 100 et 500 ans à se décomposer. Au Sénégal, certaines personnes les collectent pour les revendre à des recycleurs informels. Renseignez-vous dans votre quartier! Vous pouvez aussi les réutiliser comme pots à crayons ou pour faire des petits jardins.',
-            icon: 'fas fa-wine-bottle'
-        },
-        { 
-            text: 'Marché', 
-            message: 'Après avoir fait vos courses au marché, ne laissez pas vos emballages sur place. Apportez un sac pour ramener vos déchets et les jeter proprement. Les marchés propres, c\'est l\'affaire de tous! Encouragez les commerçants à utiliser moins d\'emballages inutiles.',
-            icon: 'fas fa-store'
-        },
-        { 
-            text: 'Transport', 
-            message: 'Dans les cars rapides, bus et taxis, ne jetez pas vos déchets par la fenêtre. Gardez-les jusqu\'à la descente. De nombreux accidents sont causés par des déchets sur la chaussée. Proposez aux chauffeurs d\'installer des petites poubelles dans leurs véhicules.',
-            icon: 'fas fa-bus'
-        },
-        { 
-            text: 'Plage', 
-            message: 'Les déchets sur nos magnifiques plages finissent dans l\'océan, tuant les poissons et détruisant l\'écosystème marin. Ramassez toujours vos déchets après un pique-nique et participez aux nettoyages de plage organisés. Le tourisme, vital pour notre économie, dépend de la propreté de nos côtes.',
-            icon: 'fas fa-umbrella-beach'
-        },
-        { 
-            text: 'École', 
-            message: 'Apprenez aux enfants à utiliser les poubelles dès le plus jeune âge. Une génération éduquée à la propreté changera les mentalités. Notre projet Clean\'School intervient dans les écoles pour sensibiliser les plus jeunes. Demandez à ce que votre école participe!',
-            icon: 'fas fa-school'
-        },
-        { 
-            text: 'Quartier', 
-            message: 'Organisez des "Set Setal" (nettoyage collectif) dans votre quartier. C\'est une tradition sénégalaise qui permet de maintenir les espaces communs propres tout en créant du lien social. Contactez votre mairie pour organiser une journée de nettoyage avec vos voisins.',
-            icon: 'fas fa-users'
-        },
-        { 
-            text: 'Sachet eau', 
-            message: 'Les sachets d\'eau jetés n\'importe où bouchent les caniveaux et provoquent des inondations pendant l\'hivernage. Après avoir bu, mettez le sachet dans une poubelle ou un collecteur spécifique. Mieux encore, utilisez une gourde réutilisable que vous pouvez remplir avec de l\'eau filtrée.',
-            icon: 'fas fa-tint'
-        }
-    ];
-
-    const gameContainer = document.getElementById('memory-game');
-    const infoModal = document.getElementById('infoModal');
-    const infoTitle = document.getElementById('infoTitle');
-    const infoIcon = document.getElementById('infoIcon');
-    const infoText = document.getElementById('infoText');
-    const closeInfoBtn = document.getElementById('closeInfoBtn');
-    const timerDisplay = document.getElementById('timer');
-    
-    let firstCard = null;
-    let secondCard = null;
-    let lockBoard = false;
-    let gameTime = 120;
-    let timerInterval;
-    let matchedPairs = 0;
-    let isPaused = false;
-
-    function shuffle(array) {
-        return array.sort(() => Math.random() - 0.5);
-    }
-
-    function createCard(cardData) {
-        const card = document.createElement('div');
-        card.classList.add('memory-card');
-        card.dataset.text = cardData.text;
-        
-        const cardInner = document.createElement('div');
-        cardInner.classList.add('memory-card-inner');
-        
-        const cardFront = document.createElement('div');
-        cardFront.classList.add('memory-card-front');
-        cardFront.innerHTML = '<i class="fas fa-question"></i><div class="card-title">?</div>';
-        
-        const cardBack = document.createElement('div');
-        cardBack.classList.add('memory-card-back');
-        cardBack.innerHTML = `<i class="${cardData.icon}"></i><div class="card-title">${cardData.text}</div>`;
-        
-        cardInner.appendChild(cardFront);
-        cardInner.appendChild(cardBack);
-        card.appendChild(cardInner);
-
-        card.addEventListener('click', () => {
-            if (lockBoard || card === firstCard || card.classList.contains('flipped') || isPaused) return;
-
-            flipCard(card);
-
-            if (!firstCard) {
-                firstCard = card;
-                return;
+        const cards = [
+            { 
+                text: 'Poubelle', 
+                message: 'Au Sénégal, seulement 30% des déchets sont collectés. En utilisant systématiquement les poubelles, même quand elles sont rares, nous pouvons améliorer ce chiffre. Gardez vos déchets avec vous jusqu\'à trouver une poubelle si nécessaire.',
+                icon: 'fas fa-trash-alt'
+            },
+            { 
+                text: 'Plastique', 
+                message: 'Les sacs plastiques sont un véritable fléau au Sénégal. Ils bouchent les caniveaux, causant des inondations pendant l\'hivernage. Préférez les paniers traditionnels ou sacs en tissu réutilisables. Un sac plastique met 400 ans à se décomposer!',
+                icon: 'fas fa-shopping-bag'
+            },
+            { 
+                text: 'Mégot', 
+                message: 'Un seul mégot peut polluer 500 litres d\'eau! Malheureusement, beaucoup de Sénégalais les jettent encore par terre. Utilisez un cendrier de poche ou éteignez-les dans une boîte métallique avant de les jeter à la poubelle. Les filtres contiennent des produits toxiques qui polluent nos sols.',
+                icon: 'fas fa-smoking'
+            },
+            { 
+                text: 'Canette', 
+                message: 'Les canettes en métal mettent entre 100 et 500 ans à se décomposer. Au Sénégal, certaines personnes les collectent pour les revendre à des recycleurs informels. Renseignez-vous dans votre quartier! Vous pouvez aussi les réutiliser comme pots à crayons ou pour faire des petits jardins.',
+                icon: 'fas fa-wine-bottle'
+            },
+            { 
+                text: 'Marché', 
+                message: ' Les marchés propres, c\'est l\'affaire de tous! Encouragez les commerçants à utiliser moins d\'emballages inutiles.',
+                icon: 'fas fa-store'
+            },
+            { 
+                text: 'Transport', 
+                message: 'Dans les cars rapides, bus et taxis, ne jetez pas vos déchets par la fenêtre. Gardez-les jusqu\'à la descente. De nombreux accidents peuvent être causés par des déchets sur la chaussée. Proposez aux chauffeurs d\'installer des petites poubelles dans leurs véhicules.',
+                icon: 'fas fa-bus'
+            },
+            { 
+                text: 'Plage', 
+                message: 'Les déchets sur nos magnifiques plages finissent dans l\'océan, tuant les poissons et détruisant l\'écosystème marin. Ramassez toujours vos déchets après un pique-nique et participez aux nettoyages de plage organisés. Le tourisme, vital pour notre économie, dépend de la propreté de nos côtes.',
+                icon: 'fas fa-umbrella-beach'
+            },
+            { 
+                text: 'École', 
+                message: 'Apprenez aux enfants à utiliser les poubelles dès le plus jeune âge. Une génération éduquée à la propreté changera les mentalités. Notre projet Clean\'School intervient dans ce sens au près des collégiens de Ngaye Méckhé !',
+                icon: 'fas fa-school'
+            },
+            { 
+                text: 'Quartier', 
+                message: 'Organisez des "Set Setal" dans votre quartier. C\'est une tradition sénégalaise qui permet de maintenir les espaces communs propres tout en créant du lien social.',
+                icon: 'fas fa-users'
+            },
+            { 
+                text: 'Sachet eau', 
+                message: 'Les sachets d\'eau jetés n\'importe où bouchent les caniveaux et provoquent des inondations pendant l\'hivernage. Après avoir bu, mettez le sachet dans une poubelle ou un collecteur spécifique. Mieux encore, utilisez une gourde réutilisable que vous pouvez remplir avec de l\'eau filtrée.',
+                icon: 'fas fa-tint'
             }
+        ];
 
-            secondCard = card;
-            checkForMatch();
-        });
-
-        return card;
-    }
-
-    function flipCard(card) {
-        card.classList.toggle('flipped');
-    }
-
-    function showInfoModal(title, icon, text) {
-        isPaused = true;
-        clearInterval(timerInterval);
+        const gameContainer = document.getElementById('memory-game');
+        const infoModal = document.getElementById('infoModal');
+        const infoTitle = document.getElementById('infoTitle');
+        const infoIcon = document.getElementById('infoIcon');
+        const infoText = document.getElementById('infoText');
+        const closeInfoBtn = document.getElementById('closeInfoBtn');
+        const timerDisplay = document.getElementById('timer');
+        const startGameBtn = document.getElementById('startGameBtn');
+        const gameStats = document.getElementById('gameStats');
+        const pairsFoundDisplay = document.getElementById('pairsFound');
+        const totalPairsDisplay = document.getElementById('totalPairs');
         
-        infoTitle.textContent = title;
-        infoIcon.className = icon;
-        infoText.textContent = text;
-        infoModal.style.display = 'flex';
-    }
+        let firstCard = null;
+        let secondCard = null;
+        let lockBoard = false;
+        let gameTime = 120;
+        let timerInterval;
+        let matchedPairs = 0;
+        let isPaused = false;
+        let gameStarted = false;
+        let totalPairs = 0;
 
-    function hideInfoModal() {
-        infoModal.style.display = 'none';
-        isPaused = false;
-        startTimer();
-    }
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
 
-    function checkForMatch() {
-        const isMatch = firstCard.dataset.text === secondCard.dataset.text;
-
-        if (isMatch) {
-            const cardData = cards.find(c => c.text === firstCard.dataset.text);
-            showInfoModal(cardData.text, cardData.icon, cardData.message);
-            matchedPairs++;
+        function createCard(cardData) {
+            const card = document.createElement('div');
+            card.classList.add('memory-card');
+            card.dataset.text = cardData.text;
             
-            firstCard.removeEventListener('click', flipCard);
-            secondCard.removeEventListener('click', flipCard);
+            const cardInner = document.createElement('div');
+            cardInner.classList.add('memory-card-inner');
             
-            firstCard = null;
-            secondCard = null;
+            const cardFront = document.createElement('div');
+            cardFront.classList.add('memory-card-front');
+            cardFront.innerHTML = '<i class="fas fa-question"></i><div class="card-title">?</div>';
+            
+            const cardBack = document.createElement('div');
+            cardBack.classList.add('memory-card-back');
+            cardBack.innerHTML = `<i class="${cardData.icon}"></i><div class="card-title">${cardData.text}</div>`;
+            
+            cardInner.appendChild(cardFront);
+            cardInner.appendChild(cardBack);
+            card.appendChild(cardInner);
 
-            checkWinCondition();
-        } else {
-            lockBoard = true;
-            setTimeout(() => {
-                firstCard.classList.remove('flipped');
-                secondCard.classList.remove('flipped');
+            card.addEventListener('click', () => {
+                if (!gameStarted) return;
+                if (lockBoard || card === firstCard || card.classList.contains('flipped') || isPaused) return;
+
+                flipCard(card);
+
+                if (!firstCard) {
+                    firstCard = card;
+                    return;
+                }
+
+                secondCard = card;
+                checkForMatch();
+            });
+
+            return card;
+        }
+
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+
+        function showInfoModal(title, icon, text) {
+            isPaused = true;
+            clearInterval(timerInterval);
+            
+            infoTitle.textContent = title;
+            infoIcon.className = icon;
+            infoText.textContent = text;
+            infoModal.style.display = 'flex';
+        }
+
+        function hideInfoModal() {
+            infoModal.style.display = 'none';
+            isPaused = false;
+            startTimer();
+        }
+
+        function checkForMatch() {
+            const isMatch = firstCard.dataset.text === secondCard.dataset.text;
+
+            if (isMatch) {
+                const cardData = cards.find(c => c.text === firstCard.dataset.text);
+                showInfoModal(cardData.text, cardData.icon, cardData.message);
+                matchedPairs++;
+                updatePairsFound();
+                
+                firstCard.removeEventListener('click', flipCard);
+                secondCard.removeEventListener('click', flipCard);
                 
                 firstCard = null;
                 secondCard = null;
-                lockBoard = false;
+
+                checkWinCondition();
+            } else {
+                lockBoard = true;
+                setTimeout(() => {
+                    firstCard.classList.remove('flipped');
+                    secondCard.classList.remove('flipped');
+                    
+                    firstCard = null;
+                    secondCard = null;
+                    lockBoard = false;
+                }, 1000);
+            }
+        }
+
+        function updatePairsFound() {
+            pairsFoundDisplay.textContent = matchedPairs;
+        }
+
+        function startTimer() {
+            gameTime = 120;
+            timerDisplay.innerText = `Temps restant : ${gameTime}s`;
+
+            timerInterval = setInterval(() => {
+                if (!isPaused && gameStarted) {
+                    gameTime -= 1;
+                    timerDisplay.innerText = `Temps restant : ${gameTime}s`;
+
+                    if (gameTime <= 0) {
+                        clearInterval(timerInterval);
+                        const successRate = Math.round((matchedPairs / totalPairs) * 100);
+                        alert(`Temps écoulé ! Vous avez trouvé ${matchedPairs} paires sur ${totalPairs} (${successRate}%). Recommencez pour faire mieux !`);
+                        resetGame();
+                    }
+                }
             }, 1000);
         }
-    }
 
-    function startTimer() {
-        gameTime = 120;
-        timerDisplay.innerText = `Temps restant : ${gameTime}s`;
-
-        timerInterval = setInterval(() => {
-            if (!isPaused) {
-                gameTime -= 1;
-                timerDisplay.innerText = `Temps restant : ${gameTime}s`;
-
-                if (gameTime <= 0) {
-                    clearInterval(timerInterval);
-                    const totalPairs = cards.length;
-                    const successRate = Math.round((matchedPairs / totalPairs) * 100);
-                    alert(`Temps écoulé ! Vous avez trouvé ${matchedPairs} paires sur ${totalPairs} (${successRate}%). Recommencez pour faire mieux !`);
-                    resetGame();
-                }
+        function checkWinCondition() {
+            if (matchedPairs === totalPairs) {
+                clearInterval(timerInterval);
+                const timeUsed = 120 - gameTime;
+                alert(`Félicitations ! Vous avez gagné en ${timeUsed} secondes. Vous connaissez maintenant les bons gestes pour un Sénégal plus propre !`);
+                resetGame();
             }
-        }, 1000);
-    }
-
-    function checkWinCondition() {
-        const allCards = Array.from(document.querySelectorAll('.memory-card'));
-        const allFlipped = allCards.every(card => card.classList.contains('flipped'));
-
-        if (allFlipped) {
-            clearInterval(timerInterval);
-            const timeUsed = 120 - gameTime;
-            alert(`Félicitations ! Vous avez gagné en ${timeUsed} secondes. Vous connaissez maintenant les bons gestes pour un Sénégal plus propre !`);
-            resetGame();
         }
-    }
 
-    function resetGame() {
-        gameContainer.innerHTML = '';
-        firstCard = null;
-        secondCard = null;
-        lockBoard = false;
-        gameTime = 120;
-        matchedPairs = 0;
-        clearInterval(timerInterval);
-        initGame();
-    }
+        function resetGame() {
+            gameContainer.innerHTML = '';
+            firstCard = null;
+            secondCard = null;
+            lockBoard = false;
+            gameTime = 120;
+            matchedPairs = 0;
+            gameStarted = false;
+            clearInterval(timerInterval);
+            timerDisplay.innerText = "Prêt à rejouer ? Cliquez sur le bouton ci-dessous";
+            startGameBtn.style.display = 'block';
+            gameStats.classList.add('d-none');
+            startGameBtn.innerHTML = '<i class="fas fa-redo mr-2"></i>Rejouer';
+        }
 
-    function showAllCardsTemporarily(duration) {
-    // Retourner toutes les cartes (face visible)
-    const allCards = Array.from(document.querySelectorAll('.memory-card'));
-    allCards.forEach(card => {
-        card.classList.add('flipped');
-    });
+        function showAllCardsTemporarily(duration) {
+            // Retourner toutes les cartes (face visible)
+            const allCards = Array.from(document.querySelectorAll('.memory-card'));
+            allCards.forEach(card => {
+                card.classList.add('flipped');
+            });
 
-    // Message pendant la phase de mémorisation
-    timerDisplay.innerText = "Mémorisez les paires...";
+            // Message pendant la phase de mémorisation
+            timerDisplay.innerText = "Mémorisez les paires... (15 secondes)";
 
-    // Après la durée spécifiée, cacher les cartes et démarrer le jeu
-    setTimeout(() => {
-        allCards.forEach(card => {
-            card.classList.remove('flipped');
-        });
-        startTimer();
-    }, duration);
-}
+            // Après la durée spécifiée, cacher les cartes et démarrer le jeu
+            setTimeout(() => {
+                allCards.forEach(card => {
+                    card.classList.remove('flipped');
+                });
+                gameStarted = true;
+                startTimer();
+            }, duration);
+        }
 
-    function initGame() {
-        // Sélectionne 10 cartes aléatoires (5 paires) parmi toutes les possibilités
-        const selectedCards = shuffle(cards).slice(0, 10);
-        const gameCards = shuffle([...selectedCards, ...selectedCards]);
+        function initGame() {
+            // Sélectionne 10 cartes aléatoires (5 paires) parmi toutes les possibilités
+            const selectedCards = shuffle(cards).slice(0, 10);
+            const gameCards = shuffle([...selectedCards, ...selectedCards]);
+            totalPairs = selectedCards.length;
+            
+            gameCards.forEach(cardData => {
+                const cardElement = createCard(cardData);
+                gameContainer.appendChild(cardElement);
+            });
+
+            // Mettre à jour les statistiques
+            pairsFoundDisplay.textContent = '0';
+            totalPairsDisplay.textContent = totalPairs;
+            gameStats.classList.remove('d-none');
+
+            // Cacher le bouton de démarrage
+            startGameBtn.style.display = 'none';
+
+            // Montrer les cartes pendant 15 secondes au début
+            showAllCardsTemporarily(15000);
+        }
+
+        // Event listeners
+        document.querySelector('.close-info').addEventListener('click', hideInfoModal);
+        closeInfoBtn.addEventListener('click', hideInfoModal);
         
-        gameCards.forEach(cardData => {
-            const cardElement = createCard(cardData);
-            gameContainer.appendChild(cardElement);
+        startGameBtn.addEventListener('click', () => {
+            initGame();
         });
 
-        // Montrer les cartes pendant 15 secondes au début
-        showAllCardsTemporarily(15000);
-    }
+        // Initialize game (just prepare the container, don't start yet)
+        gameContainer.innerHTML = '';
+    </script>
 
-    // Event listeners
-    document.querySelector('.close-info').addEventListener('click', hideInfoModal);
-    closeInfoBtn.addEventListener('click', hideInfoModal);
-
-    // Initialize game
-    initGame();
-</script>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
