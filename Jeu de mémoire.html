@@ -4,195 +4,885 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jeu éducatif sur le recyclage - LAGENES Verte">
-    <meta name="keywords" content="jeu, recyclage, environnement, éducation">
-    <title>Jeu éducatif | LAGENES Verte</title>
+    <meta name="description" content="Jeu éducatif sur la propreté - LAGENES Verte Sénégal">
+    <meta name="keywords" content="jeu, propreté, environnement, éducation, Sénégal, déchets">
+    <title>Sensibilisation propreté | LAGENES Verte</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/aev.png" />
     <style>
+        :root {
+            --senegal-green: #00853F;
+            --senegal-yellow: #FDEF42;
+            --senegal-red: #E31B23;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+       
+        .header {
+            background: linear-gradient(135deg, var(--senegal-green), #006b32);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--senegal-yellow);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .senegal-flag {
+            color: var(--senegal-yellow);
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .memory-game-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-top: 5px solid var(--senegal-green);
+        }
+        
         .memory-game {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 15px;
             margin-top: 30px;
         }
-
+        
         .memory-card {
             width: 100%;
             height: 150px;
-            border-radius: 5px;
-            background: #f2f2f2;
+            border-radius: 8px;
+            perspective: 1000px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .memory-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .memory-card.flipped .memory-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .memory-card-front, 
+        .memory-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .memory-card-front {
+            background: linear-gradient(135deg, var(--senegal-green), #00c853);
+            color: white;
+        }
+        
+        .memory-card-back {
+            background-color: white;
+            color: var(--senegal-green);
+            border: 2px solid var(--senegal-green);
+            transform: rotateY(180deg);
+        }
+        
+        .memory-card-back i {
+            font-size: 2.5rem;
+            color: var(--senegal-green);
+            margin-bottom: 10px;
+        }
+        
+        .memory-card-front i {
+            font-size: 2.5rem;
+            color: var(--senegal-yellow);
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .card-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        #timer {
+            font-size: 1.2rem;
+            color: var(--senegal-red);
+            font-weight: bold;
+            margin-bottom: 20px;
+            background-color: #ffecec;
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .info-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
+            z-index: 2000;
+            padding: 20px;
         }
-
-        .memory-card.flipped {
-            background: #22aa22;
+        
+        .info-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border-top: 5px solid var(--senegal-green);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .close-info {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+        
+        .close-info:hover {
+            color: var(--senegal-red);
+        }
+        
+        .section-title {
+            color: var(--senegal-green);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow));
+        }
+        
+        .impact-section {
+            background-color: #e8f5e9;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+        
+        .clean-section {
+            background-color: #f1f8e9;
+            padding: 40px 0;
+        }
+        
+        .problem-section {
+            background-color: #ffebee;
+            padding: 40px 0;
+        }
+        
+        .btn-senegal {
+            background-color: var(--senegal-green);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn-senegal:hover {
+            background-color: #006b32;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline-success {
+            border-color: var(--senegal-green);
+            color: var(--senegal-green);
+        }
+        
+        .btn-outline-success:hover {
+            background-color: var(--senegal-green);
             color: white;
         }
-
-        .educational-message {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            margin-bottom: 20px;
         }
-
-        #timer {
-            font-size: 18px;
-            color: #e53935;
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .card-title {
+            color: var(--senegal-green);
+        }
+        
+        .material-icon {
+            font-size: 2.5rem;
+            color: var(--senegal-green);
+            margin-bottom: 15px;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
             font-weight: bold;
+            color: var(--senegal-green);
         }
+        
+        .stats-label {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .progress {
+            height: 25px;
+            margin-bottom: 20px;
+            border-radius: 50px;
+            background-color: #e0e0e0;
+            overflow: visible;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow));
+            border-radius: 50px;
+            position: relative;
+            overflow: visible;
+        }
+        
+        .progress-bar:after {
+            content: attr(aria-valuenow);
+            position: absolute;
+            right: 10px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .clean-tip {
+            border-left: 4px solid var(--senegal-green);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .clean-tip:hover {
+            transform: translateX(5px);
+        }
+        
+        .clean-tip i {
+            color: var(--senegal-green);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+      
+      
+        .nav-link {
+            position: relative;
+            padding: 8px 15px;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background: var(--senegal-yellow);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: calc(100% - 30px);
+        }
+        
+        .title-section {
+            color: var(--senegal-green);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .title-section:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow));
+        }
+        
+        .content-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-top: 4px solid var(--senegal-green);
+            transition: transform 0.3s;
+        }
+        
+        .content-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .senegal-highlight {
+            border-left: 4px solid var(--senegal-green);
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .btn-senegal {
+            background: var(--senegal-green);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn-senegal:hover {
+            background: #006b32;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .whatsapp-btn-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        
+        footer {
+            background: linear-gradient(135deg, #222, #444);
+            margin-top: 0;
+            padding: 3rem 0;
+            position: relative;
+        }
+        
+        footer:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow), var(--senegal-red));
+        }
+        
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact i {
+            color: var(--senegal-yellow);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: all 0.3s;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--senegal-green);
+            transform: translateY(-3px);
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 30px;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+        .dropdown-item :active {
+    color: #06bb15;
+ }
     </style>
 </head>
 
 <body>
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container text-center">
-                <a href="index.html" class="navbar-brand ml-auto" style="color: rgb(22, 170, 22)">LAGENES Verte</a>
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/aev.png" alt="Logo LAGENES Verte">
+                    LAGENES <span style="color: var(--senegal-yellow)">Verte</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav m-auto mt-auto">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link" style="color: whitesmoke">Accueil</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link">Accueil</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="evenements.html" class="nav-link custom-pl-3 dropdown-toggle" style="color: whitesmoke" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:whitesmoke">
                                 Projets
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="school.html">Projet Clean'School</a>
-                                <a class="dropdown-item" href="Jeu de mémoire.html"> <i>Memo-Recyclage</i></a>
-                                <a class="dropdown-item" href="SuiteProject.html"> <i>En construction</i></a>
+                                <a class="dropdown-item" href="Jeu de mémoire.html">Memo-Recyclage</a>
+                                <a class="dropdown-item" href="SuiteProject.html">Projets Futurs</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link" style="color: whitesmoke">À propos</a>
+                            <a href="about.html" class="nav-link" style="color:whitesmoke">À propos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Boutique.html" class="nav-link" style="color: whitesmoke">Boutique</a>
+                            <a href="Boutique.html" class="nav-link" style="color:whitesmoke">Boutique</a>
                         </li>
                     </ul>
-                </div>
-                <div class="social-icons">
-                    <a href="contact.html" class="social-icon"><i class="fas fa-user"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <div class="social-icons d-none d-lg-flex ml-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </nav>
+        <div class="whatsapp-btn-container">
+            <a class="whatsapp-btn" href="https://wa.me/33605536426"><i class="fab fa-whatsapp"></i></a>
+            <span><i>Contact us</i></span>
+        </div>
     </header>
 
-    <section class="py-5">
-        <div class="container">
-            <h1 class="text-center mb-5">Jeu de mémoire éducatif sur le recyclage</h1>
-            <p class="text-center">Associez les matériaux pour vous acculturer sur le recyclage !</p>
+    <main class="container py-5">
+        <div class="memory-game-container">
+            <h1 class="text-center mb-4">Memo-Sénégal PROPRE</h1>
+            <p class="text-center lead">Jeu éducatif pour un Sénégal plus propre</p>
 
-            <div class="text-center mt-3">
-                <p id="timer">Temps restant : 120s</p>
+            <div class="alert alert-info text-center">
+                <strong>Saviez-vous ?</strong> Chaque Sénégalais produit environ 0.5 kg de déchets par jour. En les jetant correctement, nous pouvons préserver notre beau pays.
+            </div>
+
+            <div class="text-center">
+                <p id="timer">Préparez-vous à mémoriser...</p>
             </div>
 
             <div class="memory-game" id="memory-game">
                 <!-- Les cartes seront générées dynamiquement -->
             </div>
-
-            <div class="educational-message text-center" id="educational-message"></div>
         </div>
-    </section>
 
-    <footer class="bg-dark text-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="footer-section text-center">
-                        <img src="images/aev.png" alt="Logo de l'Association pour l'Environnement Vert" class="footer-logo">
-                        <div class="footer-text">
-                            <p class="footer-heading">À propos de nous</p>
-                            <p>L'Association LAGENES Verte s'engage à la préservation de l'environnement et à la sensibilisation à l'écologie.</p>
+        <section class="problem-section">
+            <div class="container">
+                <h2 class="section-title text-center">Les défis de la propreté au Sénégal</h2>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="text-center p-4">
+                            <div class="material-icon">
+                                <i class="fas fa-lungs-virus"></i>
+                            </div>
+                            <h4>Santé publique</h4>
+                            <p>Les déchets accumulés favorisent les maladies comme le paludisme, la dengue et les infections respiratoires.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="text-center p-4">
+                            <div class="material-icon">
+                                <i class="fas fa-flood"></i>
+                            </div>
+                            <h4>Inondations</h4>
+                            <p>Les déchets bouchent les caniveaux, aggravant les inondations pendant l'hivernage.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="text-center p-4">
+                            <div class="material-icon">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <h4>Pollution marine</h4>
+                            <p>Nos plages et océans sont envahis par les déchets, affectant le tourisme et la pêche.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="footer-section">
-                        <div class="footer-text">
-                            <p class="footer-heading">Contactez-nous</p>
-                            <p>Adresse : Méckhé, Sénégal</p>
-                            <p>Email : lagenescleanschool@gmail.com</p>
-                            <p>Téléphone : +221 76 214 70 78</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-4">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <h4 class="text-center mb-4">Situation actuelle</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Dakar produit 1,4 million de tonnes de déchets/an</li>
+                                <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Seulement 60% sont collectés en ville</li>
+                                <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Moins de 20% dans les zones périurbaines</li>
+                                <li><i class="fas fa-check-circle text-success mr-2"></i> 0% de recyclage organisé nationalement</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="footer-section">
-                        <div class="footer-text text-center">
-                            <p class="footer-heading">Suivez-nous</p>
-                            <div class="social-links">
-                                <a class="social-link" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="social-link" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="social-link" href="#"><i class="fab fa-instagram"></i></a>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <h4 class="text-center mb-4">Temps de décomposition</h4>
+                            <div class="mb-3">
+                                <h6>Mégot de cigarette</h6>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">1-5 ans</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Sac plastique</h6>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">10-20 ans</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Canette en aluminium</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100-500 ans</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-12 text-center">
-                        <a href="contact.html" class="btn btn-primary btn-lg">Faire un don</a>
+            </div>
+        </section>
+
+        <section class="clean-section">
+            <div class="container">
+                <h2 class="section-title text-center">Solutions pour un Sénégal plus propre</h2>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="clean-tip">
+                            <h4><i class="fas fa-trash-alt"></i> Utilisez les poubelles</h4>
+                            <p>Même si elles sont rares, cherchez toujours une poubelle. Sinon, gardez vos déchets jusqu'à en trouver une.</p>
+                        </div>
+                        
+                        <div class="clean-tip">
+                            <h4><i class="fas fa-shopping-bag"></i> Réduisez les plastiques</h4>
+                            <p>Utilisez des paniers ou sacs réutilisables. Refusez les sacs plastiques inutiles.</p>
+                        </div>
+                        
+                        <div class="clean-tip">
+                            <h4><i class="fas fa-users"></i> Sensibilisez votre entourage</h4>
+                            <p>Montrez l'exemple et expliquez pourquoi il ne faut pas jeter par terre.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-12 text-center">
-                        <p class="copyright">&copy;2025 LAGENES Verte. Tous droits réservés.</p>
+                    
+                    <div class="col-md-6">
+                        <div class="clean-tip">
+                            <h4><i class="fas fa-school"></i> Éduquez les enfants</h4>
+                            <p>Apprenez aux plus jeunes les bons gestes. Ils seront les ambassadeurs de la propreté.</p>
+                        </div>
+                        
+                        <div class="clean-tip">
+                            <h4><i class="fas fa-calendar-alt"></i> Participez aux Set Setal</h4>
+                            <p>Rejoignez les nettoyages collectifs des quartiers, plages et espaces publics.</p>
+                        </div>
+                        
+                        <div class="clean-tip">
+                            <h4><i class="fas fa-recycle"></i> Réutilisez au maximum</h4>
+                            <p>Donnez une seconde vie aux objets avant de les jeter (bouteilles, boîtes, etc.).</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Nos initiatives locales</h2>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Clean Day">
+                            <div class="card-body">
+                                <h5 class="card-title">Projet Clean'School</h5>
+                                <p class="card-text">Programme d'éducation à la propreté et à l'environnement dans les écoles de Méckhé et ses environs.</p>
+                                <a href="school.html" class="btn btn-senegal">En savoir plus</a>
+                                <a href="https://goo.gl/maps/..." class="btn btn-outline-success ml-2" target="_blank">
+                                    <i class="fas fa-map-marker-alt"></i> Localiser
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Poubelles école">
+                            <div class="card-body">
+                                <h5 class="card-title">Déploiement de poubelles</h5>
+                                <p class="card-text">Installation de poubelles de tri dans les écoles partenaires à Méckhé pour une meilleure gestion des déchets.</p>
+                                <a href="school.html#poubelles" class="btn btn-senegal">Voir le projet</a>
+                                <a href="https://goo.gl/maps/..." class="btn btn-outline-success ml-2" target="_blank">
+                                    <i class="fas fa-map-marker-alt"></i> Écoles équipées
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <div class="alert alert-success">
+                        <h4 class="alert-heading">Le saviez-vous ?</h4>
+                        <p>Un Sénégal propre commence par chacun de nous. En jetant vos déchets correctement, vous inspirez les autres à faire de même.</p>
+                        <hr>
+                        <p class="mb-0">"SET" (propreté en wolof) est une valeur traditionnelle sénégalaise. Retrouvons cet esprit !</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="images/aev.png" alt="Logo association" class="img-fluid" style="max-width: 150px;">
+                    <p class="mt-3">Engagés pour un Sénégal plus propre et une meilleure gestion des déchets !</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Contactez-nous</h5>
+                    <p><i class="fas fa-map-marker-alt mr-2"></i>Méckhé, Sénégal</p>
+                    <p><i class="fas fa-envelope mr-2"></i><a href="mailto:lagenescleanschool@gmail.com">lagenescleanschool@gmail.com</a></p>
+                    <p><i class="fas fa-phone mr-2"></i>+221 76 214 70 78</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Suivez-nous</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="Boutique.html" class="btn btn-primary btn-lg">Soutenir nos actions</a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p class="mb-0">&copy; 2025 LAGENES Verte - Tous droits réservés</p>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <div id="infoModal" class="info-modal" style="display: none;">
+        <div class="info-content">
+            <span class="close-info">&times;</span>
+            <h3 id="infoTitle" class="text-center mb-4"></h3>
+            <div class="text-center">
+                <i id="infoIcon" class="material-icon"></i>
+            </div>
+            <p id="infoText" class="text-justify"></p>
+            <div class="text-center mt-4">
+                <button class="btn btn-senegal" id="closeInfoBtn">Fermer et continuer</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-      
     const cards = [
-        { text: 'Plastique', message: 'Le plastique est recyclable, mais pensez à le nettoyer avant de le jeter.' },
-        { text: 'Verre', message: 'Le verre est recyclable à l’infini, sans perte de qualité.' },
-        { text: 'Papier', message: 'Recyclez le papier propre et sec dans les bacs appropriés.' },
-        { text: 'Canette', message: 'Les canettes en aluminium sont 100 % recyclables.' },
-        { text: 'Pile', message: 'Les piles ne doivent pas être jetées dans les bacs classiques. Apportez-les aux points de collecte.' },
-        { text: 'Déchet organique', message: 'Les déchets organiques peuvent être compostés pour enrichir les sols.' }
+        { 
+            text: 'Poubelle', 
+            message: 'Au Sénégal, seulement 30% des déchets sont collectés. En utilisant systématiquement les poubelles, même quand elles sont rares, nous pouvons améliorer ce chiffre. Gardez vos déchets avec vous jusqu\'à trouver une poubelle si nécessaire.',
+            icon: 'fas fa-trash-alt'
+        },
+        { 
+            text: 'Plastique', 
+            message: 'Les sacs plastiques sont un véritable fléau au Sénégal. Ils bouchent les caniveaux, causant des inondations pendant l\'hivernage. Préférez les paniers traditionnels ou sacs en tissu réutilisables. Un sac plastique met 400 ans à se décomposer!',
+            icon: 'fas fa-shopping-bag'
+        },
+        { 
+            text: 'Mégot', 
+            message: 'Un seul mégot peut polluer 500 litres d\'eau! Malheureusement, beaucoup de Sénégalais les jettent encore par terre. Utilisez un cendrier de poche ou éteignez-les dans une boîte métallique avant de les jeter à la poubelle. Les filtres contiennent des produits toxiques qui polluent nos sols.',
+            icon: 'fas fa-smoking'
+        },
+        { 
+            text: 'Canette', 
+            message: 'Les canettes en métal mettent entre 100 et 500 ans à se décomposer. Au Sénégal, certaines personnes les collectent pour les revendre à des recycleurs informels. Renseignez-vous dans votre quartier! Vous pouvez aussi les réutiliser comme pots à crayons ou pour faire des petits jardins.',
+            icon: 'fas fa-wine-bottle'
+        },
+        { 
+            text: 'Marché', 
+            message: 'Après avoir fait vos courses au marché, ne laissez pas vos emballages sur place. Apportez un sac pour ramener vos déchets et les jeter proprement. Les marchés propres, c\'est l\'affaire de tous! Encouragez les commerçants à utiliser moins d\'emballages inutiles.',
+            icon: 'fas fa-store'
+        },
+        { 
+            text: 'Transport', 
+            message: 'Dans les cars rapides, bus et taxis, ne jetez pas vos déchets par la fenêtre. Gardez-les jusqu\'à la descente. De nombreux accidents sont causés par des déchets sur la chaussée. Proposez aux chauffeurs d\'installer des petites poubelles dans leurs véhicules.',
+            icon: 'fas fa-bus'
+        },
+        { 
+            text: 'Plage', 
+            message: 'Les déchets sur nos magnifiques plages finissent dans l\'océan, tuant les poissons et détruisant l\'écosystème marin. Ramassez toujours vos déchets après un pique-nique et participez aux nettoyages de plage organisés. Le tourisme, vital pour notre économie, dépend de la propreté de nos côtes.',
+            icon: 'fas fa-umbrella-beach'
+        },
+        { 
+            text: 'École', 
+            message: 'Apprenez aux enfants à utiliser les poubelles dès le plus jeune âge. Une génération éduquée à la propreté changera les mentalités. Notre projet Clean\'School intervient dans les écoles pour sensibiliser les plus jeunes. Demandez à ce que votre école participe!',
+            icon: 'fas fa-school'
+        },
+        { 
+            text: 'Quartier', 
+            message: 'Organisez des "Set Setal" (nettoyage collectif) dans votre quartier. C\'est une tradition sénégalaise qui permet de maintenir les espaces communs propres tout en créant du lien social. Contactez votre mairie pour organiser une journée de nettoyage avec vos voisins.',
+            icon: 'fas fa-users'
+        },
+        { 
+            text: 'Sachet eau', 
+            message: 'Les sachets d\'eau jetés n\'importe où bouchent les caniveaux et provoquent des inondations pendant l\'hivernage. Après avoir bu, mettez le sachet dans une poubelle ou un collecteur spécifique. Mieux encore, utilisez une gourde réutilisable que vous pouvez remplir avec de l\'eau filtrée.',
+            icon: 'fas fa-tint'
+        }
     ];
 
     const gameContainer = document.getElementById('memory-game');
-    const messageContainer = document.getElementById('educational-message');
+    const infoModal = document.getElementById('infoModal');
+    const infoTitle = document.getElementById('infoTitle');
+    const infoIcon = document.getElementById('infoIcon');
+    const infoText = document.getElementById('infoText');
+    const closeInfoBtn = document.getElementById('closeInfoBtn');
+    const timerDisplay = document.getElementById('timer');
+    
     let firstCard = null;
     let secondCard = null;
     let lockBoard = false;
     let gameTime = 120;
     let timerInterval;
+    let matchedPairs = 0;
+    let isPaused = false;
 
     function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);
     }
 
-    function createCard(text) {
+    function createCard(cardData) {
         const card = document.createElement('div');
         card.classList.add('memory-card');
-        card.dataset.text = text;
-        card.innerText = 'Cacher';
+        card.dataset.text = cardData.text;
+        
+        const cardInner = document.createElement('div');
+        cardInner.classList.add('memory-card-inner');
+        
+        const cardFront = document.createElement('div');
+        cardFront.classList.add('memory-card-front');
+        cardFront.innerHTML = '<i class="fas fa-question"></i><div class="card-title">?</div>';
+        
+        const cardBack = document.createElement('div');
+        cardBack.classList.add('memory-card-back');
+        cardBack.innerHTML = `<i class="${cardData.icon}"></i><div class="card-title">${cardData.text}</div>`;
+        
+        cardInner.appendChild(cardFront);
+        cardInner.appendChild(cardBack);
+        card.appendChild(cardInner);
 
         card.addEventListener('click', () => {
-            if (lockBoard || card === firstCard) return;
+            if (lockBoard || card === firstCard || card.classList.contains('flipped') || isPaused) return;
 
-            card.classList.add('flipped');
-            card.innerText = text;
+            flipCard(card);
 
             if (!firstCard) {
                 firstCard = card;
@@ -206,25 +896,47 @@
         return card;
     }
 
+    function flipCard(card) {
+        card.classList.toggle('flipped');
+    }
+
+    function showInfoModal(title, icon, text) {
+        isPaused = true;
+        clearInterval(timerInterval);
+        
+        infoTitle.textContent = title;
+        infoIcon.className = icon;
+        infoText.textContent = text;
+        infoModal.style.display = 'flex';
+    }
+
+    function hideInfoModal() {
+        infoModal.style.display = 'none';
+        isPaused = false;
+        startTimer();
+    }
+
     function checkForMatch() {
         const isMatch = firstCard.dataset.text === secondCard.dataset.text;
 
         if (isMatch) {
-            const message = cards.find(c => c.text === firstCard.dataset.text).message;
-            messageContainer.innerText = message;
-
+            const cardData = cards.find(c => c.text === firstCard.dataset.text);
+            showInfoModal(cardData.text, cardData.icon, cardData.message);
+            matchedPairs++;
+            
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
+            
             firstCard = null;
             secondCard = null;
 
-            checkWinCondition(); // Vérifie si le joueur a gagné
+            checkWinCondition();
         } else {
             lockBoard = true;
             setTimeout(() => {
                 firstCard.classList.remove('flipped');
-                firstCard.innerText = 'Cacher';
                 secondCard.classList.remove('flipped');
-                secondCard.innerText = 'Cacher';
-
+                
                 firstCard = null;
                 secondCard = null;
                 lockBoard = false;
@@ -233,17 +945,21 @@
     }
 
     function startTimer() {
-        const timerDisplay = document.getElementById('timer');
+        gameTime = 120;
         timerDisplay.innerText = `Temps restant : ${gameTime}s`;
 
         timerInterval = setInterval(() => {
-            gameTime -= 1;
-            timerDisplay.innerText = `Temps restant : ${gameTime}s`;
+            if (!isPaused) {
+                gameTime -= 1;
+                timerDisplay.innerText = `Temps restant : ${gameTime}s`;
 
-            if (gameTime <= 0) {
-                clearInterval(timerInterval);
-                alert('Temps écoulé ! Recommencez le jeu.');
-                resetGame();
+                if (gameTime <= 0) {
+                    clearInterval(timerInterval);
+                    const totalPairs = cards.length;
+                    const successRate = Math.round((matchedPairs / totalPairs) * 100);
+                    alert(`Temps écoulé ! Vous avez trouvé ${matchedPairs} paires sur ${totalPairs} (${successRate}%). Recommencez pour faire mieux !`);
+                    resetGame();
+                }
             }
         }, 1000);
     }
@@ -253,52 +969,68 @@
         const allFlipped = allCards.every(card => card.classList.contains('flipped'));
 
         if (allFlipped) {
-            clearInterval(timerInterval); // Arrête le minuteur
-            alert('Félicitations, vous avez gagné !');
+            clearInterval(timerInterval);
+            const timeUsed = 120 - gameTime;
+            alert(`Félicitations ! Vous avez gagné en ${timeUsed} secondes. Vous connaissez maintenant les bons gestes pour un Sénégal plus propre !`);
             resetGame();
         }
     }
 
     function resetGame() {
         gameContainer.innerHTML = '';
-        messageContainer.innerText = '';
         firstCard = null;
         secondCard = null;
         lockBoard = false;
-        gameTime = 60;
+        gameTime = 120;
+        matchedPairs = 0;
         clearInterval(timerInterval);
         initGame();
     }
 
-    function revealCardsBriefly() {
-        const allCards = Array.from(gameContainer.children);
-        allCards.forEach(card => {
-            card.classList.add('flipped');
-            card.innerText = card.dataset.text;
-        });
+    function showAllCardsTemporarily(duration) {
+    // Retourner toutes les cartes (face visible)
+    const allCards = Array.from(document.querySelectorAll('.memory-card'));
+    allCards.forEach(card => {
+        card.classList.add('flipped');
+    });
 
-        setTimeout(() => {
-            allCards.forEach(card => {
-                card.classList.remove('flipped');
-                card.innerText = 'Cacher';
-            });
-            startTimer();
-        }, 6000);
-    }
+    // Message pendant la phase de mémorisation
+    timerDisplay.innerText = "Mémorisez les paires...";
+
+    // Après la durée spécifiée, cacher les cartes et démarrer le jeu
+    setTimeout(() => {
+        allCards.forEach(card => {
+            card.classList.remove('flipped');
+        });
+        startTimer();
+    }, duration);
+}
 
     function initGame() {
-        const shuffledCards = shuffle([...cards, ...cards]);
-        shuffledCards.forEach(card => {
-            const cardElement = createCard(card.text);
+        // Sélectionne 10 cartes aléatoires (5 paires) parmi toutes les possibilités
+        const selectedCards = shuffle(cards).slice(0, 10);
+        const gameCards = shuffle([...selectedCards, ...selectedCards]);
+        
+        gameCards.forEach(cardData => {
+            const cardElement = createCard(cardData);
             gameContainer.appendChild(cardElement);
         });
 
-        revealCardsBriefly();
+        // Montrer les cartes pendant 15 secondes au début
+        showAllCardsTemporarily(15000);
     }
 
+    // Event listeners
+    document.querySelector('.close-info').addEventListener('click', hideInfoModal);
+    closeInfoBtn.addEventListener('click', hideInfoModal);
+
+    // Initialize game
     initGame();
 </script>
 
-</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+</body>
 </html>

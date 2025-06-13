@@ -4,168 +4,1114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Événements à venir et passés de l'Association pour l'Environnement Vert">
-    <meta name="keywords" content="événements, environnement, écologie">
-    <title>Accueil | LAGENES Verte</title>
+    <meta name="description" content="LAGENES Verte - Association sénégalaise pour la protection de l'environnement et l'écologie">
+    <meta name="keywords" content="environnement Sénégal, écologie, association, protection nature, développement durable">
+    <title>LAGENES Verte - Pour un Sénégal plus vert</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="icon" type="image/x-icon" href="images/aev.png" />
+    
+    <style>
+        :root {
+            --senegal-green: #00853F;
+            --senegal-yellow: #FDEF42;
+            --senegal-red: #E31B23;
+            --light-bg: #f9f9f9;
+            --baobab-color: #8B4513;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-bg);
+            position: relative;
+        }
+        
+        body:after {
+            content: "";
+            background: url('https://www.transparenttextures.com/patterns/african-cloth.png');
+            opacity: 0.03;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+        }
+        
+       
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                        url('images/senegal-nature.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%2300853f"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%2300853f"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%2300853f"/></svg>');
+            background-size: cover;
+            transform: rotate(180deg);
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s;
+        }
+        
+        .hero-description {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: fadeIn 1.5s;
+        }
+        
+        .btn-senegal {
+            background: var(--senegal-green);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-senegal:hover {
+            background: var(--senegal-yellow);
+            color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            animation: none;
+        }
+        
+        .section-title {
+            color: var(--senegal-green);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow));
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .card-title {
+            color: var(--senegal-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .card-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--senegal-yellow);
+        }
+        
+        .dark-section {
+            background: linear-gradient(135deg, #333, #222);
+            color: black;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow), var(--senegal-red));
+        }
+        
+        .join-section {
+            background: linear-gradient(rgba(0, 133, 63, 0.9), rgba(0, 107, 50, 0.9)), 
+                        url('images/community-action.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .join-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .baobab-icon {
+            color: var(--baobab-color);
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        
+        .whatsapp-btn-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            margin-bottom: 5px;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            color: white;
+            animation: none;
+        }
+        
+        .whatsapp-btn-container span {
+            font-size: 12px;
+            color: var(--senegal-green);
+            font-weight: bold;
+            background-color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--senegal-green), #a10909);
+            color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--senegal-yellow);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .senegal-flag {
+            color: var(--senegal-yellow);
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .memory-game-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-top: 5px solid var(--senegal-green);
+        }
+        
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .memory-card {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            perspective: 1000px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .memory-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .memory-card.flipped .memory-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .memory-card-front, 
+        .memory-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .memory-card-front {
+            background: linear-gradient(135deg, var(--senegal-green), #00c853);
+            color: white;
+        }
+        
+        .memory-card-back {
+            background-color: white;
+            color: var(--senegal-green);
+            border: 2px solid var(--senegal-green);
+            transform: rotateY(180deg);
+        }
+        
+        .memory-card-back i {
+            font-size: 2.5rem;
+            color: var(--senegal-green);
+            margin-bottom: 10px;
+        }
+        
+        .memory-card-front i {
+            font-size: 2.5rem;
+            color: var(--senegal-yellow);
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .card-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        #timer {
+            font-size: 1.2rem;
+            color: var(--senegal-red);
+            font-weight: bold;
+            margin-bottom: 20px;
+            background-color: #ffecec;
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .info-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+        
+        .info-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border-top: 5px solid var(--senegal-green);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .close-info {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+        
+        .close-info:hover {
+            color: var(--senegal-red);
+        }
+        
+        .section-title {
+            color: var(--senegal-green);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow));
+        }
+        
+        .impact-section {
+            background-color: #e8f5e9;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+        
+        .clean-section {
+            background-color: #f1f8e9;
+            padding: 40px 0;
+        }
+        
+        .problem-section {
+            background-color: #ffebee;
+            padding: 40px 0;
+        }
+        
+        .btn-senegal {
+            background-color: var(--senegal-green);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn-senegal:hover {
+            background-color: #006b32;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline-success {
+            border-color: var(--senegal-green);
+            color: var(--senegal-green);
+        }
+        
+        .btn-outline-success:hover {
+            background-color: var(--senegal-green);
+            color: white;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .card-title {
+            color: var(--senegal-green);
+        }
+        
+        .material-icon {
+            font-size: 2.5rem;
+            color: var(--senegal-green);
+            margin-bottom: 15px;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--senegal-green);
+        }
+        
+        .stats-label {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .progress {
+            height: 25px;
+            margin-bottom: 20px;
+            border-radius: 50px;
+            background-color: #e0e0e0;
+            overflow: visible;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow));
+            border-radius: 50px;
+            position: relative;
+            overflow: visible;
+        }
+        
+        .progress-bar:after {
+            content: attr(aria-valuenow);
+            position: absolute;
+            right: 10px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .clean-tip {
+            border-left: 4px solid var(--senegal-green);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .clean-tip:hover {
+            transform: translateX(5px);
+        }
+        
+        .clean-tip i {
+            color: var(--senegal-green);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+    
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+       
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background: var(--senegal-yellow);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: calc(100% - 30px);
+        }
+        
+        .title-section {
+            color: var(--senegal-green);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .nav-link.active {
+            font-weight: 600;
+        }
+        
+        .nav-link.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            width: calc(100% - 30px);
+            height: 2px;
+            background: var(--senegal-yellow);
+        }
+        
+        .dropdown-menu {
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: all 0.3s;
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--senegal-green);
+            color: white !important;
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-brand {
+                margin-right: 0;
+            }
+            
+           
+        }
+        
+        .title-section:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow));
+        }
+        
+        .content-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-top: 4px solid var(--senegal-green);
+            transition: transform 0.3s;
+        }
+        
+        .content-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .senegal-highlight {
+            border-left: 4px solid var(--senegal-green);
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .btn-senegal {
+            background: var(--senegal-green);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        
+        
+
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 15px 30px;
+            color: white !important;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background: var(--senegal-yellow);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: calc(100% - 30px);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
+                        url("images/openart-image_RATO-nbk_1746137033339_raw.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .future-hero {
+            background: linear-gradient(rgba(0, 133, 63, 0.8), rgba(0, 133, 63, 0.9));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .future-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .future-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .section-title {
+            color: var(--senegal-green);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow));
+        }
+        
+        .idea-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-top: 5px solid var(--senegal-green);
+        }
+        
+        .btn-senegal {
+            background: var(--senegal-green);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn-senegal:hover {
+            background: #006b32;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .whatsapp-btn-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            margin-bottom: 5px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .whatsapp-btn-container span {
+            font-size: 12px;
+            color: var(--senegal-green);
+            font-weight: bold;
+            background-color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #222, #444);
+            margin-top: 50px;
+            padding: 3rem 0;
+            position: relative;
+        }
+        
+        footer:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow), var(--senegal-red));
+        }
+        
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact i {
+            color: var(--senegal-yellow);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: all 0.3s;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--senegal-green);
+            transform: translateY(-3px);
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 30px;
+            }
+            
+            .future-hero {
+                padding: 80px 0;
+            }
+            
+            .future-title {
+                font-size: 2rem;
+            }
+            
+            .future-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+        .btn-hero {
+            background-color: var(--senegal-green);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+        }
+        
+        .btn-hero:hover {
+            background-color: #006b32;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        .whatsapp-btn-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            margin-bottom: 5px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .whatsapp-btn-container span {
+            font-size: 12px;
+            color: var(--senegal-green);
+            font-weight: bold;
+            background-color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .nav-item {
+    display: flex;
+    align-items: center;
+    margin: 0 39px;
+    font-weight: bold;
+    font-size: 18px;
+}
+        
+        footer {
+            background: linear-gradient(135deg, #222, #444);
+            margin-top: 0;
+            padding: 3rem 0;
+            position: relative;
+        }
+        
+        footer:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow), var(--senegal-red));
+        }
+        
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact i {
+            color: var(--senegal-yellow);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: all 0.3s;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--senegal-green);
+            transform: translateY(-3px);
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+        
+    </style>
 </head>
 
 <body>
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container text-center">
-                <a href="index.html" class="navbar-brand ml-auto" style="color: rgb(22, 170, 22)">LAGENES Verte</a>
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/aev.png" alt="Logo LAGENES Verte">
+                    LAGENES <span style="color: var(--senegal-yellow)">Verte</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav m-auto mt-auto">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link" style="color: whitesmoke">Accueil</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link">Accueil</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="evenements.html" class="nav-link custom-pl-3 dropdown-toggle" style="color: whitesmoke" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:whitesmoke">
                                 Projets
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="school.html">Projet Clean'School</a>
-                                <a class="dropdown-item" href="Jeu de mémoire.html"> <i>Memo-Recyclage</i></a>
-                                <a class="dropdown-item" href="SuiteProject.html"> <i>En construction</i></a>
+                                <a class="dropdown-item" href="Jeu de mémoire.html">Memo-Recyclage</a>
+                                <a class="dropdown-item" href="SuiteProject.html">Projets Futurs</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link" style="color: whitesmoke">À propos</a>
+                            <a href="about.html" class="nav-link" style="color:whitesmoke">À propos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Boutique.html" class="nav-link" style="color: whitesmoke">Boutique</a>
+                            <a href="Boutique.html" class="nav-link" style="color:whitesmoke">Boutique</a>
                         </li>
                     </ul>
-                </div>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fas fa-user"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <div class="social-icons d-none d-lg-flex ml-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Section Qui Sommes-Nous -->
-    <section class="quisommesnous" id="quisommesnous">
-        <div class="container py-sm-5">
-            <div class="text-center">
-                <h3 class="display-4 text-center">Qui sommes-nous</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <h4 class="text-dark mt-4 mb-3">Notre mission</h4>
-                            <img src="images/nature-3294632_1280.jpg" class="card-img-top w-100 mt-3 mb-3"
-                                alt="Image pour Notre mission" style="border-radius: 20px;">
-                            <p>
-                                Notre mission est de promouvoir la conservation de la biodiversité, de sensibiliser à la
-                                réduction des déchets et de collaborer avec d'autres organisations environnementales
-                                pour préserver notre planète.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <h4 class="text-dark mt-4 mb-3">Notre équipe</h4>
-                            <img src="images/women-2679748_1280.jpg" class="card-img-top w-100 mt-3 mb-3"
-                                alt="Image pour Notre équipe" style="border-radius: 20px;">
-                            <p>
-                                Notre équipe est composée d'experts passionnés par la protection de l'environnement.
-                                Nous sommes déterminés à faire une différence positive dans le monde.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Objectifs -->
-    <section class="objectifs" id="objectifs" style="background-color: #333">
+    <section class="hero">
         <div class="container">
-            <h3 class="display-4 text-white text-center">Nos objectifs</h3>
-            <div class="row justify-content-center">
-                <!-- Carte 1 -->
-                <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="images/ecology-4287428_1280.jpg" class="card-img-top" alt="Promouvoir la conservation de la biodiversité">
+            <h1 class="hero-title">LAGENES Verte</h1>
+            <p class="hero-description">Engagés pour un Sénégal plus propre et durable</p>
+            <a href="#quisommesnous" class="btn btn-senegal">Découvrir nos ambitions</a>
+        </div>
+    </section>
+
+    <div class="whatsapp-btn-container">
+        <a class="whatsapp-btn" href="https://wa.me/221762147078"><i class="fab fa-whatsapp"></i></a>
+        <span>Contactez-nous</span>
+    </div>
+
+    <section id="quisommesnous" class="py-5">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">Qui sommes-nous ?</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4 animate__animated animate__fadeInLeft">
+                    <div class="card h-100">
+                        <img src="images/team-action.jpg" class="card-img-top" alt="Notre mission">
                         <div class="card-body">
-                            <h5 class="card-title">Promouvoir la conservation de la biodiversité</h5>
-                            <p>
-                                Ensemble, nous pouvons préserver les écosystèmes fragiles, protéger les espèces menacées et restaurer l'équilibre naturel de notre planète.
+                            <h3 class="card-title"><i class="fas fa-bullseye baobab-icon"></i> Notre mission</h3>
+                            <p class="card-text">
+                                Notre mission est de promouvoir la conservation de la biodiversité au Sénégal, de sensibiliser à la réduction des déchets et de collaborer avec les communautés locales pour préserver notre environnement. Nous croyons en un développement durable qui respecte notre patrimoine naturel.
                             </p>
                         </div>
                     </div>
                 </div>
-                <!-- Carte 2 -->
-                <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="images/garbage-4277613_1280.jpg" class="card-img-top" alt="Sensibiliser à la réduction des déchets">
+                <div class="col-md-6 mb-4 animate__animated animate__fadeInRight">
+                    <div class="card h-100">
+                        <img src="images/volunteers.jpg" class="card-img-top" alt="Notre équipe">
                         <div class="card-body">
-                            <h5 class="card-title">Sensibiliser à la réduction des déchets</h5>
-                            <p>
-                                La réduction des déchets, c'est bien plus qu'une tendance, c'est un mode de vie responsable.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Carte 3 -->
-                <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="images/pxclimateaction-7149930_1280.jpg" class="card-img-top" alt="Lutte Contre le Changement Climatique">
-                        <div class="card-body">
-                            <h5 class="card-title">Lutte Contre le Changement Climatique</h5>
-                            <p>
-                                La lutte contre le changement climatique est une mission cruciale de notre association.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Carte 4 -->
-                <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="images/bicycles-809728_1280.jpg" class="card-img-top" alt="Promotion de modes de vie durables">
-                        <div class="card-body">
-                            <h5 class="card-title">Promotion de modes de vie durables</h5>
-                            <p>
-                                La promotion de modes de vie durables est au cœur de notre mission.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Carte 5 -->
-                <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="images/nature-2990060_1280.jpg" class="card-img-top" alt="Protection de l'eau et de l'air">
-                        <div class="card-body">
-                            <h5 class="card-title">Protection de l'eau et de l'air</h5>
-                            <p>
-                                La protection de l'eau et de l'air est au cœur de notre engagement en faveur de l'environnement.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Carte 6 -->
-                <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="images/teamwork-3213924_1280.jpg" class="card-img-top" alt="Collaborer avec d'autres organisations environnementales">
-                        <div class="card-body">
-                            <h5 class="card-title">Collaborer avec d'autres organisations environnementales</h5>
-                            <p>
-                                En unissant nos efforts, nous pouvons accomplir de grandes choses pour préserver notre environnement.
+                            <h3 class="card-title"><i class="fas fa-users baobab-icon"></i> Notre équipe</h3>
+                            <p class="card-text">
+                                Notre équipe est composée de jeunes Sénégalais passionnés par la protection de l'environnement. Nous sommes déterminés à faire une différence positive dans notre pays. Chaque membre apporte ses compétences uniques pour créer un impact collectif significatif.
                             </p>
                         </div>
                     </div>
@@ -174,57 +1120,116 @@
         </div>
     </section>
 
-    <!-- Section Nous Rejoindre -->
-    <section class="nous-rejoindre" style="background-color: #f8f9fa;">
-        <div class="container py-5">
-            <h3 class="display-4 mb-4">REJOIGNEZ-NOUS</h3>
-            <div class="row text-center mt-4">
-                <div class="col-md-6">
-                    <p class="lead">
-                        Rejoignez notre association pour contribuer à la préservation de l'environnement et à la lutte
-                        contre le changement climatique. Ensemble, nous pouvons faire la différence.
-                    </p>
+    <section class="dark-section">
+        <div class="container">
+            <h2 class="section-title text-white animate__animated animate__fadeIn">Nos objectifs</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                    <div class="card h-100">
+                        <img src="images/waste-management.jpg" class="card-img-top" alt="Déchets">
+                        <div class="card-body">
+                            <h3 class="card-title">Réduire les déchets</h3>
+                            <p>Sensibiliser à la gestion durable des déchets dans les villes et villages à travers des programmes éducatifs et des initiatives concrètes comme le recyclage et le compostage. Nous organisons régulièrement des campagnes de nettoyage communautaire.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <a href="contact.html" class="btn btn-secondary btn-lg">Nous rejoindre</a>
-                    <a href="contact.html" class="btn btn-secondary btn-lg">Faire un don</a>
+                <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                    <div class="card h-100">
+                        <img src="images/education.jpg" class="card-img-top" alt="Education">
+                        <div class="card-body">
+                            <h3 class="card-title">Impliquer les jeunes</h3>
+                            <p>Sensibiliser les générations futures aux enjeux environnementaux à travers des programmes scolaires et des activités ludiques. Nous croyons que l'éducation est la clé pour un changement durable des comportements.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+                    <div class="card h-100">
+                        <img src="images/community.jpg" class="card-img-top" alt="Communauté">
+                        <div class="card-body">
+                            <h3 class="card-title">Impliquer les communautés</h3>
+                            <p>Travailler main dans la main avec les populations locales pour des solutions durables adaptées à chaque contexte. Nous formons des éco-leaders dans chaque communauté pour pérenniser nos actions.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="whatsapp-btn-container">
-            <a class="whatsapp-btn" href="https://wa.me/33605536426"><i class="fab fa-whatsapp"></i></a>
-            <span><i>Contact us</i></span>
-        </div>
-        
     </section>
 
-    <!-- Footer -->
-    <footer class="text-white py-4" style="background-color: #333">
+    <section class="join-section">
+        <div class="container">
+            <h2 class="join-title animate__animated animate__fadeIn">Rejoignez-nous</h2>
+            <p class="lead mb-5 animate__animated animate__fadeIn" data-wow-delay="0.2s">Ensemble, construisons un Sénégal plus vert et durable pour les générations futures.</p>
+            <div class="d-flex justify-content-center animate__animated animate__fadeIn" data-wow-delay="0.4s">
+                <a href="contact.html" class="btn btn-senegal btn-lg mr-3">Devenir bénévole</a>
+                <a href="Boutique.html" class="btn btn-senegal btn-lg">Soutenir nos actions</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white">
         <div class="container text-center">
             <div class="row">
-                <div class="col-md-4">
-                    <img src="images/aev.png" alt="Logo de l'association" class="img-fluid">
-                    <p>L'association s'engage à la préservation de l'environnement et à la sensibilisation à l'écologie.</p>
+                <div class="col-md-4 mb-4">
+                    <img src="images/aev.png" alt="Logo association" class="img-fluid" style="max-width: 150px;">
+                    <p class="mt-3">Engagés pour un Sénégal plus propre et une meilleure gestion des déchets !</p>
                 </div>
-                <div class="col-md-4">
-                    <h5>Contactez-nous</h5>
-                    <p>Adresse: Méckhé, Sénégal</p>
-                    <p>Email: <a href="mailto:lagenescleanschool@gmail.com" class="text-white">lagenescleanschool@gmail.com</a></p>
-                    <p>Téléphone: +221 76 214 70 78</p>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Contactez-nous</h5>
+                    <p><i class="fas fa-map-marker-alt mr-2"></i>Méckhé, Sénégal</p>
+                    <p><i class="fas fa-envelope mr-2"></i><a href="mailto:lagenescleanschool@gmail.com">lagenescleanschool@gmail.com</a></p>
+                    <p><i class="fas fa-phone mr-2"></i>+221 76 214 70 78</p>
                 </div>
-                <div class="col-md-4">
-                    <h5>Suivez-nous</h5>
-                    <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
-	
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Suivez-nous</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p class="mb-0">&copy; 2025 LAGENES Verte - Tous droits réservés</p>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Animation au scroll
+            new WOW().init();
+            
+            // Réduire la navbar au scroll
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('.header').addClass('scrolled');
+                } else {
+                    $('.header').removeClass('scrolled');
+                }
+            });
+            
+            // Fermer le menu lorsqu'un lien est cliqué
+            $('.navbar-nav>li>a').on('click', function () {
+                $('.navbar-collapse').collapse('hide');
+            });
+            
+            // Animation douce pour les ancres
+            $('a[href*="#"]').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate(
+                    { scrollTop: $($(this).attr('href')).offset().top - 70 },
+                    500,
+                    'linear'
+                );
+            });
+        });
+    </script>
 </body>
 </html>
