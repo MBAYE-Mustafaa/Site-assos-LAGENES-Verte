@@ -76,6 +76,26 @@
         .nav-link:hover:after {
             width: calc(100% - 30px);
         }
+         .dropdown-menu {
+    background-color: var(--senegal-green) !important;
+    border: none;
+}
+
+.dropdown-item {
+    color: white !important;
+    background-color: transparent !important;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color:rgb(235, 157, 157) !important;
+    color: var(--senegal-green) !important;
+}
+.dropdown-item:focus,
+.dropdown-item.active {
+    background-color: var(--senegal-yellow) !important;
+    color: var(--senegal-green) !important;
+}
         
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
@@ -256,7 +276,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="index.html" class="nav-link">Accueil</a>
                     </li>
                     <li class="nav-item dropdown">
