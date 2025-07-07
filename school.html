@@ -36,7 +36,26 @@
             position: absolute;
             z-index: -1;
         }
-        
+   .dropdown-menu {
+    background-color: var(--senegal-green) !important;
+    border: none;
+}
+
+.dropdown-item {
+    color: white !important;
+    background-color: transparent !important;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color:rgb(235, 157, 157) !important;
+    color: var(--senegal-green) !important;
+}
+.dropdown-item:focus,
+.dropdown-item.active {
+    background-color: var(--senegal-yellow) !important;
+    color: var(--senegal-green) !important;
+}
         .header {
             background: linear-gradient(135deg, var(--senegal-green), #006b32);
             color: white;
@@ -261,13 +280,13 @@
                             <a href="index.html" class="nav-link">Accueil</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="evenements.html" class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a  class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Projets
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item active" href="school.html">Projet Clean'School</a>
-                                <a class="dropdown-item" href="Jeu de mémoire.html"> <i>Memo-S.P</i></a>
-                                <a class="dropdown-item" href="SuiteProject.html"> <i>Projets Futurs</i></a>
+                                <a class="dropdown-item" href="Jeu de mémoire.html"> Memo Sénégal PROPRE</a>
+                                <a class="dropdown-item" href="SuiteProject.html"> Projets Futurs</a>
                             </div>
                         </li>
                         <li class="nav-item">

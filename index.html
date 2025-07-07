@@ -88,6 +88,26 @@
         .nav-link:hover:after {
             width: calc(100% - 30px);
         }
+         .dropdown-menu {
+    background-color: var(--senegal-green) !important;
+    border: none;
+}
+
+.dropdown-item {
+    color: white !important;
+    background-color: transparent !important;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color:rgb(235, 157, 157) !important;
+    color: var(--senegal-green) !important;
+}
+.dropdown-item:focus,
+.dropdown-item.active {
+    background-color: var(--senegal-yellow) !important;
+    color: var(--senegal-green) !important;
+}
         
         .dropdown-menu {
             background-color: var(--senegal-green);
@@ -427,6 +447,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
@@ -465,6 +486,44 @@
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
+=======
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/aev.png" alt="Logo LAGENES Verte">
+                LAGENES <span style="color: var(--senegal-yellow)">Verte</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="evenements.html" class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projets
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="school.html">Projet Clean'School</a>
+                            <a class="dropdown-item" href="Jeu de mémoire.html"> <i>Memo-S.P</i></a>
+                            <a class="dropdown-item" href="SuiteProject.html"> <i>Projets Futurs</i></a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Boutique.html" class="nav-link">Boutique</a>
+                    </li>
+                </ul>
+                <div class="social-icons d-none d-lg-flex ml-3">
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+>>>>>>> cbf3f94cff5ba2c3c4ae8fd0176dfb0cf4044825
                 </div>
             </div>
         </nav>
