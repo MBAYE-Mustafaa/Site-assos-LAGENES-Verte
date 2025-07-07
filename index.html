@@ -23,6 +23,7 @@
             font-family: 'Arial', sans-serif;
             background-color: var(--light-bg);
             position: relative;
+            overflow-x: hidden;
         }
         
         body:after {
@@ -44,6 +45,16 @@
             border-bottom: 3px solid var(--senegal-yellow);
         }
         
+        .navbar {
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
@@ -60,6 +71,7 @@
             position: relative;
             padding: 8px 15px;
             color: white !important;
+            font-size: 1rem;
         }
         
         .nav-link:after {
@@ -77,15 +89,39 @@
             width: calc(100% - 30px);
         }
         
+        .dropdown-menu {
+            background-color: var(--senegal-green);
+            border: none;
+        }
+        
+        .dropdown-item {
+            color: white !important;
+            transition: all 0.3s;
+        }
+        
+        .dropdown-item:hover {
+            background-color: rgba(255,255,255,0.1);
+            padding-left: 20px;
+        }
+        
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
                         url("images/openart-image_RATO-nbk_1746137033339_raw.jpg");
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
             padding: 120px 0;
             text-align: center;
             position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .hero-title {
@@ -93,6 +129,7 @@
             font-weight: 700;
             margin-bottom: 20px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            line-height: 1.3;
         }
         
         .hero-description {
@@ -100,6 +137,7 @@
             max-width: 700px;
             margin: 0 auto 30px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.6;
         }
         
         .btn-hero {
@@ -113,6 +151,7 @@
             transition: all 0.3s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .btn-hero:hover {
@@ -124,8 +163,8 @@
         
         .whatsapp-btn-container {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             z-index: 1000;
             display: flex;
             flex-direction: column;
@@ -159,6 +198,7 @@
             background-color: white;
             padding: 2px 5px;
             border-radius: 3px;
+            display: none;
         }
         
         footer {
@@ -190,6 +230,16 @@
             text-align: center;
         }
         
+        .footer-contact a {
+            color: white;
+            transition: color 0.3s;
+        }
+        
+        .footer-contact a:hover {
+            color: var(--senegal-yellow);
+            text-decoration: none;
+        }
+        
         .social-icons a {
             color: white;
             font-size: 1.2rem;
@@ -217,13 +267,29 @@
             font-size: 0.9rem;
         }
         
-        @media (max-width: 768px) {
+        /* Responsive Styles */
+        @media (max-width: 1199.98px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 991.98px) {
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+            
             .navbar-brand img {
-                height: 30px;
+                height: 35px;
             }
             
             .hero {
-                padding: 80px 0;
+                padding: 100px 0;
+                min-height: 60vh;
             }
             
             .hero-title {
@@ -232,6 +298,57 @@
             
             .hero-description {
                 font-size: 1rem;
+                padding: 0 20px;
+            }
+            
+            .whatsapp-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+            
+            footer {
+                padding: 2.5rem 0;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .navbar {
+                padding: 10px 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand img {
+                height: 30px;
+            }
+            
+            .nav-link {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .hero {
+                padding: 80px 0;
+                min-height: 50vh;
+                background-attachment: scroll;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+                padding: 0 15px;
+            }
+            
+            .hero-description {
+                font-size: 0.95rem;
+                padding: 0 15px;
+            }
+            
+            .btn-hero {
+                padding: 10px 25px;
+                font-size: 1rem;
             }
             
             .whatsapp-btn {
@@ -239,61 +356,130 @@
                 height: 50px;
                 font-size: 25px;
             }
+            
+            .whatsapp-btn-container span {
+                display: inline-block;
+            }
+            
+            footer {
+                text-align: center;
+            }
+            
+            .footer-logo {
+                margin: 0 auto 20px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            .footer-contact {
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .navbar-brand {
+                font-size: 1.1rem;
+            }
+            
+            .navbar-brand img {
+                height: 25px;
+                margin-right: 8px;
+            }
+            
+            .hero {
+                padding: 60px 0;
+                min-height: 40vh;
+            }
+            
+            .hero-title {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero-description {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+            
+            .btn-hero {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .whatsapp-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+            }
+            
+            footer {
+                padding: 2rem 0;
+            }
+            
+            .footer-logo {
+                max-width: 120px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="images/aev.png" alt="Logo LAGENES Verte">
-                LAGENES <span style="color: var(--senegal-yellow)">Verte</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Accueil</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="evenements.html" class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Projets
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="school.html">Projet Clean'School</a>
-                            <a class="dropdown-item" href="Jeu de mémoire.html"> <i>Memo-S.P</i></a>
-                            <a class="dropdown-item" href="SuiteProject.html"> <i>Projets Futurs</i></a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link">À propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="Boutique.html" class="nav-link">Boutique</a>
-                    </li>
-                </ul>
-                <div class="social-icons d-none d-lg-flex ml-3">
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/aev.png" alt="Logo LAGENES Verte">
+                    LAGENES <span style="color: var(--senegal-yellow)">Verte</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Accueil</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="evenements.html" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Projets
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="school.html">Projet Clean'School</a>
+                                <a class="dropdown-item" href="Jeu de mémoire.html"> <i>Memo-S.P</i></a>
+                                <a class="dropdown-item" href="SuiteProject.html"> <i>Projets Futurs</i></a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">À propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Boutique.html" class="nav-link">Boutique</a>
+                        </li>
+                    </ul>
+                    <div class="social-icons d-none d-lg-flex ml-3">
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-        
+        </nav>
+            
         <div class="hero">
             <div class="container">
-                <h1 class="hero-title">Bienvenue sur le site de l'association LAGENES Verte</h1>
-                <p class="hero-description">
-                    Nous œuvrons pour un Sénégal plus propre grâce à la gestion durable des déchets
-                    et la sensibilisation écologique. 
-                    <br>
-                    <strong style="color: var(--senegal-yellow)">SETT MOO GUËUN SET SETTAL !</strong></p>
-                <a href="voirplusloin.html" class="btn btn-hero">En savoir plus</a>
+                <div class="hero-content">
+                    <h1 class="hero-title">Bienvenue sur le site de l'association LAGENES Verte</h1>
+                    <p class="hero-description">
+                        Nous œuvrons pour un Sénégal plus propre grâce à la gestion durable des déchets
+                        et la sensibilisation écologique. 
+                        <br>
+                        <strong style="color: var(--senegal-yellow)">SETT MOO GUËUN SET SETTAL !</strong></p>
+                    <a href="voirplusloin.html" class="btn btn-hero">En savoir plus</a>
+                </div>
             </div>
         </div>
     </header>
@@ -306,19 +492,20 @@
     <footer class="text-white">
         <div class="container text-center">
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <img src="images/aev.png" alt="Logo association" class="img-fluid" style="max-width: 150px;">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <img src="images/aev.png" alt="Logo association" class="img-fluid footer-logo">
                     <p class="mt-3">Engagés pour un Sénégal plus propre et une meilleure gestion des déchets !</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">Contactez-nous</h5>
-                    <p class="footer-contact"><i class="fas fa-map-marker-alt mr-2"></i>Méckhé, Sénégal</p>
-                    <p class="footer-contact"><i class="fas fa-envelope mr-2"></i><a href="mailto:lagenescleanschool@gmail.com">lagenescleanschool@gmail.com</a></p>
-                    <p class="footer-contact"><i class="fas fa-phone mr-2"></i>+221 76 214 70 78</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                   <h5 class="mb-3" style="color: var(--senegal-red); font-weight: bold;">Contactez-nous</h5>
+                    <p class="footer-contact"><i class="fas fa-map-marker-alt"></i>Méckhé, Sénégal</p>
+                    <p class="footer-contact"><i class="fas fa-envelope"></i><a href="mailto:lagenescleanschool@gmail.com">lagenescleanschool@gmail.com</a></p>
+                    <p class="footer-contact"><i class="fas fa-phone"></i>+221 76 214 70 78</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">Suivez-nous</h5>
-                    <div class="social-icons">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5 class="mb-3" style="color: var(--senegal-red); font-weight: bold;">Suivez-nous</h5>
+                   
+                    <div class="social-icons d-flex justify-content-center justify-content-md-start justify-content-lg-center">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -326,20 +513,21 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-4">
                 <div class="col-12 text-center">
                     <a href="Paiement.html" class="btn btn-primary btn-lg">Soutenir nos actions</a>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row mt-4">
                 <div class="col-12">
-                    <p class="mb-0">&copy; 2025 LAGENES Verte - Tous droits réservés</p>
+                    <p class="copyright mb-0">&copy; 2025 LAGENES Verte - Tous droits réservés</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -356,8 +544,20 @@
                     $('.navbar').removeClass('scrolled');
                 }
             });
+            
+            // Afficher le texte du bouton WhatsApp sur mobile
+            function checkWhatsappText() {
+                if ($(window).width() < 768) {
+                    $('.whatsapp-btn-container span').show();
+                } else {
+                    $('.whatsapp-btn-container span').hide();
+                }
+            }
+            
+            // Exécuter au chargement et au redimensionnement
+            checkWhatsappText();
+            $(window).resize(checkWhatsappText);
         });
     </script>
-    
 </body>
 </html>
