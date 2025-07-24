@@ -210,6 +210,16 @@
             width: 20px;
             text-align: center;
         }
+        
+        .footer-contact a {
+            color: white;
+            transition: color 0.3s;
+        }
+        
+        .footer-contact a:hover {
+            color: var(--senegal-yellow);
+            text-decoration: none;
+        }
 
         .copyright {
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -295,16 +305,23 @@ footer {
         <div class="whatsapp-btn-container">
             <a class="whatsapp-btn" href="https://wa.me/33605536426"><i class="fab fa-whatsapp"></i></a>
             <span><i>Contact us</i></span>
+
         </div>
     </header>
 
     <!-- Hero -->
     <section class="donation-hero text-center">
         <div class="container">
+            
             <h1 class="hero-title animate__animated animate__fadeInDown">Protégez l'environnement au Sénégal avec nous</h1>
             <p class="lead animate__animated animate__fadeInUp">Votre don finance des confections de poubelles, des activités de nettoyage, des campagnes de sensibilisation ...</p>
-            <a href="#donate" class="btn btn-success btn-lg mt-3 animate__animated animate__pulse">Je fais un don dès maintenant →</a>
-        </div>
+            <div class="donation-amounts mt-4">
+                <button class="btn btn-success btn-lg glow" onclick="window.location.href='#donate'">Faire un don</button>
+                <button class="btn btn-outline-success btn-lg" onclick="window.location.href='Boutique.html'">Acheter des produits</button>
+            </div>
+            <p class="mt-3">Chaque geste compte pour un Sénégal plus propre et durable</p>
+            <a href="#donate" class="btn btn-warning btn-lg mt-3 animate__animated animate__pulse">Je fais un don dès maintenant →</a>
+    
     </section>
 
     <!-- Section Dons -->
@@ -322,12 +339,16 @@ footer {
                                     <i class="fas fa-mobile-alt fa-2x mr-3" style="color: var(--senegal-green);"></i>
                                     <div>
                                         <h5>Mobile Money</h5>
+
                                         <p class="mb-1"><strong>Orange Money:</strong> +221 76 214 70 78 <button class="btn btn-sm btn-success ml-2" onclick="copyToClipboard('+221762147078')">Copier</button></p>
+                                        
+            
                                         <p class="mb-1"><strong>Wave:</strong> +221 76 214 70 78 <button class="btn btn-sm btn-success ml-2" onclick="copyToClipboard('+221762147078')">Copier</button></p>
                                         <small class="text-muted">Indiquez "DON LAGENES" comme message svp</small>
                                     </div>
                                 </div>
                             </div>
+
 
                             <!-- WhatsApp Confirmation -->
                             <div class="text-center mt-4">
@@ -335,12 +356,15 @@ footer {
                                    class="btn btn-success btn-lg">
                                     <i class="fab fa-whatsapp"></i> Confirmer mon don
                                 </a>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
     </section>
 
     <!-- Footer -->
