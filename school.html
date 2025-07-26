@@ -632,7 +632,16 @@
             <button id="showCarousel" class="btn btn-outline-success shadow-sm">
                 <i class="fas fa-book-open"></i> Voir en ligne
             </button>
-            
+             
+            <div class="mt-4">
+                <a href="Bilans/Bil24-25.pdf" class="btn btn-outline-danger shadow-sm" target="_blank">
+                <i class="fas fa-file-pdf"></i> Télécharger le Bilan 2024/2025
+            </a>
+           
+            <button id="showCarousel24" class="btn btn-outline-success shadow-sm">
+                <i class="fas fa-book-open"></i> Voir en ligne
+            </button>
+            </div>
         </div>
 
         <div id="carouselContainer" class="mt-4">
@@ -662,6 +671,7 @@
                 </button>
                 
             </div>
+            
         </div>
     </section>
 
@@ -711,15 +721,15 @@
     $(document).ready(function() {
         // Configuration - Remplacez ces chemins par vos vraies images
         var pages = [
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0001.jpg',
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0002.jpg',
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0003.jpg',
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0004.jpg',
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0005.jpg',
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0006.jpg',
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0007.jpg',
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0008.jpg',
-            'Bilans/Bil23-24/Bil23-24_pages-to-jpg-0009.jpg'
+            'Bilans/Bil23-24/1.jpg',
+            'Bilans/Bil23-24/2.jpg',
+            'Bilans/Bil23-24/3.jpg',
+            'Bilans/Bil23-24/4.jpg',
+            'Bilans/Bil23-24/5.jpg',
+            'Bilans/Bil23-24/6.jpg',
+            'Bilans/Bil23-24/7.jpg',
+            'Bilans/Bil23-24/8.jpg',
+            'Bilans/Bil23-24/9.jpg', 
         ];
         
         // Bouton pour afficher/masquer le carrousel
@@ -728,7 +738,119 @@
             
             if ($container.is(':visible')) {
                 $container.hide();
-                $(this).html('<i class="fas fa-book-open"></i> Feuilleter en ligne');
+                $(this).html('<i class="fas fa-book-open"></i> Voir en ligne');
+            } else {
+                initializeCarousel(pages);
+                $container.show().hide().fadeIn(300);
+                $(this).html('<i class="fas fa-times"></i> Fermer');
+                $('html, body').animate({
+                    scrollTop: $container.offset().top - 50
+                }, 500);
+            }
+        });
+        
+        $('#closeCarousel').on('click', function() {
+            $('#carouselContainer').fadeOut(300);
+            $('#showCarousel').html('<i class="fas fa-book-open"></i> Voir en ligne');
+        });
+        
+        function initializeCarousel(pages) {
+            // Vider le carrousel avant de le remplir
+            $('.carousel-indicators').empty();
+            $('.carousel-inner').empty();
+            
+            // Créer les indicateurs et les diapositives
+            pages.forEach(function(page, index) {
+                // Ajouter l'indicateur
+                $('.carousel-indicators').append(
+                    '<li data-target="#documentCarousel" data-slide-to="' + index + '"' + 
+                    (index === 0 ? ' class="active"' : '') + '></li>'
+                );
+                
+                // Ajouter la diapositive
+                $('.carousel-inner').append(
+                    '<div class="carousel-item' + (index === 0 ? ' active' : '') + '">' +
+                    '<img src="' + page + '" class="d-block img-fluid" alt="Page ' + (index + 1) + '">' +
+                    '</div>'
+                );
+            });
+            
+            // Mettre à jour le compteur
+            updateCarouselCounter();
+            
+            // Écouter les événements de changement de diapositive
+            $('#documentCarousel').on('slide.bs.carousel', function(e) {
+                var direction = e.direction;
+                var $nextItem = $(e.relatedTarget);
+                
+                // Ajouter la classe d'animation selon la direction
+                if (direction === 'left') {
+                    $nextItem.addClass('next');
+                } else {
+                    $nextItem.addClass('prev');
+                }
+            });
+            
+            $('#documentCarousel').on('slid.bs.carousel', function() {
+                // Retirer les classes d'animation après l'effet
+                $('.carousel-item').removeClass('next prev');
+                updateCarouselCounter();
+            });
+            
+            // Contrôles personnalisés
+            $('#carouselPrev').click(function() {
+                $('#documentCarousel').carousel('prev');
+            });
+            
+            $('#carouselNext').click(function() {
+                $('#documentCarousel').carousel('next');
+            });
+            
+            // Navigation au clavier
+            $(document).keydown(function(e) {
+                if ($('#carouselContainer').is(':visible')) {
+                    if (e.keyCode == 37) { // Flèche gauche
+                        $('#documentCarousel').carousel('prev');
+                        e.preventDefault();
+                    } else if (e.keyCode == 39) { // Flèche droite
+                        $('#documentCarousel').carousel('next');
+                        e.preventDefault();
+                    } else if (e.keyCode == 27) { // Echap
+                        $('#carouselContainer').fadeOut(300);
+                        $('#showCarousel').html('<i class="fas fa-book-open"></i> Feuilleter en ligne');
+                    }
+                }
+            });
+        }
+        
+        function updateCarouselCounter() {
+            var activeIndex = $('.carousel-item.active').index() + 1;
+            $('#carouselCounter').html('<strong>Page ' + activeIndex + '/' + pages.length + '</strong>');
+        }
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        // Configuration - Remplacez ces chemins par vos vraies images
+        var pages = [
+            'Bilans/Bil24-25/1.jpg',
+            'Bilans/Bil24-25/2.jpg',
+            'Bilans/Bil24-25/3.jpg',
+            'Bilans/Bil24-25/4.jpg',
+            'Bilans/Bil24-25/5.jpg',
+            'Bilans/Bil24-25/6.jpg',
+            'Bilans/Bil24-25/7.jpg',
+            'Bilans/Bil24-25/8.jpg',
+            'Bilans/Bil24-25/9.jpg', 
+        ];
+        
+        // Bouton pour afficher/masquer le carrousel
+        $('#showCarousel24').on('click', function() {
+            var $container = $('#carouselContainer');
+            
+            if ($container.is(':visible')) {
+                $container.hide();
+                $(this).html('<i class="fas fa-book-open"></i> Voir en ligne');
             } else {
                 initializeCarousel(pages);
                 $container.show().hide().fadeIn(300);
