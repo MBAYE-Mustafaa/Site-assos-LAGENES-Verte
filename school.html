@@ -734,17 +734,26 @@
         // Bouton pour afficher/masquer le carrousel
         $('#showCarousel').on('click', function() {
             var $container = $('#carouselContainer');
-            
-            if ($container.is(':visible')) {
+            // Si déjà ouvert sur 2023/2024, on ferme
+            if ($container.is(':visible') && $(this).html().includes('Fermer')) {
                 $container.hide();
                 $(this).html('<i class="fas fa-book-open"></i> Voir en ligne');
             } else {
-                initializeCarousel(pages);
+                // Ferme l'autre bouton si besoin
+                $('#showCarousel24').html('<i class="fas fa-book-open"></i> Voir en ligne');
+                initializeCarousel([
+                    'Bilans/Bil23-24/1.jpg',
+                    'Bilans/Bil23-24/2.jpg',
+                    'Bilans/Bil23-24/3.jpg',
+                    'Bilans/Bil23-24/4.jpg',
+                    'Bilans/Bil23-24/5.jpg',
+                    'Bilans/Bil23-24/6.jpg',
+                    'Bilans/Bil23-24/7.jpg',
+                    'Bilans/Bil23-24/8.jpg',
+                    'Bilans/Bil23-24/9.jpg'
+                ]);
                 $container.show().hide().fadeIn(300);
                 $(this).html('<i class="fas fa-times"></i> Fermer');
-                $('html, body').animate({
-                    scrollTop: $container.offset().top - 50
-                }, 500);
             }
         });
         
@@ -844,21 +853,30 @@
         ];
         
         // Bouton pour afficher/masquer le carrousel
-        $('#showCarousel24').on('click', function() {
-            var $container = $('#carouselContainer');
-            
-            if ($container.is(':visible')) {
-                $container.hide();
-                $(this).html('<i class="fas fa-book-open"></i> Voir en ligne');
-            } else {
-                initializeCarousel(pages);
-                $container.show().hide().fadeIn(300);
-                $(this).html('<i class="fas fa-times"></i> Fermer');
-                $('html, body').animate({
-                    scrollTop: $container.offset().top - 50
-                }, 500);
-            }
-        });
+       $('#showCarousel24').on('click', function() {
+    var $container = $('#carouselContainer');
+    // Si déjà ouvert sur 2024/2025, on ferme
+    if ($container.is(':visible') && $(this).html().includes('Fermer')) {
+        $container.hide();
+        $(this).html('<i class="fas fa-book-open"></i> Voir en ligne');
+    } else {
+        // Ferme l'autre bouton si besoin
+        $('#showCarousel').html('<i class="fas fa-book-open"></i> Voir en ligne');
+        initializeCarousel([
+            'Bilans/Bil24-25/1.jpg',
+            'Bilans/Bil24-25/2.jpg',
+            'Bilans/Bil24-25/3.jpg',
+            'Bilans/Bil24-25/4.jpg',
+            'Bilans/Bil24-25/5.jpg',
+            'Bilans/Bil24-25/6.jpg',
+            'Bilans/Bil24-25/7.jpg',
+            'Bilans/Bil24-25/8.jpg',
+            'Bilans/Bil24-25/9.jpg'
+        ]);
+        $container.show().hide().fadeIn(300);
+        $(this).html('<i class="fas fa-times"></i> Fermer');
+    }
+});
         
         $('#closeCarousel').on('click', function() {
             $('#carouselContainer').fadeOut(300);
