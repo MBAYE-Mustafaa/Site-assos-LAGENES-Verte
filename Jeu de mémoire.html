@@ -637,7 +637,7 @@
 
     <main class="container py-5">
         <div class="memory-game-container">
-            <h1 class="text-center mb-4">Memo-Sénégal PROPRE</h1>
+            <h1 class="text-center mb-4">Memo Sénégal PROPRE</h1>
             <p class="text-center lead">Jeu éducatif pour un Sénégal plus propre</p>
 
             <div class="alert alert-info text-center">
@@ -651,7 +651,7 @@
                     <li>Mémorisez les paires de cartes qui s'affichent pendant 15 secondes</li>
                     <li>Retournez les cartes deux par deux pour trouver les paires correspondantes</li>
                     <li>Chaque paire trouvée vous apprendra un geste pour un Sénégal plus propre</li>
-                    <li>Vous avez 2 minutes pour trouver toutes les paires</li>
+                    <li>Vous avez 60 secondes pour trouver une paire</li>
                 </ol>
                 <p class="mt-3"><strong>Objectif :</strong> Apprendre les bons gestes écologiques tout en s'amusant !</p>
             </div>
@@ -1087,7 +1087,7 @@
             firstCard = null;
             secondCard = null;
             lockBoard = false;
-            gameTime = 120;
+            gameTime = 60;
             matchedPairs = 0;
             gameStarted = false;
             clearInterval(timerInterval);
@@ -1105,7 +1105,7 @@
             });
 
             // Message pendant la phase de mémorisation
-            timerDisplay.innerText = "Mémorisez les paires... (15 secondes)";
+            timerDisplay.innerText = "Mémorisez les paires ! Le jeu commence dans quelques secondes...";
 
             // Après la durée spécifiée, cacher les cartes et démarrer le jeu
             setTimeout(() => {
@@ -1136,8 +1136,8 @@
             // Cacher le bouton de démarrage
             startGameBtn.style.display = 'none';
 
-            // Montrer les cartes pendant 15 secondes au début
-            showAllCardsTemporarily(15000);
+            // Montrer les cartes pendant 30 secondes au début
+            showAllCardsTemporarily(30000);
         }
 
         // Event listeners
@@ -1150,6 +1150,7 @@
 
         // Initialize game (just prepare the container, don't start yet)
         gameContainer.innerHTML = '';
+        
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
