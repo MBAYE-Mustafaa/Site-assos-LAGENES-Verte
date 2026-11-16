@@ -1,39 +1,9 @@
 /* ==========================================================
    theme.css — identité commune à TOUTES les pages
    (polices, couleurs, menu, boutons, pied de page)
+   Les polices sont chargées depuis Google Fonts (lien dans chaque page).
    Les pages ajoutent class="lgv" sur <body>.
    ========================================================== */
-
-@font-face {
-    font-family: "Pochoir";
-    src: url("fonts/big-shoulders-stencil-display-latin-900-normal.woff2") format("woff2");
-    font-weight: 900;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Affiche";
-    src: url("fonts/big-shoulders-display-latin-800-normal.woff2") format("woff2");
-    font-weight: 800;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Figtree";
-    src: url("fonts/figtree-latin-400-normal.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Figtree";
-    src: url("fonts/figtree-latin-600-normal.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Figtree";
-    src: url("fonts/figtree-latin-700-normal.woff2") format("woff2");
-    font-weight: 700;
-    font-display: swap;
-}
 
 :root {
     --barrique: #12482F;      /* vert des barriques peintes */
@@ -46,8 +16,8 @@
     --encre: #1D2A22;
     --encre-douce: #4A5A4F;
 
-    --pochoir: "Pochoir", "Arial Narrow", sans-serif;
-    --affiche: "Affiche", "Arial Narrow", sans-serif;
+    --pochoir: "Big Shoulders Stencil Display", "Arial Narrow", sans-serif;
+    --affiche: "Big Shoulders Display", "Arial Narrow", sans-serif;
     --texte: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
 
     --mesure: 34rem;          /* longueur de ligne confortable */
