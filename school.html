@@ -1,548 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-474ZDVGR3M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-474ZDVGR3M');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-474ZDVGR3M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-474ZDVGR3M');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Clean&#x27;School : des clubs d&#x27;élèves qui prennent en main la propreté de leur collège à Méckhé, avec des poubelles fabriquées en barriques recyclées.">
     <title>Projet Clean'School | LAGENES Verte</title>
+    <meta name="description" content="Clean'School : des clubs d'élèves qui prennent en main la propreté de leur collège à Méckhé, avec des poubelles fabriquées en barriques recyclées.">
     <link rel="canonical" href="https://www.lagenesverte.site/school.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LAGENES Verte">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:title" content="Projet Clean'School | LAGENES Verte">
-    <meta property="og:description" content="Clean&#x27;School : des clubs d&#x27;élèves qui prennent en main la propreté de leur collège à Méckhé, avec des poubelles fabriquées en barriques recyclées.">
+    <meta property="og:description" content="Des clubs d'élèves qui prennent en main la propreté de leur collège à Méckhé, depuis 2023.">
     <meta property="og:url" content="https://www.lagenesverte.site/school.html">
     <meta property="og:image" content="https://www.lagenesverte.site/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#12482F">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <style>
-        :root {
-            --senegal-green: #00853F;
-            --senegal-yellow: #FDEF42;
-            --senegal-red: #E31B23;
-            --light-bg: #f9f9f9;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--light-bg);
-            position: relative;
-        }
-        
-        body:after {
-            content: "";
-            background: url('https://www.transparenttextures.com/patterns/light-wool.png');
-            opacity: 0.1;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            position: absolute;
-            z-index: -1;
-        }
-        
-        .dropdown-menu {
-            background-color: var(--senegal-green) !important;
-            border: none;
-        }
-
-        .dropdown-item {
-            color: white !important;
-            background-color: transparent !important;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .dropdown-item:hover {
-            background-color:rgb(235, 157, 157) !important;
-            color: var(--senegal-green) !important;
-        }
-        .dropdown-item:focus,
-        .dropdown-item.active {
-            background-color: var(--senegal-yellow) !important;
-            color: var(--senegal-green) !important;
-        }
-        
-        /* Flipbook Carousel styles */
-        #carouselContainer {
-            display: none;
-            max-width: 800px;
-            margin: 30px auto;
-        }
-        
-        #documentCarousel {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            background: white;
-            border-radius: 5px;
-            overflow: hidden;
-            perspective: 2000px;
-        }
-        
-        .carousel-inner {
-            text-align: center;
-            padding: 0;
-            position: relative;
-        }
-        
-        .carousel-item {
-            transition: transform 0.6s ease-in-out;
-            backface-visibility: hidden;
-            transform-style: preserve-3d;
-        }
-        
-        .carousel-item img {
-            max-height: 500px;
-            width: auto;
-            margin: 0 auto;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border: 1px solid #eee;
-        }
-        
-        /* Effet de page tournée */
-        .carousel-item.next {
-            animation: flipNext 0.6s ease-in-out;
-        }
-        
-        .carousel-item.prev {
-            animation: flipPrev 0.6s ease-in-out;
-        }
-        
-        @keyframes flipNext {
-            0% {
-                transform: rotateY(0deg);
-                opacity: 1;
-            }
-            50% {
-                transform: rotateY(-90deg);
-                opacity: 0.5;
-            }
-            100% {
-                transform: rotateY(0deg);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes flipPrev {
-            0% {
-                transform: rotateY(0deg);
-                opacity: 1;
-            }
-            50% {
-                transform: rotateY(90deg);
-                opacity: 0.5;
-            }
-            100% {
-                transform: rotateY(0deg);
-                opacity: 1;
-            }
-        }
-        
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 50px;
-            height: 80px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.3);
-            border-radius: 5px;
-            opacity: 0.8;
-            transition: all 0.3s;
-        }
-        
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            opacity: 1;
-            background-color: var(--senegal-green);
-        }
-        
-        .carousel-control-prev {
-            left: 20px;
-        }
-        
-        .carousel-control-next {
-            right: 20px;
-        }
-        
-        .carousel-indicators {
-            bottom: -40px;
-        }
-        
-        .carousel-indicators li {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--senegal-green);
-            opacity: 0.5;
-            transition: all 0.3s;
-        }
-        
-        .carousel-indicators li.active {
-            opacity: 1;
-            transform: scale(1.2);
-            background-color: var(--senegal-red);
-        }
-        
-        .carousel-controls {
-            text-align: center;
-            margin-top: 30px;
-        }
-        
-        .carousel-controls button {
-            border: none;
-            background: var(--senegal-green);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .carousel-controls button:hover {
-            background: var(--senegal-red);
-            transform: translateY(-2px);
-        }
-        
-        #carouselCounter {
-            display: inline-block;
-            margin: 0 15px;
-            font-weight: bold;
-            color: var(--senegal-green);
-        }
-        
-        /* Effet de livre */
-        .book-effect {
-            position: relative;
-            padding: 20px;
-            background: #f5f5f5;
-            box-shadow: 
-                0 0 0 1px #ccc,
-                0 5px 15px rgba(0,0,0,0.1),
-                0 0 0 5px #f5f5f5,
-                0 0 0 6px #ddd,
-                0 0 20px rgba(0,0,0,0.2);
-            border-radius: 2px;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .carousel-item img {
-                max-height: 400px;
-                max-width: 90%;
-            }
-            
-            .carousel-control-prev,
-            .carousel-control-next {
-                width: 40px;
-                height: 60px;
-            }
-        }
-
-        /* Rest of your existing styles... */
-        .header {
-            background: linear-gradient(135deg, var(--senegal-green), #006b32);
-            color: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            border-bottom: 3px solid var(--senegal-yellow);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .nav-link {
-            position: relative;
-            padding: 8px 15px;
-            color: white !important;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 15px;
-            width: 0;
-            height: 2px;
-            background: var(--senegal-yellow);
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover:after {
-            width: calc(100% - 30px);
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
-                        url("images/illustration-plage.webp");
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 120px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .btn-hero {
-            background-color: var(--senegal-green);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            text-transform: uppercase;
-        }
-        
-        .btn-hero:hover {
-            background-color: #006b32;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        }
-        
-        .whatsapp-btn-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-            margin-bottom: 5px;
-        }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            color: white;
-        }
-        
-        .whatsapp-btn-container span {
-            font-size: 12px;
-            color: var(--senegal-green);
-            font-weight: bold;
-            background-color: white;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-        
-        footer {
-            background: linear-gradient(135deg, #222, #444);
-            margin-top: 0;
-            padding: 3rem 0;
-            position: relative;
-        }
-        
-        footer:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--senegal-green), var(--senegal-yellow), var(--senegal-red));
-        }
-        
-        .footer-logo {
-            max-width: 180px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-contact i {
-            color: var(--senegal-yellow);
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-        }
-        .footer-contact a {
-            color: white;
-            transition: color 0.3s;
-        }
-        
-        .footer-contact a:hover {
-            color: var(--senegal-yellow);
-            text-decoration: none;
-        }
-        
-        .social-icons a {
-            color: white;
-            font-size: 1.2rem;
-            margin: 0 10px;
-            transition: all 0.3s;
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.1);
-        }
-        
-        .social-icons a:hover {
-            background-color: var(--senegal-green);
-            transform: translateY(-3px);
-            color: white;
-        }
-        
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            margin-top: 30px;
-            font-size: 0.9rem;
-        }
-        
-        footer .row + .row {
-            margin-top: 3rem; 
-        }
-        
-        footer {
-            padding: 3rem 0 4rem;
-        }
-        
-        .clean-section {
-            background-color: var(--light-bg);
-            padding: 60px 0;
-        }
-        
-        .clean-title {
-            font-size: 2.5rem;
-            color: var(--senegal-green);
-            font-weight: bold;
-        }
-        
-        .clean-section img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .card-title {
-            color: var(--senegal-red);
-            font-weight: bold;
-        }
-        
-        .card-body {
-            padding: 20px;
-        }
-        
-        .card-body ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .card-body ul li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .card-body ul li:before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: var(--senegal-green);
-            font-weight: bold;
-        }
-        
-        .btn-outline-danger {
-            border-color: var(--senegal-red);
-            color: var(--senegal-red);
-            transition: all 0.3s;
-        }
-        
-        .btn-outline-danger:hover {
-            background-color: var(--senegal-red);
-            color: white;
-            border-color: var(--senegal-red);
-        }
-        
-        .alert {
-            background-color: #d4edda;
-            color: #155724;
-            border-color: #c3e6cb;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        
-        .alert strong {
-            font-weight: bold;
-        }
-        .alert ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 10px;
-        }   
-        .alert ul li {
-            margin-bottom: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Big+Shoulders+Stencil+Display:wght@900&family=Figtree:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="commun.css">
+    <style>
+        /* ===== Page Clean'School (le reste vient de theme.css) ===== */
+        body.lgv { background: var(--sable-clair); font-size: 1.0625rem; line-height: 1.6; }
+        .cs p { margin: 0 0 1rem; }
+        .cs h2 { font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.02; margin: 0 0 .8rem; color: var(--barrique); }
+        .cs-section { padding: clamp(3.2rem, 7vw, 5.5rem) 0; }
+        .cs-intro { max-width: 34rem; color: var(--encre-douce); font-size: 1.1rem; }
+
+        /* --- Héros --- */
+        .cs-heros { background: var(--barrique); color: var(--sable-clair); padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+        .cs-heros__grille { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+        .cs-heros__logo { display: inline-flex; align-items: center; gap: .7rem; background: var(--sable-clair); color: var(--barrique); border-radius: 999px; padding: .35rem 1rem .35rem .4rem; font-weight: 700; font-size: .95rem; margin-bottom: 1.4rem; }
+        .cs-heros__logo img { width: 38px; height: 38px; border-radius: 50%; background: #fff; }
+        .cs-heros h1 { font-size: clamp(3.4rem, 9vw, 7rem); line-height: .9; color: #fff; margin: 0 0 1.1rem; }
+        .cs-heros h1 span { color: var(--soleil); }
+        .cs-heros__texte { font-size: 1.18rem; color: #E2ECE5; max-width: 32rem; }
+        .cs-heros__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+        .cs-heros figure { margin: 0; justify-self: end; max-width: 340px; width: 100%; }
+        .cs-heros figure img { width: 100%; height: auto; border-radius: var(--rayon); border: 6px solid var(--sable); transform: rotate(2deg); box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+        .cs-heros figcaption { font-size: .88rem; color: #BFD3C6; margin-top: 1rem; text-align: right; }
+
+        /* --- Le nom --- */
+        .cs-nom { background: var(--sable); }
+        .cs-nom__grille { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: 2.2rem; border-top: 3px solid var(--barrique); }
+        .cs-sens { padding: 1.8rem 2rem 0 0; }
+        .cs-sens + .cs-sens { padding-left: 2rem; border-left: 3px solid var(--barrique); }
+        .cs-sens .cs-sens__mot { font-family: var(--affiche); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1; color: var(--barrique); margin: 0 0 .6rem; }
+        .cs-sens__mot em { font-style: normal; color: var(--ocre); }
+        .cs-sens p { font-size: 1.15rem; color: var(--encre); max-width: 26rem; }
+
+        /* --- Chiffres --- */
+        .cs-chiffres { list-style: none; margin: 2.4rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .cs-chiffres li { border-top: 3px solid var(--barrique); padding-top: 1rem; }
+        .cs-chiffres strong { display: block; font-family: var(--pochoir); font-size: 4.2rem; line-height: .9; color: var(--barrique); margin-bottom: .4rem; }
+        .cs-chiffres span { color: var(--encre-douce); font-size: 1rem; }
+
+        /* --- Fonctionnement d'un club (vraie suite d'étapes) --- */
+        .cs-club { background: var(--barrique); color: var(--sable-clair); }
+        .cs-club h2 { color: #fff; }
+        .cs-club .cs-intro { color: #CFE0D4; }
+        .cs-etapes { list-style: none; counter-reset: etape; margin: 2.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .cs-etapes li { counter-increment: etape; position: relative; padding-top: 3.6rem; }
+        .cs-etapes li::before { content: counter(etape); position: absolute; top: 0; left: 0; width: 2.7rem; height: 2.7rem; border-radius: 50%; display: grid; place-items: center; background: var(--soleil); color: var(--barrique); font-weight: 700; font-size: 1.2rem; }
+        .cs-etapes li:not(:last-child)::after { content: ""; position: absolute; top: 1.35rem; left: 3.4rem; right: -1.3rem; border-top: 2px dashed rgba(234, 211, 168, .5); }
+        .cs-etapes h3 { font-family: var(--texte); font-weight: 700; font-size: 1.15rem; color: #fff; margin: 0 0 .4rem; }
+        .cs-etapes p { color: #CFE0D4; font-size: .98rem; margin: 0; }
+
+        /* --- Objectifs et actions --- */
+        .cs-deux { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); }
+        .cs-liste { list-style: none; margin: 1.4rem 0 0; padding: 0; }
+        .cs-liste li { display: grid; grid-template-columns: 2rem 1fr; gap: .6rem; padding: .85rem 0; border-bottom: 2px solid var(--sable); }
+        .cs-liste i { color: var(--peinture); font-size: 1.15rem; margin-top: .25rem; }
+
+        /* --- Galerie --- */
+        .cs-galerie { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; margin-top: 2.2rem; }
+        .cs-photo { position: relative; margin: 0; border-radius: var(--rayon); overflow: hidden; background: var(--sable); cursor: zoom-in; border: 0; padding: 0; text-align: left; }
+        .cs-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+        .cs-photo:hover img { transform: scale(1.04); }
+        .cs-photo span { position: absolute; left: 0; right: 0; bottom: 0; padding: 2rem .9rem .8rem; color: #fff; font-size: .9rem; background: linear-gradient(to top, rgba(12,51,34,.9), rgba(12,51,34,0)); }
+        .cs-photo--grande { grid-row: span 2; }
+        .cs-photo--haute { grid-row: span 2; }
+        .cs-photo:not(.cs-photo--grande):not(.cs-photo--haute) { aspect-ratio: 4 / 3; }
+
+        .cs-zoom { border: 0; padding: 0; background: transparent; max-width: min(92vw, 1100px); max-height: 92vh; }
+        .cs-zoom::backdrop { background: rgba(8, 30, 20, .88); }
+        .cs-zoom img { display: block; max-width: 100%; max-height: 82vh; margin: 0 auto; border-radius: 10px; }
+        .cs-zoom p { color: #fff; text-align: center; margin: .8rem 0 0; }
+        .cs-zoom button { position: fixed; top: 16px; right: 16px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--soleil); color: var(--barrique); font-size: 1.3rem; cursor: pointer; }
+
+        /* --- Bilans --- */
+        .cs-bilans { background: var(--sable); }
+        .cs-onglets { display: inline-flex; gap: .4rem; background: var(--sable-clair); padding: .35rem; border-radius: 999px; margin: 1.6rem 0 1.4rem; }
+        .cs-onglets button { border: 0; background: transparent; padding: .55rem 1.2rem; border-radius: 999px; font-weight: 700; color: var(--barrique); cursor: pointer; font-size: 1rem; }
+        .cs-onglets button[aria-selected="true"] { background: var(--barrique); color: #fff; }
+        .cs-lecteur { background: var(--barrique-nuit); border-radius: var(--rayon); padding: 1rem; }
+        .cs-lecteur__page { position: relative; aspect-ratio: 16 / 9; background: #0A2A1C; border-radius: 8px; overflow: hidden; }
+        .cs-lecteur__page img { width: 100%; height: 100%; object-fit: contain; display: block; transition: opacity .25s; }
+        .cs-lecteur__page img.charge { opacity: .35; }
+        .cs-lecteur__barre { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem; margin-top: 1rem; color: #fff; }
+        .cs-lecteur__nav { display: flex; align-items: center; gap: .6rem; }
+        .cs-lecteur__nav button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--sable); background: transparent; color: var(--sable-clair); cursor: pointer; font-size: 1rem; }
+        .cs-lecteur__nav button:hover:not(:disabled) { background: var(--sable); color: var(--barrique); }
+        .cs-lecteur__nav button:disabled { opacity: .35; cursor: default; }
+        .cs-lecteur__compteur { min-width: 6.5rem; text-align: center; font-weight: 600; }
+        .cs-lecteur__pdf { color: var(--soleil) !important; font-weight: 700; }
+
+        /* --- Appel final --- */
+        .cs-appel__boite { background: var(--peinture); color: #fff; border-radius: 22px; padding: clamp(2rem, 5vw, 3.5rem); display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: center; }
+        .cs-appel__boite h2 { color: #fff; }
+        .cs-appel__boite p { color: #E8F3EC; margin: 0; }
+        .cs-appel__actions { display: flex; flex-direction: column; gap: .8rem; align-items: flex-start; }
+        .bouton--blanc { border-color: #fff; color: #fff !important; background: transparent; }
+        .bouton--blanc:hover { background: #fff; color: var(--barrique) !important; }
+
+        /* --- Responsive --- */
+        @media (max-width: 991.98px) {
+            .cs-heros__grille { grid-template-columns: 1fr; }
+            .cs-heros figure { justify-self: start; max-width: 300px; }
+            .cs-heros figcaption { text-align: left; }
+            .cs-chiffres { grid-template-columns: repeat(2, 1fr); }
+            .cs-etapes { grid-template-columns: repeat(2, 1fr); row-gap: 2.4rem; }
+            .cs-etapes li::after { display: none; }
+            .cs-deux, .cs-appel__boite { grid-template-columns: 1fr; }
+            .cs-galerie { grid-template-columns: 1fr 1fr; }
+            .cs-photo--grande { grid-column: span 2; grid-row: auto; aspect-ratio: 16 / 10; }
+            .cs-photo--haute { grid-row: span 2; }
+        }
+        @media (max-width: 575.98px) {
+            .cs-nom__grille { grid-template-columns: 1fr; }
+            .cs-sens { padding-right: 0; }
+            .cs-sens + .cs-sens { padding-left: 0; border-left: 0; border-top: 3px solid var(--barrique); margin-top: 1.6rem; }
+            .cs-etapes { grid-template-columns: 1fr; }
+            .cs-galerie { grid-template-columns: 1fr; }
+            .cs-photo--grande, .cs-photo--haute { grid-column: auto; grid-row: auto; aspect-ratio: 4 / 3; }
+            .cs-chiffres strong { font-size: 3.4rem; }
+        }
+    </style>
 </head>
 
 <body class="lgv">
-    <header class="header">
+    <header>
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Navigation principale">
             <div class="enveloppe d-flex flex-wrap align-items-center justify-content-between">
                 <a href="index.html" class="navbar-brand">
@@ -585,106 +197,176 @@
         </nav>
     </header>
 
-    <section class="container clean-section my-5">
-        <div class="text-center">
-            <h2 class="clean-title mb-4">
-                <span style="font-size: 2.5rem;">🌿</span> <strong>Projet Clean'School</strong>
-            </h2>
-            <div class="alert alert-success mt-4" role="alert">
-                <strong>Pourquoi "Clean'School" ?</strong><br>
-                Ce nom a deux sens : 
-                <ul class="mb-0">
-                    <strong>"Clean is cool"</strong> : être propre, c'est stylé ! 😎
-                    <br>
-                    <strong>"Clean School"</strong> : une école propre, écolo et bien entretenue. 🌿
+    <main class="cs">
+        <!-- ===== Héros ===== -->
+        <section class="cs-heros">
+            <div class="enveloppe cs-heros__grille">
+                <div>
+                    <span class="cs-heros__logo"><img src="images/logo-clean-school.webp" alt="" width="38" height="38">Un projet de LAGENES Verte, depuis 2023</span>
+                    <h1>Clean'<span>School</span></h1>
+                    <p class="cs-heros__texte">Des clubs d'élèves qui prennent en main la propreté de leur collège, à Méckhé. Ils gèrent les poubelles, organisent les nettoyages et sensibilisent leurs camarades.</p>
+                    <div class="cs-heros__actions">
+                        <a class="bouton bouton--soleil" href="https://wa.me/221762147078?text=Bonjour%20LAGENES%20Verte%2C%20j'aimerais%20ouvrir%20un%20club%20Clean'School%20dans%20mon%20%C3%A9cole." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i>Ouvrir un club dans mon école</a>
+                        <a class="bouton bouton--contour" href="#bilans">Lire nos bilans</a>
+                    </div>
+                </div>
+                <figure>
+                    <img src="images/cs-poubelle-cour.webp" alt="Une poubelle en barrique installée dans la cour d'un collège de Méckhé" width="355" height="520">
+                    <figcaption>Une poubelle Clean'School dans la cour d'un collège de Méckhé.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ===== Le nom ===== -->
+        <section class="cs-section cs-nom" aria-labelledby="titre-nom">
+            <div class="enveloppe">
+                <h2 id="titre-nom">Un nom, deux sens</h2>
+                <div class="cs-nom__grille">
+                    <div class="cs-sens">
+                        <p class="cs-sens__mot">Clean <em>is cool</em></p>
+                        <p>Être propre, c'est stylé. Garder sa cour propre devient une fierté, pas une corvée.</p>
+                    </div>
+                    <div class="cs-sens">
+                        <p class="cs-sens__mot">Clean <em>School</em></p>
+                        <p>Une école propre, écolo et bien entretenue, où chacun sait où jeter ses déchets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== En chiffres ===== -->
+        <section class="cs-section" aria-labelledby="titre-chiffres">
+            <div class="enveloppe">
+                <h2 id="titre-chiffres">Le projet en chiffres</h2>
+                <p class="cs-intro">Depuis le lancement au début de l'année scolaire 2023, d'après nos bilans d'activités.</p>
+                <ul class="cs-chiffres">
+                    <li><strong>2</strong><span>clubs Clean'School, au CEM I et au CEM II de Méckhé</span></li>
+                    <li><strong>17</strong><span>poubelles fabriquées dans des barriques en métal par un ouvrier de Méckhé</span></li>
+                    <li><strong>23</strong><span>polos remis aux bureaux et aux coordinateurs des clubs</span></li>
+                    <li><strong>1</strong><span>satisfecit reçu le 17 mai 2025 pour les services rendus à l'école</span></li>
                 </ul>
             </div>
-            
-            <p class="lead">Un projet écoresponsable lancé en <strong>2023</strong> pour impliquer les élèves dans la gestion des déchets de leur établissement.</p>
-            <img loading="lazy" decoding="async" src="images/logo-clean-school.webp" alt="Logo Clean'School" class="img-fluid my-3" style="max-height: 300px;">
-        </div>
+        </section>
 
-        <div class="row mt-4">
-            <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title"><span style="color: green;"><i class="fas fa-bullseye"></i></span> Objectifs</h4>
-                        <ul class="mb-0">
-                            <li>Développer la conscience écologique des élèves</li>
-                            <li>Encourager leur participation active dans la propreté scolaire</li>
-                            <li>Créer une dynamique durable d'écocitoyenneté dans les établissements</li>
-                            <li>Créer un club Clean'School</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title"><span style="color: forestgreen;"><i class="fas fa-hands-helping"></i></span> Actions</h4>
-                        <ul class="mb-0">
-                            <li>Distribution de poubelles adaptées dans les écoles partenaires.</li>
-                            <li>Création de clubs <strong>Clean'School</strong> animés par les élèves.</li>
-                            <li>Suivi et valorisation des meilleures initiatives scolaires.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-5">
-            <h4><span style="color: rgb(220, 43, 20);"><i class="fas fa-file-alt"></i></span> Bilans d'activités</h4>
-            <p class="mb-3">(Consultez nos bilans et rapports d'activités)</p>
-            
-            <a href="Bilans/Bil23-24.pdf" class="btn btn-outline-danger shadow-sm" target="_blank">
-                <i class="fas fa-file-pdf"></i> Télécharger le Bilan 2023/2024
-            </a>
-            
-            <button id="showCarousel" class="btn btn-outline-success shadow-sm">
-                <i class="fas fa-book-open"></i> Voir en ligne
-            </button>
-             
-            <div class="mt-4">
-                <a href="Bilans/Bil24-25.pdf" class="btn btn-outline-danger shadow-sm" target="_blank">
-                <i class="fas fa-file-pdf"></i> Télécharger le Bilan 2024/2025
-            </a>
-           
-            <button id="showCarousel24" class="btn btn-outline-success shadow-sm">
-                <i class="fas fa-book-open"></i> Voir en ligne
-            </button>
-            </div>
-        </div>
-
-        <div id="carouselContainer" class="mt-4">
-            <div id="documentCarousel" class="carousel slide book-effect" data-ride="carousel" data-interval="false">
-                <ol class="carousel-indicators">
-                    <!-- Les indicateurs seront générés par JavaScript -->
+        <!-- ===== Comment fonctionne un club ===== -->
+        <section class="cs-section cs-club" aria-labelledby="titre-club">
+            <div class="enveloppe">
+                <h2 id="titre-club">Comment naît un club</h2>
+                <p class="cs-intro">Le même chemin dans chaque collège : l'association équipe, les élèves prennent le relais.</p>
+                <ol class="cs-etapes">
+                    <li>
+                        <h3>L'école accepte le projet</h3>
+                        <p>L'association rencontre la direction du collège et présente Clean'School.</p>
+                    </li>
+                    <li>
+                        <h3>Les élèves forment le club</h3>
+                        <p>Un bureau d'élèves et un coordinateur sont désignés pour animer le club.</p>
+                    </li>
+                    <li>
+                        <h3>L'association équipe l'école</h3>
+                        <p>Poubelles en barriques recyclées, polos pour le bureau et matériel de nettoyage.</p>
+                    </li>
+                    <li>
+                        <h3>Le club agit toute l'année</h3>
+                        <p>Journées Set-Settal, sensibilisation des camarades et entretien des poubelles.</p>
+                    </li>
                 </ol>
-                <div class="carousel-inner">
-                    <!-- Les diapositives seront générées par JavaScript -->
+            </div>
+        </section>
+
+        <!-- ===== Objectifs et actions ===== -->
+        <section class="cs-section" aria-label="Objectifs et actions">
+            <div class="enveloppe cs-deux">
+                <div>
+                    <h2>Ce que nous visons</h2>
+                    <ul class="cs-liste">
+                        <li><i class="fas fa-seedling" aria-hidden="true"></i><span>Développer la conscience écologique des élèves.</span></li>
+                        <li><i class="fas fa-hand-sparkles" aria-hidden="true"></i><span>Encourager leur participation active à la propreté de l'école.</span></li>
+                        <li><i class="fas fa-arrows-rotate" aria-hidden="true"></i><span>Créer une dynamique durable d'écocitoyenneté dans les établissements.</span></li>
+                        <li><i class="fas fa-users" aria-hidden="true"></i><span>Ouvrir un club Clean'School dans chaque collège partenaire.</span></li>
+                    </ul>
                 </div>
-                <a class="carousel-control-prev" href="#documentCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Précédent</span>
-                </a>
-                <a class="carousel-control-next" href="#documentCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Suivant</span>
-                </a>
+                <div>
+                    <h2>Ce que nous faisons</h2>
+                    <ul class="cs-liste">
+                        <li><i class="fas fa-trash-can" aria-hidden="true"></i><span>Nous fournissons des poubelles adaptées aux écoles partenaires.</span></li>
+                        <li><i class="fas fa-people-group" aria-hidden="true"></i><span>Nous créons des clubs Clean'School animés par les élèves.</span></li>
+                        <li><i class="fas fa-broom" aria-hidden="true"></i><span>Nous organisons des journées de nettoyage (Set-Settal).</span></li>
+                        <li><i class="fas fa-award" aria-hidden="true"></i><span>Nous suivons et valorisons les meilleures initiatives des élèves.</span></li>
+                    </ul>
+                </div>
             </div>
-            <div class="carousel-controls text-center mt-3">
-                <button class="btn btn-sm btn-secondary" id="carouselPrev">
-                    <i class="fas fa-arrow-left"></i> Précédent
-                </button>
-                <span id="carouselCounter">Page 1/9</span>
-                <button class="btn btn-sm btn-secondary" id="carouselNext">
-                    Suivant <i class="fas fa-arrow-right"></i>
-                </button>
-                
+        </section>
+
+        <!-- ===== Galerie ===== -->
+        <section class="cs-section" style="padding-top:0" aria-labelledby="titre-galerie">
+            <div class="enveloppe">
+                <h2 id="titre-galerie">Sur le terrain</h2>
+                <p class="cs-intro">Touchez une photo pour l'agrandir.</p>
+                <div class="cs-galerie">
+                    <button type="button" class="cs-photo cs-photo--grande" data-legende="La cour du CEM II de Méckhé, avec ses sièges en pneus peints aux couleurs du club.">
+                        <img src="images/cem2-meckhe.webp" alt="La cour du CEM II de Méckhé" loading="lazy"><span>La cour du CEM II de Méckhé</span>
+                    </button>
+                    <button type="button" class="cs-photo" data-legende="Satisfecit décerné au club Clean'School pour ses services rendus à l'école, le 17 mai 2025.">
+                        <img src="images/cs-satisfecit.webp" alt="Satisfecit décerné au club Clean'School" loading="lazy"><span>Satisfecit, 17 mai 2025</span>
+                    </button>
+                    <button type="button" class="cs-photo cs-photo--haute" data-legende="Une poubelle en barrique installée dans la cour.">
+                        <img src="images/cs-poubelle-cour.webp" alt="Poubelle en barrique dans la cour d'un collège" loading="lazy"><span>Une poubelle en barrique</span>
+                    </button>
+                    <button type="button" class="cs-photo" data-legende="Les journées d'excellence 2024 du CEM II, avec les membres du club.">
+                        <img src="images/cs-journee-excellence.webp" alt="Élèves lors des journées d'excellence 2024 du CEM II" loading="lazy"><span>Journées d'excellence 2024, CEM II</span>
+                    </button>
+                </div>
             </div>
-            
-        </div>
-    </section>
+        </section>
+
+        <dialog class="cs-zoom" id="zoom" aria-label="Photo agrandie">
+            <button type="button" id="fermerZoom" aria-label="Fermer"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+            <img id="zoomImage" src="" alt="">
+            <p id="zoomLegende"></p>
+        </dialog>
+
+        <!-- ===== Bilans ===== -->
+        <section class="cs-section cs-bilans" id="bilans" aria-labelledby="titre-bilans">
+            <div class="enveloppe">
+                <h2 id="titre-bilans">Nos bilans d'activités</h2>
+                <p class="cs-intro">Feuilletez nos rapports page par page, ou téléchargez-les en PDF.</p>
+                <div class="cs-onglets" role="tablist" aria-label="Choisir un bilan">
+                    <button type="button" role="tab" aria-selected="true" data-bilan="Bil24-25">2024-2025</button>
+                    <button type="button" role="tab" aria-selected="false" data-bilan="Bil23-24">2023-2024</button>
+                </div>
+                <div class="cs-lecteur">
+                    <div class="cs-lecteur__page">
+                        <img id="pageBilan" src="Bilans/Bil24-25/1.jpg" alt="Bilan 2024-2025, page 1 sur 9" width="1920" height="1080">
+                    </div>
+                    <div class="cs-lecteur__barre">
+                        <div class="cs-lecteur__nav">
+                            <button type="button" id="pagePrec" aria-label="Page précédente"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                            <span class="cs-lecteur__compteur" id="compteur" aria-live="polite">Page 1 / 9</span>
+                            <button type="button" id="pageSuiv" aria-label="Page suivante"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
+                        <a class="cs-lecteur__pdf" id="lienPdf" href="Bilans/Bil24-25.pdf" download><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Télécharger le PDF (10 Mo)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Appel final ===== -->
+        <section class="cs-section" aria-labelledby="titre-appel">
+            <div class="enveloppe">
+                <div class="cs-appel__boite">
+                    <div>
+                        <h2 id="titre-appel">Un club Clean'School dans votre école ?</h2>
+                        <p>Enseignant, élève ou parent : écrivez-nous, nous venons présenter le projet. Prochaine étape prévue : le CEM III de Méckhé.</p>
+                    </div>
+                    <div class="cs-appel__actions">
+                        <a class="bouton bouton--soleil" href="https://wa.me/221762147078?text=Bonjour%20LAGENES%20Verte%2C%20j'aimerais%20ouvrir%20un%20club%20Clean'School%20dans%20mon%20%C3%A9cole." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i>Proposer mon école</a>
+                        <a class="bouton bouton--blanc" href="Paiement.html">Financer une poubelle</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="pied">
         <div class="enveloppe">
@@ -727,255 +409,79 @@
 
     <a class="wa-flottant" href="https://wa.me/221762147078" target="_blank" rel="noopener" aria-label="Écrire à LAGENES Verte sur WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="commun.js"></script>
     <script>
-    $(document).ready(function() {
-        // Configuration - Remplacez ces chemins par vos vraies images
-        var pages = [
-            'Bilans/Bil23-24/1.jpg',
-            'Bilans/Bil23-24/2.jpg',
-            'Bilans/Bil23-24/3.jpg',
-            'Bilans/Bil23-24/4.jpg',
-            'Bilans/Bil23-24/5.jpg',
-            'Bilans/Bil23-24/6.jpg',
-            'Bilans/Bil23-24/7.jpg',
-            'Bilans/Bil23-24/8.jpg',
-            'Bilans/Bil23-24/9.jpg', 
-        ];
-        
-        // Bouton pour afficher/masquer le carrousel
-        $('#showCarousel').on('click', function() {
-            var $container = $('#carouselContainer');
-            // Si déjà ouvert sur 2023/2024, on ferme
-            if ($container.is(':visible') && $(this).html().includes('Fermer')) {
-                $container.hide();
-                $(this).html('<i class="fas fa-book-open"></i> Voir en ligne');
-            } else {
-                // Ferme l'autre bouton si besoin
-                $('#showCarousel24').html('<i class="fas fa-book-open"></i> Voir en ligne');
-                initializeCarousel([
-                    'Bilans/Bil23-24/1.jpg',
-                    'Bilans/Bil23-24/2.jpg',
-                    'Bilans/Bil23-24/3.jpg',
-                    'Bilans/Bil23-24/4.jpg',
-                    'Bilans/Bil23-24/5.jpg',
-                    'Bilans/Bil23-24/6.jpg',
-                    'Bilans/Bil23-24/7.jpg',
-                    'Bilans/Bil23-24/8.jpg',
-                    'Bilans/Bil23-24/9.jpg'
-                ]);
-                $container.show().hide().fadeIn(300);
-                $(this).html('<i class="fas fa-times"></i> Fermer');
-            }
+    (function () {
+        /* ---- Galerie : agrandir une photo ---- */
+        var zoom = document.getElementById('zoom');
+        var zImg = document.getElementById('zoomImage');
+        var zLeg = document.getElementById('zoomLegende');
+        document.querySelectorAll('.cs-photo').forEach(function (b) {
+            b.addEventListener('click', function () {
+                var img = b.querySelector('img');
+                zImg.src = img.currentSrc || img.src;
+                zImg.alt = img.alt;
+                zLeg.textContent = b.dataset.legende || '';
+                if (zoom.showModal) zoom.showModal(); else window.open(zImg.src, '_blank');
+            });
         });
-        
-        $('#closeCarousel').on('click', function() {
-            $('#carouselContainer').fadeOut(300);
-            $('#showCarousel').html('<i class="fas fa-book-open"></i> Voir en ligne');
+        document.getElementById('fermerZoom').addEventListener('click', function () { zoom.close(); });
+        zoom.addEventListener('click', function (e) { if (e.target === zoom) zoom.close(); });
+
+        /* ---- Lecteur de bilans ---- */
+        var NB_PAGES = 9;
+        var bilan = 'Bil24-25', page = 1;
+        var img = document.getElementById('pageBilan');
+        var compteur = document.getElementById('compteur');
+        var prec = document.getElementById('pagePrec');
+        var suiv = document.getElementById('pageSuiv');
+        var pdf = document.getElementById('lienPdf');
+        var onglets = document.querySelectorAll('.cs-onglets button');
+
+        function annee(b) { return b === 'Bil24-25' ? '2024-2025' : '2023-2024'; }
+        function afficher() {
+            img.classList.add('charge');
+            img.onload = function () { img.classList.remove('charge'); };
+            img.src = 'Bilans/' + bilan + '/' + page + '.jpg';
+            img.alt = 'Bilan ' + annee(bilan) + ', page ' + page + ' sur ' + NB_PAGES;
+            compteur.textContent = 'Page ' + page + ' / ' + NB_PAGES;
+            prec.disabled = page === 1;
+            suiv.disabled = page === NB_PAGES;
+            pdf.href = 'Bilans/' + bilan + '.pdf';
+            // précharge la page suivante pour un défilement fluide
+            if (page < NB_PAGES) { new Image().src = 'Bilans/' + bilan + '/' + (page + 1) + '.jpg'; }
+        }
+        prec.addEventListener('click', function () { if (page > 1) { page--; afficher(); } });
+        suiv.addEventListener('click', function () { if (page < NB_PAGES) { page++; afficher(); } });
+        onglets.forEach(function (o) {
+            o.addEventListener('click', function () {
+                onglets.forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
+                o.setAttribute('aria-selected', 'true');
+                bilan = o.dataset.bilan; page = 1; afficher();
+            });
         });
-        
-        function initializeCarousel(pages) {
-            // Vider le carrousel avant de le remplir
-            $('.carousel-indicators').empty();
-            $('.carousel-inner').empty();
-            
-            // Créer les indicateurs et les diapositives
-            pages.forEach(function(page, index) {
-                // Ajouter l'indicateur
-                $('.carousel-indicators').append(
-                    '<li data-target="#documentCarousel" data-slide-to="' + index + '"' + 
-                    (index === 0 ? ' class="active"' : '') + '></li>'
-                );
-                
-                // Ajouter la diapositive
-                $('.carousel-inner').append(
-                    '<div class="carousel-item' + (index === 0 ? ' active' : '') + '">' +
-                    '<img loading="lazy" decoding="async" src="' + page + '" class="d-block img-fluid" alt="Page ' + (index + 1) + '">' +
-                    '</div>'
-                );
-            });
-            
-            // Mettre à jour le compteur
-            updateCarouselCounter();
-            
-            // Écouter les événements de changement de diapositive
-            $('#documentCarousel').on('slide.bs.carousel', function(e) {
-                var direction = e.direction;
-                var $nextItem = $(e.relatedTarget);
-                
-                // Ajouter la classe d'animation selon la direction
-                if (direction === 'left') {
-                    $nextItem.addClass('next');
-                } else {
-                    $nextItem.addClass('prev');
-                }
-            });
-            
-            $('#documentCarousel').on('slid.bs.carousel', function() {
-                // Retirer les classes d'animation après l'effet
-                $('.carousel-item').removeClass('next prev');
-                updateCarouselCounter();
-            });
-            
-            // Contrôles personnalisés
-            $('#carouselPrev').click(function() {
-                $('#documentCarousel').carousel('prev');
-            });
-            
-            $('#carouselNext').click(function() {
-                $('#documentCarousel').carousel('next');
-            });
-            
-            // Navigation au clavier
-            $(document).keydown(function(e) {
-                if ($('#carouselContainer').is(':visible')) {
-                    if (e.keyCode == 37) { // Flèche gauche
-                        $('#documentCarousel').carousel('prev');
-                        e.preventDefault();
-                    } else if (e.keyCode == 39) { // Flèche droite
-                        $('#documentCarousel').carousel('next');
-                        e.preventDefault();
-                    } else if (e.keyCode == 27) { // Echap
-                        $('#carouselContainer').fadeOut(300);
-                        $('#showCarousel').html('<i class="fas fa-book-open"></i> Feuilleter en ligne');
-                    }
-                }
-            });
-        }
-        
-        function updateCarouselCounter() {
-            var activeIndex = $('.carousel-item.active').index() + 1;
-            $('#carouselCounter').html('<strong>Page ' + activeIndex + '/' + pages.length + '</strong>');
-        }
-    });
+        // flèches du clavier quand le lecteur est visible
+        document.addEventListener('keydown', function (e) {
+            if (zoom.open) return;
+            var r = img.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > window.innerHeight) return;
+            if (e.key === 'ArrowLeft') prec.click();
+            if (e.key === 'ArrowRight') suiv.click();
+        });
+        // glisser du doigt sur mobile
+        var x0 = null;
+        img.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+        img.addEventListener('touchend', function (e) {
+            if (x0 === null) return;
+            var dx = e.changedTouches[0].clientX - x0;
+            if (dx > 40) prec.click(); else if (dx < -40) suiv.click();
+            x0 = null;
+        });
+        afficher();
+    })();
     </script>
-    <script>
-    $(document).ready(function() {
-        // Configuration - Remplacez ces chemins par vos vraies images
-        var pages = [
-            'Bilans/Bil24-25/1.jpg',
-            'Bilans/Bil24-25/2.jpg',
-            'Bilans/Bil24-25/3.jpg',
-            'Bilans/Bil24-25/4.jpg',
-            'Bilans/Bil24-25/5.jpg',
-            'Bilans/Bil24-25/6.jpg',
-            'Bilans/Bil24-25/7.jpg',
-            'Bilans/Bil24-25/8.jpg',
-            'Bilans/Bil24-25/9.jpg', 
-        ];
-        
-        // Bouton pour afficher/masquer le carrousel
-       $('#showCarousel24').on('click', function() {
-    var $container = $('#carouselContainer');
-    // Si déjà ouvert sur 2024/2025, on ferme
-    if ($container.is(':visible') && $(this).html().includes('Fermer')) {
-        $container.hide();
-        $(this).html('<i class="fas fa-book-open"></i> Voir en ligne');
-    } else {
-        // Ferme l'autre bouton si besoin
-        $('#showCarousel').html('<i class="fas fa-book-open"></i> Voir en ligne');
-        initializeCarousel([
-            'Bilans/Bil24-25/1.jpg',
-            'Bilans/Bil24-25/2.jpg',
-            'Bilans/Bil24-25/3.jpg',
-            'Bilans/Bil24-25/4.jpg',
-            'Bilans/Bil24-25/5.jpg',
-            'Bilans/Bil24-25/6.jpg',
-            'Bilans/Bil24-25/7.jpg',
-            'Bilans/Bil24-25/8.jpg',
-            'Bilans/Bil24-25/9.jpg'
-        ]);
-        $container.show().hide().fadeIn(300);
-        $(this).html('<i class="fas fa-times"></i> Fermer');
-    }
-});
-        
-        $('#closeCarousel').on('click', function() {
-            $('#carouselContainer').fadeOut(300);
-            $('#showCarousel').html('<i class="fas fa-book-open"></i> Feuilleter en ligne');
-        });
-        
-        function initializeCarousel(pages) {
-            // Vider le carrousel avant de le remplir
-            $('.carousel-indicators').empty();
-            $('.carousel-inner').empty();
-            
-            // Créer les indicateurs et les diapositives
-            pages.forEach(function(page, index) {
-                // Ajouter l'indicateur
-                $('.carousel-indicators').append(
-                    '<li data-target="#documentCarousel" data-slide-to="' + index + '"' + 
-                    (index === 0 ? ' class="active"' : '') + '></li>'
-                );
-                
-                // Ajouter la diapositive
-                $('.carousel-inner').append(
-                    '<div class="carousel-item' + (index === 0 ? ' active' : '') + '">' +
-                    '<img loading="lazy" decoding="async" src="' + page + '" class="d-block img-fluid" alt="Page ' + (index + 1) + '">' +
-                    '</div>'
-                );
-            });
-            
-            // Mettre à jour le compteur
-            updateCarouselCounter();
-            
-            // Écouter les événements de changement de diapositive
-            $('#documentCarousel').on('slide.bs.carousel', function(e) {
-                var direction = e.direction;
-                var $nextItem = $(e.relatedTarget);
-                
-                // Ajouter la classe d'animation selon la direction
-                if (direction === 'left') {
-                    $nextItem.addClass('next');
-                } else {
-                    $nextItem.addClass('prev');
-                }
-            });
-            
-            $('#documentCarousel').on('slid.bs.carousel', function() {
-                // Retirer les classes d'animation après l'effet
-                $('.carousel-item').removeClass('next prev');
-                updateCarouselCounter();
-            });
-            
-            // Contrôles personnalisés
-            $('#carouselPrev').click(function() {
-                $('#documentCarousel').carousel('prev');
-            });
-            
-            $('#carouselNext').click(function() {
-                $('#documentCarousel').carousel('next');
-            });
-            
-            // Navigation au clavier
-            $(document).keydown(function(e) {
-                if ($('#carouselContainer').is(':visible')) {
-                    if (e.keyCode == 37) { // Flèche gauche
-                        $('#documentCarousel').carousel('prev');
-                        e.preventDefault();
-                    } else if (e.keyCode == 39) { // Flèche droite
-                        $('#documentCarousel').carousel('next');
-                        e.preventDefault();
-                    } else if (e.keyCode == 27) { // Echap
-                        $('#carouselContainer').fadeOut(300);
-                        $('#showCarousel').html('<i class="fas fa-book-open"></i> Feuilleter en ligne');
-                    }
-                }
-            });
-        }
-        
-        function updateCarouselCounter() {
-            var activeIndex = $('.carousel-item.active').index() + 1;
-            $('#carouselCounter').html('<strong>Page ' + activeIndex + '/' + pages.length + '</strong>');
-        }
-    });
-    </script>
-    <script src="commun.js" defer></script>
 </body>
-
 </html>
-
