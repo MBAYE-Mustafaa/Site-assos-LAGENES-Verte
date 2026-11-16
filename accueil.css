@@ -1,58 +1,9 @@
 /* ==========================================================
-   accueil.css — page d'accueil LAGENES Verte
+   accueil.css — sections propres à la page d'accueil
+   (l'identité commune est dans theme.css)
    Palette tirée de la cour du CEM II de Méckhé :
    vert des barriques peintes, sable de la cour, soleil.
    ========================================================== */
-
-@font-face {
-    font-family: "Pochoir";
-    src: url("fonts/big-shoulders-stencil-display-latin-900-normal.woff2") format("woff2");
-    font-weight: 900;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Affiche";
-    src: url("fonts/big-shoulders-display-latin-800-normal.woff2") format("woff2");
-    font-weight: 800;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Figtree";
-    src: url("fonts/figtree-latin-400-normal.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Figtree";
-    src: url("fonts/figtree-latin-600-normal.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Figtree";
-    src: url("fonts/figtree-latin-700-normal.woff2") format("woff2");
-    font-weight: 700;
-    font-display: swap;
-}
-
-:root {
-    --barrique: #12482F;      /* vert des barriques peintes */
-    --barrique-nuit: #0C3322;
-    --peinture: #1E8A4C;      /* vert de la marque */
-    --sable: #EAD3A8;         /* sable de la cour */
-    --sable-clair: #F6EBD6;
-    --ocre: #B8742F;
-    --soleil: #F7D33B;
-    --encre: #1D2A22;
-    --encre-douce: #4A5A4F;
-
-    --pochoir: "Pochoir", "Arial Narrow", sans-serif;
-    --affiche: "Affiche", "Arial Narrow", sans-serif;
-    --texte: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-
-    --mesure: 34rem;          /* longueur de ligne confortable */
-    --rayon: 14px;
-}
 
 html { scroll-behavior: smooth; }
 
@@ -73,64 +24,6 @@ body.accueil {
     width: min(1180px, 100% - 2.5rem);
     margin-inline: auto;
 }
-
-/* ---------- Navigation ---------- */
-.accueil .navbar {
-    background: var(--barrique);
-    border-bottom: 3px solid var(--soleil);
-    padding: .7rem 0;
-}
-.accueil .navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    font-family: var(--affiche);
-    font-size: 1.7rem;
-    letter-spacing: .02em;
-    color: #fff;
-}
-.accueil .navbar-brand:hover { color: #fff; }
-.accueil .navbar-brand img { height: 42px; width: 42px; }
-.accueil .navbar-brand span { color: var(--soleil); }
-.accueil .navbar .nav-link {
-    color: #fff !important;
-    font-weight: 600;
-    padding: .5rem .9rem !important;
-}
-.accueil .navbar .nav-link:hover { color: var(--soleil) !important; }
-.accueil .dropdown-menu {
-    background: var(--barrique-nuit);
-    border: 0;
-    border-radius: 10px;
-    padding: .4rem;
-}
-.accueil .dropdown-item {
-    color: #fff;
-    border-radius: 6px;
-    padding: .5rem .8rem;
-}
-.accueil .dropdown-item:hover,
-.accueil .dropdown-item:focus { background: var(--peinture); color: #fff; }
-.nav-don {
-    background: var(--soleil);
-    color: var(--barrique) !important;
-    font-weight: 700;
-    border-radius: 999px;
-    padding: .45rem 1.1rem;
-    margin-left: .6rem;
-    text-decoration: none !important;
-    white-space: nowrap;
-}
-.nav-don:hover { background: #ffe36b; }
-.nav-social { display: flex; gap: .3rem; margin-left: .8rem; }
-.nav-social a {
-    width: 36px; height: 36px;
-    display: grid; place-items: center;
-    border-radius: 50%;
-    color: #fff;
-    background: rgba(255,255,255,.1);
-}
-.nav-social a:hover { background: var(--peinture); color: #fff; }
 
 /* ---------- Héros ---------- */
 .heros {
@@ -212,25 +105,6 @@ body.accueil {
     margin-top: 1.4rem;
 }
 
-.bouton {
-    display: inline-flex;
-    align-items: center;
-    gap: .55rem;
-    font-weight: 700;
-    font-size: 1.02rem;
-    padding: .85rem 1.5rem;
-    border-radius: 999px;
-    border: 2px solid transparent;
-    text-decoration: none !important;
-    transition: background-color .2s, color .2s, transform .2s;
-    cursor: pointer;
-}
-.bouton--soleil { background: var(--soleil); color: var(--barrique) !important; }
-.bouton--soleil:hover { background: #ffe36b; transform: translateY(-2px); }
-.bouton--contour { border-color: var(--sable); color: var(--sable-clair) !important; background: transparent; }
-.bouton--contour:hover { background: var(--sable); color: var(--barrique) !important; }
-.bouton--vert { background: var(--peinture); color: #fff !important; }
-.bouton--vert:hover { background: var(--barrique); }
 
 .heros__photo {
     position: relative;
@@ -585,70 +459,8 @@ body.accueil {
 }
 .option a.lien-fort:hover { color: var(--peinture); }
 
-/* ---------- Pied de page ---------- */
-.pied {
-    background: var(--barrique-nuit);
-    color: #CFE0D4;
-    padding: 3.5rem 0 2rem;
-    font-size: .98rem;
-}
-.pied__grille {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr;
-    gap: 2.5rem;
-}
-.pied__marque { display: flex; gap: 1rem; align-items: flex-start; }
-.pied__marque img { width: 76px; height: 76px; flex: none; }
-.pied h2 {
-    font-family: var(--affiche);
-    font-weight: 800;
-    font-size: 1.35rem;
-    color: var(--soleil);
-    margin: 0 0 .9rem;
-}
-.pied ul { list-style: none; padding: 0; margin: 0; }
-.pied li { margin-bottom: .55rem; }
-.pied li i { width: 1.4rem; color: var(--soleil); }
-.pied a { color: #fff; }
-.pied a:hover { color: var(--soleil); }
-.pied .nav-social { margin: 1rem 0 0; }
-.pied__bas {
-    border-top: 1px solid rgba(255,255,255,.12);
-    margin-top: 2.5rem;
-    padding-top: 1.4rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: .5rem 1.5rem;
-    font-size: .9rem;
-}
-
-/* Bouton WhatsApp flottant */
-.wa-flottant {
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 1000;
-    width: 58px; height: 58px;
-    border-radius: 50%;
-    display: grid; place-items: center;
-    background: #25D366;
-    color: #fff !important;
-    font-size: 30px;
-    box-shadow: 0 6px 18px rgba(0,0,0,.25);
-    transition: transform .2s;
-}
-.wa-flottant:hover { transform: scale(1.08); }
-
 /* ---------- Responsive ---------- */
 @media (max-width: 991.98px) {
-    .accueil .navbar-collapse {
-        background: var(--barrique);
-        padding: .8rem 0 1rem;
-    }
-    .nav-don { display: inline-block; margin: .6rem 0 0 .9rem; }
-    .nav-social { margin: .8rem 0 0 .6rem; }
-
     .heros__grille { grid-template-columns: 1fr; min-height: 0; }
     .heros__texte { padding-right: 0; }
     .heros__photo { min-height: 0; aspect-ratio: 4 / 3; margin: 0 calc(-1 * (100vw - min(1180px, 100vw - 2.5rem)) / 2); }
@@ -662,21 +474,16 @@ body.accueil {
     .rejoindre__grille { grid-template-columns: 1fr; gap: 2rem; }
     .option, .option:first-child { padding: 1.6rem 0 0; border-left: 0; border-top: 2px solid var(--sable); }
     .option:first-child { border-top: 0; padding-top: 0; }
-
-    .pied__grille { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 @media (max-width: 575.98px) {
     body.accueil { font-size: 1rem; }
-    .accueil .navbar-brand { font-size: 1.4rem; }
-    .accueil .navbar-brand img { height: 36px; width: 36px; }
     .heros { padding-top: 64px; }
     .frise { grid-template-columns: 1fr; }
     .vedette { grid-template-columns: 1fr; }
     .vedette__logo { padding: 1rem; }
     .vedette__logo img { width: 130px; }
     .barrique { width: 92px; }
-    .wa-flottant { width: 52px; height: 52px; font-size: 26px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
