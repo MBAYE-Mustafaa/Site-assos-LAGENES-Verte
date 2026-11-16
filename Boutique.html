@@ -14,12 +14,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Boutique officielle de LAGENES Verte - Soutenez notre cause environnementale">
-    <meta name="keywords" content="boutique, environnement, écologie, Sénégal, produits">
     <title>Boutique | LAGENES Verte</title>
+    <link rel="canonical" href="https://www.lagenesverte.site/Boutique.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LAGENES Verte">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:title" content="Boutique | LAGENES Verte">
+    <meta property="og:description" content="Boutique officielle de LAGENES Verte - Soutenez notre cause environnementale">
+    <meta property="og:url" content="https://www.lagenesverte.site/Boutique.html">
+    <meta property="og:image" content="https://www.lagenesverte.site/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#12482F">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/aev.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         :root {
             --senegal-green: #00853F;
@@ -462,7 +473,7 @@
         
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
-                        url("images/openart-image_RATO-nbk_1746137033339_raw.jpg");
+                        url("images/illustration-plage.webp");
             background-size: cover;
             background-position: center;
             color: white;
@@ -649,7 +660,7 @@
         /* Boutique Styles */
         .shop-hero {
             background: linear-gradient(rgba(0, 133, 63, 0.8), rgba(0, 133, 63, 0.7)), 
-                        url('images/shop-bg.jpg');
+                        url('images/cem2-meckhe.webp');
             background-size: cover;
             background-position: center;
             color: white;
@@ -939,6 +950,7 @@ footer {
     padding: 3rem 0 4rem; /* Augmente le padding en bas */
 }
     </style>
+    <link rel="stylesheet" href="commun.css">
 </head>
 
 <body>
@@ -946,7 +958,7 @@ footer {
        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a href="index.html" class="navbar-brand">
-                    <img src="images/aev.png" alt="Logo LAGENES Verte">
+                    <img src="images/logo-lagenes.webp" alt="Logo LAGENES Verte">
                     LAGENES <span style="color: var(--senegal-yellow)">Verte</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -964,7 +976,8 @@ footer {
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="school.html">Projet Clean'School</a>
-                                <a class="dropdown-item" href="Jeu de mémoire.html"> <i>Memo-S.P</i></a>
+                                <a class="dropdown-item" href="memo-recyclage.html"> <i>Memo-S.P</i></a>
+                                <a class="dropdown-item" href="localisation.html">Carte des poubelles</a>
                                 <a class="dropdown-item" href="SuiteProject.html"> <i>Projets Futurs</i></a>
                             </div>
                         </li>
@@ -976,16 +989,16 @@ footer {
                         </li>
                     </ul>
                     <div class="social-icons d-none d-lg-flex ml-3">
-                          <a href="https://youtube.com/@lagenesverte?si=_BTDvu6Dw6LMOX9x" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.fb.com/l/6lp1kJRRR" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/lagenesverte?igsh=NDdsZGRhZjVyN2Y0" class="social-icon"><i class="fab fa-instagram"></i></a>
+                          <a href="https://youtube.com/@lagenesverte?si=_BTDvu6Dw6LMOX9x" class="social-icon" aria-label="YouTube de LAGENES Verte"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.fb.com/l/6lp1kJRRR" class="social-icon" aria-label="Facebook de LAGENES Verte"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/lagenesverte?igsh=NDdsZGRhZjVyN2Y0" class="social-icon" aria-label="Instagram de LAGENES Verte"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </nav>
         <div class="whatsapp-btn-container">
-            <a class="whatsapp-btn" href="https://wa.me/33605536426"><i class="fab fa-whatsapp"></i></a>
-            <span><i>Contact us</i></span>
+            <a class="whatsapp-btn" href="https://wa.me/33605536426" aria-label="Écrire à LAGENES Verte sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <span>Contactez-nous</span>
         </div>
     </header>
 
@@ -1009,15 +1022,15 @@ footer {
                 <div class="product-card magic-card">
                     <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                        target="_blank" 
-                       class="img-hover-zoom">
-                        <img src="images/carte 2.jpg" class="product-img img-fluid" alt="T-shirt Clean'School">
+                       class="img-hover-zoom" aria-label="Écrire à LAGENES Verte sur WhatsApp">
+                        <img loading="lazy" decoding="async" src="images/produit-carte-2.webp" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">Carte de soutien</h3>
                         <div class="product-price flash-sale">3 000 FCFA</div>
                         <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                            class="btn btn-buy super-pulse" 
-                           target="_blank">
+                           target="_blank" aria-label="Écrire à LAGENES Verte sur WhatsApp">
                             <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
@@ -1031,15 +1044,15 @@ footer {
                 <div class="product-card magic-card">
                     <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                        target="_blank" 
-                       class="img-hover-zoom">
-                        <img src="images/carte 1.jpg" class="product-img img-fluid" alt="T-shirt Clean'School">
+                       class="img-hover-zoom" aria-label="Écrire à LAGENES Verte sur WhatsApp">
+                        <img loading="lazy" decoding="async" src="images/produit-carte-1.webp" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">Carte de membre</h3>
                         <div class="product-price flash-sale">1 500 FCFA</div>
                         <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                            class="btn btn-buy super-pulse" 
-                           target="_blank">
+                           target="_blank" aria-label="Écrire à LAGENES Verte sur WhatsApp">
                             <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
@@ -1053,15 +1066,15 @@ footer {
                 <div class="product-card magic-card">
                     <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                        target="_blank" 
-                       class="img-hover-zoom">
-                        <img src="images/A1.png" class="product-img img-fluid" alt="T-shirt Clean'School">
+                       class="img-hover-zoom" aria-label="Écrire à LAGENES Verte sur WhatsApp">
+                        <img loading="lazy" decoding="async" src="images/produit-polo-a1.webp" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">Polo</h3>
                         <div class="product-price flash-sale">6 500 FCFA</div>
                         <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                            class="btn btn-buy super-pulse" 
-                           target="_blank">
+                           target="_blank" aria-label="Écrire à LAGENES Verte sur WhatsApp">
                             <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
@@ -1074,15 +1087,15 @@ footer {
                 <div class="product-card magic-card">
                     <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                        target="_blank" 
-                       class="img-hover-zoom">
-                        <img src="images/A2.png" class="product-img img-fluid" alt="T-shirt Clean'School">
+                       class="img-hover-zoom" aria-label="Écrire à LAGENES Verte sur WhatsApp">
+                        <img loading="lazy" decoding="async" src="images/produit-polo-a2.webp" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">T-shirt</h3>
                         <div class="product-price flash-sale">5 000 FCFA</div>
                         <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                            class="btn btn-buy super-pulse" 
-                           target="_blank">
+                           target="_blank" aria-label="Écrire à LAGENES Verte sur WhatsApp">
                             <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
@@ -1095,15 +1108,15 @@ footer {
                 <div class="product-card magic-card">
                     <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                        target="_blank" 
-                       class="img-hover-zoom">
-                        <img src="images/CASQUET.png" class="product-img img-fluid" alt="T-shirt Clean'School">
+                       class="img-hover-zoom" aria-label="Écrire à LAGENES Verte sur WhatsApp">
+                        <img loading="lazy" decoding="async" src="images/produit-casquette.webp" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">Casquette LAGENES Verte</h3>
                         <div class="product-price flash-sale">3 000 FCFA</div>
                         <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                            class="btn btn-buy super-pulse" 
-                           target="_blank">
+                           target="_blank" aria-label="Écrire à LAGENES Verte sur WhatsApp">
                             <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
@@ -1117,15 +1130,15 @@ footer {
                 <div class="product-card magic-card">
                     <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                        target="_blank" 
-                       class="img-hover-zoom">
-                        <img src="images/CASQUET 2.png" class="product-img img-fluid" alt="T-shirt Clean'School">
+                       class="img-hover-zoom" aria-label="Écrire à LAGENES Verte sur WhatsApp">
+                        <img loading="lazy" decoding="async" src="images/produit-casquette-2.webp" class="product-img img-fluid" alt="T-shirt Clean'School">
                     </a>
                     <div class="product-body">
                         <h3 class="product-title">Casquette Clean'School</h3>
                         <div class="product-price flash-sale">3 000 FCFA</div>
                         <a href="https://wa.me/33605536426?text=Bonjour%2C%20je%20souhaite%20commander%20un%20T-shirt%20Clean'School" 
                            class="btn btn-buy super-pulse" 
-                           target="_blank">
+                           target="_blank" aria-label="Écrire à LAGENES Verte sur WhatsApp">
                             <i class="fab fa-whatsapp"></i> COMMANDER
                         </a>
                     </div>
@@ -1152,22 +1165,22 @@ footer {
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <img src="images/aev.png" alt="Logo association" class="img-fluid footer-logo">
+                    <img loading="lazy" decoding="async" src="images/logo-lagenes.webp" alt="Logo association" class="img-fluid footer-logo">
                     <p class="mt-3">Engagés pour un Sénégal plus propre et une meilleure gestion des déchets !</p>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                   <h5 class="mb-3" style="color: var(--senegal-red); font-weight: bold;">Contactez-nous</h5>
+                   <h5 class="mb-3" style="color: var(--senegal-yellow); font-weight: bold;">Contactez-nous</h5>
                     <p class="footer-contact"><i class="fas fa-map-marker-alt"></i>Méckhé, Sénégal</p>
                     <p class="footer-contact"><i class="fas fa-envelope"></i><a href="mailto:contact@lagenesverte.site">contact@lagenesverte.site</a></p>
                     <p class="footer-contact"><i class="fas fa-phone"></i>+221 76 214 70 78</p>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4">
-                    <h5 class="mb-3" style="color: var(--senegal-red); font-weight: bold;">Suivez-nous</h5>
+                    <h5 class="mb-3" style="color: var(--senegal-yellow); font-weight: bold;">Suivez-nous</h5>
                    
                     <div class="social-icons d-flex justify-content-center justify-content-md-start justify-content-lg-center">
-                          <a href="https://youtube.com/@lagenesverte?si=_BTDvu6Dw6LMOX9x" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.fb.com/l/6lp1kJRRR" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/lagenesverte?igsh=NDdsZGRhZjVyN2Y0" class="social-icon"><i class="fab fa-instagram"></i></a>
+                          <a href="https://youtube.com/@lagenesverte?si=_BTDvu6Dw6LMOX9x" class="social-icon" aria-label="YouTube de LAGENES Verte"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.fb.com/l/6lp1kJRRR" class="social-icon" aria-label="Facebook de LAGENES Verte"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/lagenesverte?igsh=NDdsZGRhZjVyN2Y0" class="social-icon" aria-label="Instagram de LAGENES Verte"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -1188,6 +1201,7 @@ footer {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="commun.js" defer></script>
 </body>
 
 </html>

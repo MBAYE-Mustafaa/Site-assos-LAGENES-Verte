@@ -17,7 +17,7 @@ const objectifsData = [
       card.className = "col-lg-4 col-md-6 mb-4";
       card.innerHTML = `
         <div class="card custom-card" id="card-${index + 1}">
-          <img src="images/hero-image.jpg" class="card-img-top img-fluid" alt="Image${index + 1}">
+          <img src="images/hero-image.webp" class="card-img-top img-fluid" alt="Image${index + 1}">
           <div class="card-body">
             <h5 class="card-title">${objectif.title}</h5>
             <p class="hidden-text" id="card-text-${index + 1}">
