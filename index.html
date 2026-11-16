@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="LAGENES Verte mobilise la jeunesse de Méckhé pour des écoles et des quartiers plus propres : clubs Clean'School, poubelles en barriques recyclées, journées Set-Settal.">
     <title>LAGENES Verte | Association pour un Sénégal plus propre, à Méckhé</title>
+    <link rel="preload" href="fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="canonical" href="https://www.lagenesverte.site/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LAGENES Verte">
@@ -32,11 +33,12 @@
     <link rel="preload" href="images/cem2-meckhe.webp" as="image">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="accueil.css">
     <link rel="stylesheet" href="commun.css">
 </head>
 
-<body class="accueil">
+<body class="accueil lgv">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Navigation principale">
             <div class="enveloppe d-flex flex-wrap align-items-center justify-content-between">
@@ -50,7 +52,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto align-items-lg-center">
-                        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Accueil</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Accueil</a></li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="menuProjets" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projets</a>
                             <div class="dropdown-menu" aria-labelledby="menuProjets">
@@ -60,7 +62,13 @@
                                 <a class="dropdown-item" href="SuiteProject.html">Projets futurs</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a href="voirplusloin.html" class="nav-link">Qui sommes-nous</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="menuAsso" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">L'association</a>
+                            <div class="dropdown-menu" aria-labelledby="menuAsso">
+                                <a class="dropdown-item" href="voirplusloin.html">Qui sommes-nous</a>
+                                <a class="dropdown-item" href="about.html">Nos objectifs</a>
+                            </div>
+                        </li>
                         <li class="nav-item"><a href="Boutique.html" class="nav-link">Boutique</a></li>
                     </ul>
                     <a href="#don" class="nav-don">Faire un don</a>
@@ -252,7 +260,7 @@
         </section>
     </main>
 
-    <a class="wa-flottant" href="https://wa.me/221762147078" target="_blank" rel="noopener" aria-label="Écrire à LAGENES Verte sur WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+    
 
     <footer class="pied">
         <div class="enveloppe">
@@ -264,7 +272,7 @@
                 <div>
                     <h2>Nous contacter</h2>
                     <ul>
-                        <li><i class="fas fa-location-dot" aria-hidden="true"></i>Méckhé, Sénégal</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Méckhé, Sénégal</li>
                         <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:contact@lagenesverte.site">contact@lagenesverte.site</a></li>
                         <li><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+221762147078">+221 76 214 70 78</a></li>
                     </ul>
@@ -280,6 +288,7 @@
                         <li><a href="school.html">Projet Clean'School</a></li>
                         <li><a href="localisation.html">Carte des poubelles</a></li>
                         <li><a href="voirplusloin.html">Qui sommes-nous</a></li>
+                        <li><a href="about.html">Nos objectifs</a></li>
                         <li><a href="Bilans/Bil24-25.pdf">Bilan 2024-2025 (PDF)</a></li>
                         <li><a href="Paiement.html">Faire un don</a></li>
                     </ul>
@@ -291,6 +300,8 @@
             </div>
         </div>
     </footer>
+
+    <a class="wa-flottant" href="https://wa.me/221762147078" target="_blank" rel="noopener" aria-label="Écrire à LAGENES Verte sur WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>

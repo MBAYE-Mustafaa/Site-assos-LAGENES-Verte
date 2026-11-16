@@ -1,0 +1,292 @@
+/* ==========================================================
+   theme.css — identité commune à TOUTES les pages
+   (polices, couleurs, menu, boutons, pied de page)
+   Les pages ajoutent class="lgv" sur <body>.
+   ========================================================== */
+
+@font-face {
+    font-family: "Pochoir";
+    src: url("fonts/big-shoulders-stencil-display-latin-900-normal.woff2") format("woff2");
+    font-weight: 900;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Affiche";
+    src: url("fonts/big-shoulders-display-latin-800-normal.woff2") format("woff2");
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Figtree";
+    src: url("fonts/figtree-latin-400-normal.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Figtree";
+    src: url("fonts/figtree-latin-600-normal.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Figtree";
+    src: url("fonts/figtree-latin-700-normal.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
+:root {
+    --barrique: #12482F;      /* vert des barriques peintes */
+    --barrique-nuit: #0C3322;
+    --peinture: #1E8A4C;      /* vert de la marque */
+    --sable: #EAD3A8;         /* sable de la cour */
+    --sable-clair: #F6EBD6;
+    --ocre: #B8742F;
+    --soleil: #F7D33B;
+    --encre: #1D2A22;
+    --encre-douce: #4A5A4F;
+
+    --pochoir: "Pochoir", "Arial Narrow", sans-serif;
+    --affiche: "Affiche", "Arial Narrow", sans-serif;
+    --texte: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --mesure: 34rem;          /* longueur de ligne confortable */
+    --rayon: 14px;
+}
+
+body.lgv {
+    font-family: var(--texte);
+    color: var(--encre);
+    overflow-x: hidden;
+}
+body.lgv h1, body.lgv h2 {
+    font-family: var(--affiche);
+    font-weight: 800;
+    letter-spacing: .01em;
+}
+
+.enveloppe {
+    width: min(1180px, 100% - 2.5rem);
+    margin-inline: auto;
+}
+
+/* ---------- Navigation ---------- */
+.lgv .navbar {
+    background: var(--barrique);
+    border-bottom: 3px solid var(--soleil);
+    padding: .7rem 0;
+}
+.lgv .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: var(--affiche);
+    font-size: 1.7rem;
+    letter-spacing: .02em;
+    color: #fff;
+}
+.lgv .navbar-brand:hover { color: #fff; }
+.lgv .navbar-brand img { height: 42px; width: 42px; }
+.lgv .navbar-brand span { color: var(--soleil); }
+.lgv .navbar .nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    padding: .5rem .9rem !important;
+}
+.lgv .navbar .nav-link:hover { color: var(--soleil) !important; }
+.lgv .dropdown-menu {
+    background: var(--barrique-nuit);
+    border: 0;
+    border-radius: 10px;
+    padding: .4rem;
+}
+.lgv .dropdown-item {
+    color: #fff;
+    border-radius: 6px;
+    padding: .5rem .8rem;
+}
+.lgv .dropdown-item:hover,
+.lgv .dropdown-item:focus { background: var(--peinture); color: #fff; }
+.nav-don {
+    background: var(--soleil);
+    color: var(--barrique) !important;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: .45rem 1.1rem;
+    margin-left: .6rem;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+.nav-don:hover { background: #ffe36b; }
+.nav-social { display: flex; gap: .3rem; margin-left: .8rem; }
+.nav-social a {
+    width: 36px; height: 36px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+.nav-social a:hover { background: var(--peinture); color: #fff; }
+
+
+/* Neutralise les anciens styles du menu sur les pages intérieures */
+.lgv .navbar { box-shadow: none; }
+.lgv .navbar .nav-link:not(.dropdown-toggle)::after { content: none; display: none; }
+.lgv .navbar .nav-link.dropdown-toggle::after {
+    display: inline-block;
+    position: static;
+    width: 0; height: 0;
+    margin-left: .3em;
+    vertical-align: .2em;
+    content: "";
+    background: none;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    transform: none;
+    opacity: 1;
+}
+.lgv .navbar .nav-link.active { color: var(--soleil) !important; }
+
+.bouton {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-weight: 700;
+    font-size: 1.02rem;
+    padding: .85rem 1.5rem;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    text-decoration: none !important;
+    transition: background-color .2s, color .2s, transform .2s;
+    cursor: pointer;
+}
+.bouton--soleil { background: var(--soleil); color: var(--barrique) !important; }
+.bouton--soleil:hover { background: #ffe36b; transform: translateY(-2px); }
+.bouton--contour { border-color: var(--sable); color: var(--sable-clair) !important; background: transparent; }
+.bouton--contour:hover { background: var(--sable); color: var(--barrique) !important; }
+.bouton--vert { background: var(--peinture); color: #fff !important; }
+.bouton--vert:hover { background: var(--barrique); }
+
+/* ---------- Pied de page ---------- */
+body.lgv footer.pied {
+    background: var(--barrique-nuit);
+    color: #CFE0D4;
+    padding: 3.5rem 0 2rem;
+    font-size: .98rem;
+}
+.pied__grille {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 2.5rem;
+}
+.pied__marque { display: flex; gap: 1rem; align-items: flex-start; }
+.pied__marque img { width: 76px; height: 76px; flex: none; }
+.pied h2 {
+    font-family: var(--affiche);
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: var(--soleil);
+    margin: 0 0 .9rem;
+}
+.pied ul { list-style: none; padding: 0; margin: 0; }
+.pied li { margin-bottom: .55rem; }
+.pied li i { width: 1.4rem; color: var(--soleil); }
+.pied a { color: #fff; }
+.pied a:hover { color: var(--soleil); }
+.pied .nav-social { margin: 1rem 0 0; }
+.pied__bas {
+    border-top: 1px solid rgba(255,255,255,.12);
+    margin-top: 2.5rem;
+    padding-top: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem 1.5rem;
+    font-size: .9rem;
+}
+
+/* Bouton WhatsApp flottant */
+.wa-flottant {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1000;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: #25D366;
+    color: #fff !important;
+    font-size: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    transition: transform .2s;
+}
+.wa-flottant:hover { transform: scale(1.08); }
+
+
+/* Neutralise les anciens styles du pied de page */
+body.lgv footer.pied { margin-top: 0; border: 0; box-shadow: none; text-align: left; }
+body.lgv footer.pied::before { content: none; display: none; }
+body.lgv footer.pied p { color: #CFE0D4; }
+
+@media (max-width: 991.98px) {
+    .lgv .navbar-collapse {
+        background: var(--barrique);
+        padding: .8rem 0 1rem;
+    }
+    .nav-don { display: inline-block; margin: .6rem 0 0 .9rem; }
+    .nav-social { margin: .8rem 0 0 .6rem; }
+    .pied__grille { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 575.98px) {
+    .lgv .navbar-brand { font-size: 1.4rem; }
+    .lgv .navbar-brand img { height: 36px; width: 36px; }
+    .wa-flottant { width: 52px; height: 52px; font-size: 26px; }
+}
+
+/* Le menu reste sur une ligne, même si une ancienne page force la largeur */
+.lgv .navbar .nav-link { margin: 0 !important; }
+.lgv .navbar .nav-item { margin: 0; }
+.lgv .navbar-nav {
+    width: auto;
+    margin-left: auto !important;
+    margin-right: 0;
+    justify-content: flex-end;
+}
+@media (min-width: 992px) {
+    .lgv .navbar .enveloppe { flex-wrap: nowrap !important; }
+    .lgv .navbar-collapse { flex-grow: 1; }
+}
+
+/* Pied de page : alignements, quels que soient les anciens styles */
+body.lgv footer.pied h2 {
+    text-align: left;
+    margin: 0 0 .9rem;
+    padding: 0;
+    border: 0;
+}
+body.lgv footer.pied h2::before,
+body.lgv footer.pied h2::after { content: none; display: none; }
+body.lgv footer.pied .pied__bas p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    font-size: .9rem;
+    color: #CFE0D4;
+}
+body.lgv footer.pied .pied__bas { align-items: center; }
+body.lgv footer.pied img { max-width: none; }
+
+/* Mobile : logo à gauche, bouton du menu à droite sur toutes les pages */
+.lgv .navbar-brand { order: 0; }
+.lgv .navbar-toggler { order: 1; border-color: rgba(255, 255, 255, .35); }
+.lgv .navbar-collapse { order: 2; }
+
+/* Le texte justifié crée de grands trous sur petit écran */
+@media (max-width: 767.98px) {
+    body.lgv .text-justify,
+    body.lgv .content-box li,
+    body.lgv .content-box p { text-align: left !important; }
+}
