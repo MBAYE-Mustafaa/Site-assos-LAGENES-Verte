@@ -1,0 +1,63 @@
+/* ==========================================================
+   commun.css — corrections partagées par toutes les pages
+   (chargé en dernier pour passer devant les styles internes)
+   ========================================================== */
+
+/* Bouton « Soutenir nos actions » du pied de page : il était
+   vert foncé sur gris foncé, presque invisible */
+footer a.btn[href="Paiement.html"] {
+    background: #F7D33B;
+    border: 0;
+    color: #12482F;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: .8rem 2rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+}
+footer a.btn[href="Paiement.html"]:hover,
+footer a.btn[href="Paiement.html"]:focus {
+    background: #ffe36b;
+    color: #12482F;
+}
+
+/* Focus clavier visible partout */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid #F7D33B;
+    outline-offset: 3px;
+    box-shadow: none;
+}
+
+/* Petit message de confirmation (remplace les alert()) */
+.lgv-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 20px);
+    background: #12482F;
+    color: #fff;
+    padding: .8rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    font-size: .95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s, transform .25s;
+    z-index: 2000;
+    max-width: calc(100vw - 32px);
+}
+.lgv-toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* Respect du réglage « réduire les animations » */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

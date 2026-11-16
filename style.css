@@ -315,7 +315,7 @@
 .hero {
     background-size: cover;
     position: relative;
-    background-image: url('images/hero-image.jpg');
+    background-image: url('images/hero-image.webp');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -325,7 +325,7 @@
 /* Styles pour la section hero */
 .hero-image {
     position: relative;
-    background-image: url('images/hero-image.jpg');
+    background-image: url('images/hero-image.webp');
     background-size: cover;
     height: 500px;
     display: flex;
@@ -838,7 +838,7 @@ p {
 
 /* Styles pour la section about */
 .about {
-   background-image: url('images/About.jpg');
+   background-image: url('images/about.webp');
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -902,7 +902,7 @@ p {
     font-size: 18px;
 }
 .past-events {
-   background-image: url('images/gettyimages-545269118-170667a.jpg');
+   background-image: url('images/nature.webp');
 }
 
 .custom-image {
